@@ -1,0 +1,56 @@
+@import '../utils/variaveis';
+
+footer {
+    background: $default_grey;
+    color: $white;
+    font-size: 11px;
+    min-height: 175px;
+    border-top: 1px solid $divider_border_color;
+
+    .footer-container {
+        max-width: 1100px;
+        width: 100%;
+        min-height: 175px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-weight: 500;
+
+        @media(max-width: 997px){
+            padding: 20px 10px;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .footer-link-logo {
+            transition: all 0.3s;
+            &:hover {
+                filter:brightness(0.7);
+            }
+        }
+
+        #direitos-reservados {
+            margin: 30px 0;
+        }
+
+        #desenvolvido-por {
+            display: flex;
+            align-items: center;
+            a {
+                transition: all 0.3s;
+                &:hover {
+                    filter: brightness(0.7);
+                }
+                img {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+    
+}
