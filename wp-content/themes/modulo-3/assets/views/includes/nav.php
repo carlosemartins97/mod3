@@ -1,6 +1,11 @@
 <nav>
     <div class="nav-content">
-        <a class="nav-link-logo" href="#"><img class="nav-logo" src="<?php echo get_template_directory_uri()?>/dist/img/logo.png" alt="Logo do Grupo Sartori"></a>
+        <div class="nav-header">
+            <a class="nav-link-logo" href="#"><img class="nav-logo" src="<?php echo get_template_directory_uri()?>/dist/img/logo.png" alt="Logo do Grupo Sartori"></a>
+            <i class="fas fa-bars" id="collapse-nav-button"></i></button>
+        </div>
+        
+        
         <ul class="nav-bar">
             <li class="nav-link"><a href="#">Sobre nós</a></li>
             <li class="nav-link"><a href="#">Para sua Empresa</a></li>
