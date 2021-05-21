@@ -1,6 +1,6 @@
 @import '../utils/variaveis';
 
-.main-slider-container {
+section.main-slider-container {
     height: calc(100vh - 86px);
     position: relative;
     overflow: hidden;
@@ -122,5 +122,91 @@
         border-radius: 20%;
         height: 100%;
         padding: 100px 0 0 200px;
+    }
+}
+
+section.encontre-vagas {
+    min-height: 320px;
+    height: 100%;
+    background: $gradient_default;
+
+    padding: 40px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    color: $white;
+    .encontre-vagas-header, .encontre-vagas-form {
+        max-width: 1366px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .encontre-vagas-header {
+        display: flex;
+        align-items: center;
+        > img {
+            margin-right: 30px;
+        }
+        > span {
+            font-weight: 600;
+            font-size: 30px;
+            text-shadow: 0px 4px 24px rgba(135, 135, 135, 0.92);
+            max-width: 360px;
+            display: block;
+        }
+    }
+    form.encontre-vagas-form {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-left: 125px;
+
+        .input-vagas-container {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            width: 100%;
+
+            font-size: 14px;
+            font-weight: 500;
+            // & + .input-vagas-container {
+            //     margin-left: 50px;
+            // }
+            label {
+                text-transform: uppercase;
+            }
+            input {
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid $white;
+                padding: 2px 0;
+                color: $white;
+                font-size: 14px;
+            }
+
+        }
+
+        #estado-container {
+            max-width: 150px;
+        }
+        #filtrar-button {
+            text-transform: uppercase;
+            background: $black;
+            border: none;
+            color: $white;
+            min-width: 200px;
+            min-height: 60px;
+            font-size: 13px;
+            font-weight: 600;
+            // margin-left: 50px;
+            transition: color 0.3s;
+            &:hover {
+                color: $default_yellow;
+            }
+        }
+        @media(max-width: 1170px){
+            padding-left: 0;
+        }
     }
 }

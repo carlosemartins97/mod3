@@ -6,7 +6,7 @@
 <body onload="home()"> 
     <?php include_once get_template_directory() . '/assets/views/includes/nav.php' ?>
     
-    <div class="main-slider-container">
+    <section class="main-slider-container">
         <div class="main-slider-content">
             <div class="main-slider-slide" id="slide-1">
                 <div class="slider-info">
@@ -44,7 +44,32 @@
             </div>
         </div>
         <div id="left-background"><span>Desenvolvimento Humano e Organizacional</span></div>
-    </div>
+    </section>
+
+    <section class="encontre-vagas">
+        <div class="encontre-vagas-header">
+            <img src="<?=get_template_directory_uri()?>/dist/img/home/lupa.png" alt="Imagem de uma lupa, referenciando um formulário para buscar informações.">
+            <span>Encontre vagas por área de especialidade</span>
+        </div>
+        <form class="encontre-vagas-form">
+            <div class="input-vagas-container">
+                <label for="cargo">cargo:</label>
+                <input type="text" id="cargo" name="cargo">
+            </div>
+
+            <div class="input-vagas-container">
+                <label for="cidade">cidade:</label>
+                <input type="text" id="cidade" name="cidade">
+            </div>
+
+            <div class="input-vagas-container" id="estado-container">
+                <label for="estado">estado:</label>
+                <input type="text" id="estado" name="estado">
+            </div>
+
+            <button id="filtrar-button">filtrar</button>
+        </form>
+    </section>
 
     <?php include_once get_template_directory() . '/assets/views/includes/footer.php' ?>
 
