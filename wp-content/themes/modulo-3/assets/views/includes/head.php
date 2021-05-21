@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
 
     <?php if($page == 'Home') { ?>
-        
+        <!-- SLICK SLIDER -->
+        <link href="<?php echo get_template_directory_uri()?>/assets/utils/slick.css" rel="stylesheet">
+        <link href="<?php echo get_template_directory_uri()?>/assets/utils/slick-theme.css" rel="stylesheet">
     <?php } ?>
 
     <?php 

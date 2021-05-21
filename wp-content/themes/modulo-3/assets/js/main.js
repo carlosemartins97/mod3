@@ -8,5 +8,7 @@ $(window).resize(function(){
     var windowWidth = window.innerWidth;
     if(windowWidth >= 768){
         $('.nav-bar').css('display','flex')
+    } else {
+        $('.nav-bar').css('display','none');
     }
 });
