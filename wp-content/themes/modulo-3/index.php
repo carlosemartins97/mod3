@@ -71,6 +71,24 @@
         </form>
     </section>
 
+    <section class="slider-especialidades">
+        <div class="slider-especialidades-header">
+            <div class="especialidades-header-wrapper">
+                <div class="especialidades-header-info">
+                    <img src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/icons/industria.png" alt="Ícone de uma indústria">
+                    <h2>Indústria</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sequi officiis rem voluptates repudiandae. Modi nam aperiam et blanditiis 
+                        animi rem facere voluptates magni, sit commodi incidunt alias sunt, enim ea quod sequi impedit ducimus neque, placeat quidem facilis 
+                    </p>
+                </div>
+            </div>
+            <div class="especialidades-img-wrapper">
+                <img class="especialidades-header-img" src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/industria.png" alt="Imagem de indústria">
+            </div>
+        </div>
+    </section>
+
     <?php include_once get_template_directory() . '/assets/views/includes/footer.php' ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

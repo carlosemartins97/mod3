@@ -78,6 +78,7 @@ section.main-slider-container {
                 width: 40%;
                 display: flex;
                 justify-content: center;
+                align-items: flex-start;
                 max-height: 150px;
                 height: 100%;
                 border-bottom: 1px solid rgba(255,255,255,0.3);
@@ -159,7 +160,6 @@ section.encontre-vagas {
     form.encontre-vagas-form {
         display: flex;
         align-items: flex-end;
-        justify-content: space-between;
         padding-left: 125px;
 
         .input-vagas-container {
@@ -183,13 +183,11 @@ section.encontre-vagas {
                 padding: 2px 0;
                 color: $white;
                 font-size: 14px;
+                max-width: 250px;
             }
 
         }
 
-        #estado-container {
-            max-width: 150px;
-        }
         #filtrar-button {
             text-transform: uppercase;
             background: $black;
@@ -200,13 +198,62 @@ section.encontre-vagas {
             font-size: 13px;
             font-weight: 600;
             // margin-left: 50px;
-            transition: color 0.3s;
+            transition: all 0.3s;
             &:hover {
-                color: $default_yellow;
+                color: $black;
+                background: $default_yellow;
             }
         }
         @media(max-width: 1170px){
             padding-left: 0;
         }
+    }
+}
+
+section.slider-especialidades {
+    max-height: 630px;
+    height: 100%;
+
+    .slider-especialidades-header {
+        display: flex;
+        background: $default_grey;
+        width: 100%;
+
+        .especialidades-header-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            width: 100%;
+            padding: 0 50px 0 10px;
+            .especialidades-header-info {
+                max-width: 600px;
+                margin-left: auto;
+                color: $white;
+                h2 {
+                    font-weight: 600;
+                    font-size: 30px;
+                    margin: 10px 0;
+                }
+                p {
+                    font-size: 17px;
+                    line-height: 28px;
+                }
+                > img {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
+
+        .especialidades-img-wrapper {
+            width: 100%;
+            .especialidades-header-img {
+                max-height: 630px;
+                height: 100%;
+                width: 100%;
+            }
+        }
+        
     }
 }
