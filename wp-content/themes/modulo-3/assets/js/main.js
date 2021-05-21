@@ -12,3 +12,15 @@ $(window).resize(function(){
         $('.nav-bar').css('display','none');
     }
 });
+
+function home() {
+    $('.main-slider-content').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        prevArrow: $('.main-slider-prev'),
+        nextArrow: $('.main-slider-next')
+    });
+}
