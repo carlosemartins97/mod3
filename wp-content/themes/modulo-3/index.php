@@ -6,6 +6,8 @@
 <body onload="home()"> 
     <?php include_once get_template_directory() . '/assets/views/includes/nav.php' ?>
     
+    <main class="main-home">
+
     <section class="main-slider-container">
         <div class="main-slider-content">
             <div class="main-slider-slide" id="slide-1">
@@ -71,23 +73,110 @@
         </form>
     </section>
 
+    <?php 
+        $especialidades = array(
+            array("img"=>"/dist/img/home/slider-especialidades/icons/industria.png", "nome"=>"Indústria", "cor"=>"#C6565A"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/porto.png", "nome"=>"Porto", "cor"=>"#1D3E73"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/logistica.png", "nome"=>"Logistica", "cor"=>"#6B364F"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/agenciamento.png", "nome"=>"Agenciamento Marítmo", "cor"=>"#181818"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/servico.png", "nome"=>"Serviço", "cor"=>"#312626"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/energia.png", "nome"=>"Energia", "cor"=>"#FFB500"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/construcao.png", "nome"=>"Construção", "cor"=>"#654B2D"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/automotivo.png", "nome"=>"Automotivo", "cor"=>"#300141"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/tecnologia.png", "nome"=>"Tecnologia", "cor"=>"#21385D"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/quimico.png", "nome"=>"Químico e Petroquímico", "cor"=>"#B3050D"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/oleo.png", "nome"=>"Óleo e Gás", "cor"=>"#5F5F5F"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/farma.png", "nome"=>"Farma", "cor"=>"#05ACB7"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/transportes.png", "nome"=>"Transportes", "cor"=>"#21385D"),
+            array("img"=>"/dist/img/home/slider-especialidades/icons/agro.png", "nome"=>"Agro", "cor"=>"#00A341")
+        )
+    ?>
     <section class="slider-especialidades">
         <div class="slider-especialidades-header">
             <div class="especialidades-header-wrapper">
-                <div class="especialidades-header-info">
-                    <img src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/icons/industria.png" alt="Ícone de uma indústria">
-                    <h2>Indústria</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sequi officiis rem voluptates repudiandae. Modi nam aperiam et blanditiis 
-                        animi rem facere voluptates magni, sit commodi incidunt alias sunt, enim ea quod sequi impedit ducimus neque, placeat quidem facilis 
-                    </p>
-                </div>
+                <?php foreach($especialidades as $key => $especialidade) { ?>
+                    <div class="especialidades-header-info">
+                        <div class="especialidades-slide-headerinfo">
+                            <div class="especialidades-texto">
+                                <img src="<?=get_template_directory_uri()?><?php echo $especialidade["img"]?>" alt="<?php echo $especialidade["nome"]?>">
+                                <h2><?php echo $especialidade["nome"]?></h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sequi officiis rem voluptates repudiandae. Modi nam aperiam et blanditiis 
+                                    animi rem facere voluptates magni, sit commodi incidunt alias sunt, enim ea quod sequi impedit ducimus neque, placeat quidem facilis 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="especialidades-img-wrapper">
+                            <img class="especialidades-header-img" src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/industria.png" alt="<?php echo $especialidade["nome"]?>">
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
-            <div class="especialidades-img-wrapper">
-                <img class="especialidades-header-img" src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/industria.png" alt="Imagem de indústria">
+            
+        </div>
+        <div class="slider-especialidades-slider">
+            <div class="slider-especialidades-slides">
+                <?php foreach($especialidades as $key => $especialidade) { ?>
+                    <div class="slider-especialidades-slide" style="background-color: <?=$especialidade["cor"]?>">
+                        <img src="<?=get_template_directory_uri()?><?php echo $especialidade["img"]?>" alt="imagem de uma industria">
+                        <span><?=$especialidade["nome"]?></span>
+                    </div>
+                <?php } ?>
+            </div>
+            <div class="slider-especialidades-button">
+                <button id="slider-especialidades-prev"><img src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/setas/left.png" alt="seta pra esquerda"></button>
+                <button id="slider-especialidades-next"><img src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/setas/right.png" alt="seta pra direita"></button>
             </div>
         </div>
     </section>
+
+    <section class="onde-chegamos">
+        <div class="contagem-candidatos-contratados">
+            <div class="contagem-info">
+                <h2>97%</h2>
+                <p>Dos candidatos contratados por nós,permanecem por pelo menos 15 meses na empresa.</p>
+            </div>
+            <div class="contagem-info">
+                <h2>+10MIL</h2>
+                <p>Posições realizadas por nós, somados todo Know How de nosso time.</p>
+            </div>
+            <div class="contagem-info">
+                <h2>+500</h2>
+                <p>Mais de 500 clientes atendidos em todo território nacional.</p>
+            </div>
+            <div class="contagem-info">
+                <h2>12</h2>
+                <p>Nossa operação está presente em 12 estados do país.</p>
+            </div>
+        </div>
+
+        <?php $cidades = array(
+            'São Paulo', 'Mato Grosso', 'Minas Gerais', 'Bahia', 'Goiás', 'Paraná', 'Rio Grande do Sul',
+            'Santa Catarina', 'Pernambuco', 'Pará', 'Piauí', 'Espírito Santo', 'Mato Grosso do Sul',
+            'Rio de Janeiro', 'Sergipe', 'Amapá'
+        ) ?>
+        <div class="mapa-container">
+            <div class="mapa-content">
+                <img src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/mapa.png" alt="Mapa onde a empresa Grupo Sartori atua.">
+            </div>
+            <div class="mapa-legenda">
+                <h3>Onde chegamos:</h3>
+                <ul>
+                    <?php foreach($cidades as $key => $cidade) {?>
+                        <li><?=$cidade?></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+        <div class="capilaridade">
+            <span>Capilaridade nacional</span>
+            <h2>Estamos presentes onde você precisa.</h2>
+            <a href="#" class="capilaridade-button">fale com nosso time</a>
+        </div>
+    </section>
+
+    
+    </main>
 
     <?php include_once get_template_directory() . '/assets/views/includes/footer.php' ?>
 

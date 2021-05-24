@@ -1,12 +1,36 @@
 @import '../utils/variaveis';
 
+main.main-home {
+    overflow-x: hidden;
+}
+
 section.main-slider-container {
-    height: calc(100vh - 86px);
+    height: 100%;
     position: relative;
     overflow: hidden;
+    @media(max-width: 1000px){
+        .main-slider-content {
+            height: 100% !important;
+            .main-slider-slide {
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100% !important;
+                .slider-info, .slider-buttons {
+                    max-width: 100% !important;
+                    padding: 10px !important;
+                    width: 100% !important;
+                    span, h1 {
+                        text-align: center;
+                    }
+                    h1 {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
     .main-slider-content {
-        height: calc(100vh - 86px);
-
+        height: 100%;
         #slide-1, #slide-2 {
             background: url('../img/home/main-slider.png') no-repeat;
             background-size: cover;
@@ -37,6 +61,14 @@ section.main-slider-container {
                     max-width: 540px;
                     margin-left: auto;
                     padding: 20px 5px;
+                    @media(max-width: 1720px){
+                        font-size: 30px;
+                        line-height: 50px;
+                    }
+                    @media(max-width: 768px){
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
                 }
             }
             .slider-links {
@@ -47,11 +79,19 @@ section.main-slider-container {
                     font-weight: 600;
                     font-size: 30px;
                     text-shadow: 0px 4px 24px rgba(135, 135, 135, 0.92);
+                    @media(max-width: 1235px){
+                        font-size: 25px;
+                        padding: 0 10px;
+                    }
+                    @media(max-width: 550px){
+                        font-size: 16px;
+                    }
                 }
                 .slider-links-flex {
                     margin-top: 30px;
                     display: flex;
                     max-width: 440px;
+                    padding: 0 10px;
                     .first-slider-link, .second-slider-link {
                         height: 60px;
                         width: 100%;
@@ -63,6 +103,9 @@ section.main-slider-container {
                         transition: filter 0.3s;
                         &:hover {
                             filter: brightness(0.8);
+                        }
+                        @media(max-width: 1235px){
+                            font-size: 12px;
                         }
                     }
                     .first-slider-link {     
@@ -123,6 +166,9 @@ section.main-slider-container {
         border-radius: 20%;
         height: 100%;
         padding: 100px 0 0 200px;
+        @media(max-width: 768px){
+            display: none;
+        }
     }
 }
 
@@ -156,6 +202,16 @@ section.encontre-vagas {
             max-width: 360px;
             display: block;
         }
+        @media(max-width: 1170px){
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            margin-bottom: 30px;
+            > img {
+                margin-bottom: 10px;
+            }
+        }
+
     }
     form.encontre-vagas-form {
         display: flex;
@@ -185,7 +241,20 @@ section.encontre-vagas {
                 font-size: 14px;
                 max-width: 250px;
             }
+        }
 
+        #estado-container {
+            max-width: 200px;
+            input {
+                max-width: 150px;
+            }
+            @media(max-width: 1170px){
+                max-width: 250px;
+                input {
+                    max-width: unset;
+                    width: 100%;
+                }
+            }
         }
 
         #filtrar-button {
@@ -203,57 +272,262 @@ section.encontre-vagas {
                 color: $black;
                 background: $default_yellow;
             }
+            @media(max-width: 1170px){
+                margin-top: 15px;
+                max-width: 250px;
+                width: 100%;
+            }
         }
         @media(max-width: 1170px){
             padding-left: 0;
+            flex-direction: column;
+            align-items: center;
+            >div {
+                margin: 15px 0;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                max-width: 300px;
+                input {
+                    max-width: 300px;
+                    width: 100%;
+                }
+            }
         }
     }
 }
 
 section.slider-especialidades {
-    max-height: 630px;
-    height: 100%;
 
     .slider-especialidades-header {
         display: flex;
         background: $default_grey;
         width: 100%;
+        max-height: 630px;
+        height: 100%;
 
         .especialidades-header-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             
             width: 100%;
-            padding: 0 50px 0 10px;
+            min-height: 630px;
+            height: 100%;
+            .slick-list, .slick-track {
+                min-height: 630px;
+                height: 100%; 
+            }
             .especialidades-header-info {
-                max-width: 600px;
-                margin-left: auto;
-                color: $white;
-                h2 {
-                    font-weight: 600;
-                    font-size: 30px;
-                    margin: 10px 0;
+                    width: 100%;
+                    margin-left: auto;
+                    color: $white;
+                    display: flex;
+                .especialidades-slide-headerinfo {
+                    width: 100% !important;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    padding-right: 20px;
+                    .especialidades-texto {
+                        max-width: 500px;
+                        h2 {
+                            font-weight: 600;
+                            font-size: 30px;
+                            margin: 10px 0;
+                        }
+                        p {
+                            font-size: 17px;
+                            line-height: 28px;
+                        }
+                        > img {
+                            width: 45px;
+                            height: 45px; 
+                        }
+                    }
                 }
-                p {
-                    font-size: 17px;
-                    line-height: 28px;
-                }
-                > img {
-                    width: 45px;
-                    height: 45px;
-                }
+                
             }
         }
-
         .especialidades-img-wrapper {
-            width: 100%;
+            width: 50%;
             .especialidades-header-img {
                 max-height: 630px;
-                height: 100%;
-                width: 100%;
             }
         }
         
+    }
+    .slider-especialidades-slider {
+        min-height: 245px;
+        height: 100%;
+        display: flex;
+        
+        
+        .slider-especialidades-slides {
+            width: 85%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            
+            .slick-list, .slick-track {
+                height: 100%;
+            }
+
+            .slick-current {
+                transform: scaleY(1.1);
+                transition: all 0.3s;
+            }
+            .slider-especialidades-slide {
+                transition: all 0.3s;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex: 1;
+                transition: all 0.3;
+                span {
+                    font-weight: 500;
+                    color: $white;
+                    margin-top: 10px;
+                    max-width: 150px;
+                    text-align: center;
+                }
+            }
+            
+        }
+        .slider-especialidades-button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            button {
+                border: none;
+                background: none;
+                border-radius: 50%;
+                -webkit-box-shadow: 0px 10px 15px -10px rgba(0,0,0,1);
+                -moz-box-shadow: 0px 10px 15px -10px rgba(0,0,0,1);
+                box-shadow: 0px 10px 15px -10px rgba(0,0,0,1);
+            }
+        }
+    }
+}
+
+
+
+section.onde-chegamos {
+    position: relative;
+    display: flex;
+
+    //contagem
+    div.contagem-candidatos-contratados {
+        position: absolute;
+        z-index: 3;
+        top: 150px;
+        right: 0;
+        background: $default_yellow;
+        width: 80%;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        padding: 20px 20px 20px 100px;
+        height: 280px;
+
+        .contagem-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            max-width: 300px;
+            height: 80%;
+            padding: 0 20px;
+            color: $blue;
+            
+            h2 {
+                font-size: 66px;
+                font-weight: 900;
+                line-height: 66px;
+            }
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+    }
+
+    .mapa-container {
+        background: $default_grey;
+        width: 100%;
+        height: 1200px;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 10px 150px 80px;
+        border-bottom-right-radius: 30%;
+        position: relative;
+
+        .mapa-content {
+            padding-bottom: 70px;
+        }
+
+        .mapa-legenda {
+            position: relative;
+            padding-left: 80px;
+            h3 {
+                position: absolute;
+                top: 0;
+                left: -50%;
+                color: $white;
+                max-width: 50px;
+                line-height: 20px;
+            }
+            ul {
+                li {
+                    color: $white;
+                    &::marker {
+                        color: $default_yellow;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    .capilaridade {
+        height: 1100px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: $blue;
+        padding: 0 10px 150px 80px;
+
+        span {
+            font-size: 30px;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: 60px;
+            max-width: 80%;
+            line-height: 60px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .capilaridade-button {
+            margin-top: 80px;
+            max-width: 250px;
+            height: 60px;
+            font-weight: 600;
+            display: block;
+            text-transform: uppercase;
+            background: $default_yellow;
+            color: $black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+            &:hover {
+                background: $blue;
+                color: $default_yellow;
+            }
+        }
     }
 }

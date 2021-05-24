@@ -23,4 +23,23 @@ function home() {
         prevArrow: $('.main-slider-prev'),
         nextArrow: $('.main-slider-next')
     });
+    
+
+
+    $('.especialidades-header-wrapper').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-especialidades-slides'
+      });
+    $('.slider-especialidades-slides').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        dots: false,
+        focusOnSelect: true,
+        asNavFor: '.especialidades-header-wrapper',
+        prevArrow: $('#slider-especialidades-prev'),
+        nextArrow: $('#slider-especialidades-next')
+    });
 }
