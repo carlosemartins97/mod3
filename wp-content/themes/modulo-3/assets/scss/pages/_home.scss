@@ -763,3 +763,81 @@ section.saiu-na-midia {
         }
     }
 }
+
+section.ultimas-do-blog {
+    background: $light-grey;
+    padding: 100px 10px;
+    .ultimas-blog-content {
+        max-width: 1366px;
+        margin: 0 auto;
+        width: 100%;
+
+        h2 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 35px;
+            text-transform: uppercase;
+            letter-spacing: normal;
+
+            color: $blue;
+            margin-bottom: 40px;
+        }
+
+        .ultimas-blog-grid {
+            display: flex;
+            justify-content: space-around;
+
+            .ultimas-blog-post {
+               display: flex;
+               flex-direction: column;
+               max-width: 390px;
+               
+               .blog-post-header {
+                    background: $white;
+                    height: 270px;
+                    padding: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    span {
+                        color: $default_yellow;
+                        font-size: 17px;
+                        font-weight: 300;
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                        font-weight: 700;
+                        letter-spacing: normal;
+                        line-height: 23px;
+                        color: $blue;
+                        text-transform: uppercase;
+                    }
+
+                    p {
+                        font-size: 17px;
+                        font-weight: 300;
+                        line-height: 25px;
+                        color: #1C1F25;
+                    }
+               }
+               .blog-post-link {
+                text-align: right;
+                img {
+                    background: $default_yellow;
+                    padding: 10px;
+                    -webkit-box-shadow: 0px 33px 44px -18px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 33px 44px -18px rgba(0,0,0,0.75);
+                    box-shadow: 0px 33px 44px -18px rgba(0,0,0,0.75);
+                    transition: transform 0.3s;
+                    &:hover {
+                        cursor: pointer;
+                        transform: scale(1.1);
+                    }
+                }
+               }
+            }
+        }
+        
+    }
+}

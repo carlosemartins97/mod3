@@ -1,3 +1,4 @@
+<?php include_once get_template_directory() . '/assets/views/includes/curriculo.php' ?>
 <footer>
     <div class="footer-container">
         <a class="footer-link-logo" href="#"><img class="footer-logo" src="<?php echo get_template_directory_uri()?>/dist/img/logo.png" alt="Logo do Grupo Sartori"></a>

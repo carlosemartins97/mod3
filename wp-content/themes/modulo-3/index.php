@@ -232,9 +232,36 @@
             </div>
         </section>
 
-    </main>
+        <?php 
+            $blog_posts = array(
+                array("data"=>"27/01/2021", "titulo"=>"COMO MANDAR Bem NUMA ENTREVISTA", "descricao"=>"Cerca de 40% dos entrevistados, poderiam ser aprovados nas entrevistas, mas esbarram em coisas simples:"),
+                array("data"=>"27/01/2021", "titulo"=>"O QUE FAZER PARA SE DESTACAR EM UM PROCESSO SELETIVO", "descricao"=>"Assim como qualquer momento crucial da sua vida, quando você encontra a vaga certa"),
+                array("data"=>"27/01/2021", "titulo"=>"O QUE É PRECISO PARA TER SUCESSO E RECONHECIMENTO ", "descricao"=>"O tão sonhado reconhecimento profissional. Quem nunca trabalhou duro para receber um elogio."),
+            )
+        ?>
+        <section class="ultimas-do-blog">
+            <div class="ultimas-blog-content">
+                <h2>últimas do blog</h2>
 
+                <div class="ultimas-blog-grid">
+                    <?php foreach($blog_posts as $key => $post) { ?>
+                        <div class="ultimas-blog-post">
+                            <div class="blog-post-header">
+                                <span><?=$post["data"]?></span>
+                                <h3><?=$post["titulo"]?></h3>
+                                <p><?=$post["descricao"]?></p>
+                            </div>
+                            <div class="blog-post-link"><img src="<?=get_template_directory_uri()?>/dist/img/home/mais-icon.png" alt="Ícone de mais, dando a entender que seja um link."></div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </section>
+
+    
     <?php include_once get_template_directory() . '/assets/views/includes/footer.php' ?>
+
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
