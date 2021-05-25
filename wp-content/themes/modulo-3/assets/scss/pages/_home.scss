@@ -48,6 +48,10 @@ section.main-slider-container {
                 width: 34%;
                 text-align: end;
                 padding: 0 60px 0 10px;
+
+                >img {
+                    margin-left: auto;
+                }
                 span {
                     font-size: 14px;
                     display: block;
@@ -409,10 +413,9 @@ section.slider-especialidades {
     }
 }
 
-
-
 section.onde-chegamos {
     position: relative;
+    z-index: 2;
     display: flex;
 
     //contagem
@@ -456,24 +459,27 @@ section.onde-chegamos {
     .mapa-container {
         background: $default_grey;
         width: 100%;
-        height: 1200px;
+        height: 1300px;
         display: flex;
         align-items: flex-end;
         padding: 0 10px 150px 80px;
-        border-bottom-right-radius: 30%;
+        border-bottom-right-radius: 300px;
         position: relative;
 
         .mapa-content {
-            padding-bottom: 70px;
+            >:last-child {
+                padding-top: 70px;
+            }
         }
 
         .mapa-legenda {
             position: relative;
-            padding-left: 80px;
+            width: 50%;
+            padding-bottom: 50px;
             h3 {
                 position: absolute;
-                top: 0;
-                left: -50%;
+                top: 0%;
+                left: -80%;
                 color: $white;
                 max-width: 50px;
                 line-height: 20px;
@@ -490,14 +496,13 @@ section.onde-chegamos {
         }
     }
     .capilaridade {
-        height: 1100px;
+        height: 900px;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         color: $blue;
-        padding: 0 10px 150px 80px;
-
+        padding: 0 10px 0px 80px;
         span {
             font-size: 30px;
             font-weight: 500;
@@ -516,6 +521,7 @@ section.onde-chegamos {
             max-width: 250px;
             height: 60px;
             font-weight: 600;
+            font-size: 13px;
             display: block;
             text-transform: uppercase;
             background: $default_yellow;
@@ -530,4 +536,111 @@ section.onde-chegamos {
             }
         }
     }
+}
+
+section.nossos-servicos {
+    margin-top: -300px;
+    background-image: url('../img/home/nossos-servicos.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 900px;
+    padding: 300px 10px 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    position: relative;
+    z-index: 1;
+
+    overflow-y: hidden;
+
+    
+    .nossos-servicos-content {
+        color: $white;
+        max-width: 1366px;
+        width: 100%;
+        margin: 0 auto;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+
+
+        h2 {
+            font-size: 35px;
+            text-transform: uppercase;
+            letter-spacing: normal;
+            max-width: 300px;
+        }
+
+        span {
+            font-size: 25px;
+            display: block;
+            max-width: 440px;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            color: $default_yellow;
+            font-size: 17px;
+            list-style: none;
+            li {
+                margin: 5px 0;
+                transition: transform 0.3s;
+                max-width: 400px;
+
+                &:hover {
+                    transform: translateX(10px);
+                }
+                &::before {
+                    content: url('../img/home/seta-lista.png');
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        > a {
+            max-width: 200px;
+            height: 60px;
+            font-weight: 600;
+            font-size: 13px;
+            display: block;
+            text-transform: uppercase;
+            background: $default_yellow;
+            color: $black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+
+    #servico-background {
+        position: absolute;
+        bottom: -85%;
+        left: 380px;
+        text-transform: uppercase;
+        opacity: 0.2;
+
+        border-top: 1px solid $white;
+        border-right: 1px solid $white;
+
+        border-top-right-radius: 20%;
+
+
+        width: 1000px;
+        height: 100%;
+        padding: 100px 0 0 200px;
+        @media(max-width: 768px){
+            display: none;
+        }
+    }
+
 }
