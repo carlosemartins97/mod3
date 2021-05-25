@@ -178,6 +178,7 @@
         </section>
 
         <section class="nossos-servicos">
+            <img id="nossos-servicos-logo" src="<?=get_template_directory_uri()?>/dist/img/min-logo.png" alt="Logo minimalista do grupo Sartori.">
             <div class="nossos-servicos-content">
                 <h2>Nossos serviços</h2>
 
@@ -202,7 +203,34 @@
             </div>
         </section>
 
+        <section class="saiu-na-midia">
+            <div class="midia-content">
+                <h2>Saiu na mídia</h2>
 
+                <div class="midia-grid">
+                    <a href="#" class="midia-post">
+                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
+                    </a>
+                    <a href="#" class="midia-post">
+                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
+                    </a>
+                    <a href="#" class="midia-post">
+                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
+                    </a>
+                    <a href="#" class="midia-post">
+                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
+                    </a>
+                    <a href="#" class="midia-post">
+                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
+                    </a>
+                    <a href="#" class="midia-post">
+                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
+                    </a>
+                </div>
+
+                <a id="midia-veja-mais" href="#">veja outras notícias <img src="<?=get_template_directory_uri()?>/dist/img/home/seta-lista.png" alt="Seta pra direita"></a>
+            </div>
+        </section>
 
     </main>
 
