@@ -4,12 +4,12 @@
     background: $gradient_default;
     min-height: 220px;
     .cadastre-curriculo-content {
-        max-width: 1366px;
+        max-width: 1100px;
         margin: 0 auto;
         width: 100%;
         min-height: 220px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
 
         .curriculo-info {
@@ -41,6 +41,7 @@
             width: 100%;
             display:flex;
             flex-direction: column;
+            align-items: flex-end;
             a {
                 margin-top: -20px;
                 display: flex;
