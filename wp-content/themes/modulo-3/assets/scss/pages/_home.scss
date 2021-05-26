@@ -806,10 +806,13 @@ section.ultimas-do-blog {
                display: flex;
                flex-direction: column;
                max-width: 390px;
+               margin: 0 10px;
                
                .blog-post-header {
                     background: $white;
                     height: 270px;
+                    max-width: 390px;
+                    width: 100%;
                     padding: 30px;
                     display: flex;
                     flex-direction: column;
@@ -852,7 +855,47 @@ section.ultimas-do-blog {
                 }
                }
             }
+            @media(max-width: 1100px){
+                flex-direction: column;
+
+                .ultimas-blog-post {
+                    max-width: 100%;
+                    margin-bottom: 30px;
+                    .blog-post-header {
+                        max-width: 100%;
+                        min-height: 180px;
+                        height: unset;
+                        span, p {
+                            font-size: 15px;
+                        }
+                        h3 {
+                            font-size: 16px;
+                        }
+                        @media(max-width: 400px){
+                            justify-content: space-between;
+                        }
+                    }
+                }
+            }
+            @media(max-width: 550px){
+                .ultimas-blog-post {
+                    min-height: 300px;
+                    height: unset;
+                    .blog-post-header {
+                        min-height: 250px;
+                        padding: 20px;
+                    }
+                }
+            }
         }
         
+    }
+    @media(max-width: 1100px){
+        padding: 50px 10px;
+        .ultimas-blog-content {
+            > h2 {
+                font-size: 28px;
+            }
+        }
     }
 }
