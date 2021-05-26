@@ -40,6 +40,37 @@ function home() {
         focusOnSelect: true,
         asNavFor: '.especialidades-header-wrapper',
         prevArrow: $('#slider-especialidades-prev'),
-        nextArrow: $('#slider-especialidades-next')
+        nextArrow: $('#slider-especialidades-next'),
+        responsive: [
+            {
+              breakpoint: 1366,
+              settings: {
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                infinite: true,
+              }
+            },
+            {
+              breakpoint: 1000,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            }
+          ]
     });
 }

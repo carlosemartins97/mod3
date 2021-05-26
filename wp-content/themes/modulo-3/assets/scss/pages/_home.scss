@@ -318,6 +318,9 @@ section.slider-especialidades {
             .slick-list, .slick-track {
                 min-height: 630px;
                 height: 100%; 
+                @media(max-width: 1100px){
+                    min-height: unset;
+                }
             }
             .especialidades-header-info {
                     width: 100%;
@@ -346,12 +349,38 @@ section.slider-especialidades {
                             height: 45px; 
                         }
                     }
+                    @media(max-width: 1100px){
+                        justify-content: center;
+                        
+                        padding: 50px 10px;
+
+                        h2 {
+                            font-size: 25px !important;
+                        }
+                        p {
+                            font-size: 15px !important;
+                        }
+                    }
+                    @media(max-width: 400px){
+                        padding: 20px 10px;
+                        text-align: center;
+                        img {
+                            margin: 0 auto;
+                        }
+                    }
                 }
                 
+                
+            }
+            @media(max-width: 1100px){
+                min-height: unset;
             }
         }
         .especialidades-img-wrapper {
             width: 50%;
+                @media(max-width: 1100px){
+                    display: none;
+                }
             .especialidades-header-img {
                 max-height: 630px;
             }
@@ -408,6 +437,10 @@ section.slider-especialidades {
                 -webkit-box-shadow: 0px 10px 15px -10px rgba(0,0,0,1);
                 -moz-box-shadow: 0px 10px 15px -10px rgba(0,0,0,1);
                 box-shadow: 0px 10px 15px -10px rgba(0,0,0,1);
+            }
+            @media(max-width: 550px){
+                flex-direction: column;
+                justify-content: space-around;
             }
         }
     }
@@ -568,7 +601,7 @@ section.nossos-servicos {
     position: relative;
     z-index: 1;
 
-    overflow-y: hidden;
+    overflow: hidden;
 
     #nossos-servicos-logo {
         position: absolute;
