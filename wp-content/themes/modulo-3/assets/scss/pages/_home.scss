@@ -198,6 +198,9 @@ section.encontre-vagas {
         align-items: center;
         > img {
             margin-right: 30px;
+            @media(max-width: 1170px){
+                margin-right: 0;
+            }
         }
         > span {
             font-weight: 600;
@@ -309,6 +312,28 @@ section.slider-especialidades {
         width: 100%;
         max-height: 630px;
         height: 100%;
+        position: relative;
+
+        //detalhe de background
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 3;
+            left: 5%;
+            top: 260px;
+            border-left: 1px solid $white;
+            border-top: 1px solid $white;
+            opacity: 0.1;
+            border-top-left-radius: 15%;
+            width: 700px;
+            height: 1000px;
+            @media(max-width: 1500px){
+                left: 1%;
+            }
+            @media(max-width: 1100px){
+                display: none;
+            }
+        }
 
         .especialidades-header-wrapper {
             
@@ -318,6 +343,8 @@ section.slider-especialidades {
             .slick-list, .slick-track {
                 min-height: 630px;
                 height: 100%; 
+                position: relative;
+                z-index: 4;
                 @media(max-width: 1100px){
                     min-height: unset;
                 }
@@ -333,8 +360,12 @@ section.slider-especialidades {
                     align-items: center;
                     justify-content: flex-end;
                     padding-right: 20px;
+
                     .especialidades-texto {
                         max-width: 500px;
+
+                        padding-left: 50px;
+                        background: $default_grey;
                         h2 {
                             font-weight: 600;
                             font-size: 30px;
@@ -347,6 +378,9 @@ section.slider-especialidades {
                         > img {
                             width: 45px;
                             height: 45px; 
+                        }
+                        @media(max-width: 1100px){
+                            padding-left: unset;
                         }
                     }
                     @media(max-width: 1100px){
@@ -401,6 +435,8 @@ section.slider-especialidades {
             
             .slick-list, .slick-track {
                 height: 100%;
+                position: relative;
+                z-index: 4;
             }
 
             .slick-current {
@@ -441,6 +477,19 @@ section.slider-especialidades {
             @media(max-width: 550px){
                 flex-direction: column;
                 justify-content: space-around;
+            }
+        }
+
+        @media(max-width: 1100px){
+            min-height: 200px;
+        }
+        @media(max-width: 500px){
+            min-height: 100px;
+            .slider-especialidades-slide {
+                img {
+                    width: 40%;
+                    height: 40%;
+                }
             }
         }
     }
@@ -591,7 +640,7 @@ section.nossos-servicos {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 900px;
+    height: 1000px;
     padding: 300px 10px 100px;
 
     display: flex;
@@ -685,8 +734,8 @@ section.nossos-servicos {
     #servico-background {
         position: absolute;
         z-index: 0;
-        bottom: -85%;
-        left: 380px;
+        bottom: -87%;
+        left: 20%;
         text-transform: uppercase;
         opacity: 0.2;
 
