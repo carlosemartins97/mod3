@@ -1,5 +1,98 @@
 @import '../utils/variaveis';
 
+section.cadastre-curriculo {
+    background: $gradient_default;
+    min-height: 220px;
+    padding: 0 10px;
+    .cadastre-curriculo-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        width: 100%;
+        min-height: 220px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .curriculo-info {
+            display: flex;
+            flex-direction: column;
+            h2 {
+                font-size: 35px;
+                line-height: 45px;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: normal;
+                color: $white;
+                margin-bottom: 20px;
+                span {
+                    color: $default_yellow;
+                    font-weight: 400;
+                }
+            }
+            p {
+                font-size: 15px;
+                color: $white;
+                line-height: 27px;
+                max-width: 440px;
+            }
+        }
+
+        .curriculo-button {
+            max-width: 440px;
+            width: 100%;
+            display:flex;
+            flex-direction: column;
+            align-items: flex-end;
+            a {
+                margin-top: -20px;
+                display: flex;
+                align-items: center; 
+                padding: 20px 30px 20px 80px;
+                text-align: right;
+                width: 100%;
+                max-width: 330px;
+                background: $black;
+                color: $white;
+                text-transform: uppercase;
+                font-weight: 600;
+                transition: color 0.3s;
+                >img {
+                    margin-left: 20px;
+                    background: $default_yellow;
+                    border-radius: 50%;
+                    padding: 5px;
+                }
+                &:hover {
+                    color: $default_yellow;
+                }
+            }
+        }
+
+        @media(max-width: 1100px){
+            flex-direction: column;
+            padding: 30px 0;
+
+            text-align: center;
+            .curriculo-info {
+                align-items: center;
+            }
+            .curriculo-button {
+                margin-top: 20px;
+                align-items: center;
+                @media(max-width: 400px){
+                    > a {
+                        padding: 20px 0;
+                        max-width: unset;
+                        justify-content: center;
+
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
 section.contato-container {
     background: $default_grey;
     color: $white;
@@ -36,6 +129,9 @@ section.contato-container {
                         }
                     }
                 }
+                @media(max-width: 1100px){
+
+                }
             }
         }
         .contato-onde-estamos {
@@ -48,6 +144,7 @@ section.contato-container {
                 font-size: 15px;
                 letter-spacing: 0.04em;
                 line-height: 47px;
+
             }
 
             #contato-acompanhe-nos {
@@ -86,15 +183,16 @@ section.contato-container {
             }
 
             > a {
+                display: block;
                 text-transform: uppercase;
                 font-size: 17px;
-                border-bottom: 1px solid transparent;
                 transition: all 0.3s;
-                margin-left: 20px;
                 padding: 5px 0;
+                padding-left: 10px;
                 &:hover {
-                    border-color: $default_yellow;
+                    transform: scale(1.1);
                 }
+
             }
 
             .contato-contatos-card {
@@ -103,7 +201,7 @@ section.contato-container {
                 width: 100%;
                 
                 border-radius: 10px;
-                padding: 20px;
+                padding: 20px 10px;
                 margin-bottom: 10px;
 
                 transition: all 0.3s;
@@ -132,11 +230,43 @@ section.contato-container {
                         strong {
                             font-weight: 700;
                         }
+
                     }
                     
                 }
             }
         }
+        @media(max-width: 1100px){
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            h3 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            ul, span {
+                max-width: 300px;
+            }
+
+            #titulo-contato {
+                text-align: center;
+            }
+
+            .onde-estamos-social {
+                justify-content: center;
+            }
+
+            > div {
+                margin-bottom: 80px;
+            }
+
+            .contato-contatos > a {
+                font-size: 15px;
+            }
+        }
+    }
+    @media(max-width: 1100px){
+        padding: 50px 10px 0;
     }
 }
 
@@ -146,6 +276,7 @@ footer {
     font-size: 11px;
     min-height: 175px;
     border-top: 1px solid $divider_border_color;
+    padding: 0 10px;
 
     .footer-container {
         max-width: 1100px;

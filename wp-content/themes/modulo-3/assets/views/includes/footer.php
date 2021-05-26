@@ -1,4 +1,17 @@
-<?php include_once get_template_directory() . '/assets/views/includes/curriculo.php' ?>
+<section class="cadastre-curriculo">
+    <div class="cadastre-curriculo-content">
+        <div class="curriculo-info">
+            <h2>Cadastre <span>seu currículo</span></h2>
+
+            <p>Cadastre-se grátis e de forma rápida para se candidatar às melhores vagas.</p>
+        </div>
+        <div class="curriculo-button">
+            <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/dotted2.png" alt="Imagem de detalhe de fundo com vários pontos.">
+            <a href="#">Cadastre-se aqui <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></a>
+        </div>
+    </div>
+</section>
+
 <section class="contato-container">
     <div class="contato-content">
         <div class="contato-acesso-rapido">
@@ -32,7 +45,7 @@
         </div>
         <div class="contato-contatos">
             <div class="contato-contatos-content">
-                <h3>contatos</h3>
+                <h3 id="titulo-contato">contatos</h3>
                 <a href="tel:13991590164" class="contato-contatos-card">
                     <img src="<?=get_template_directory_uri()?>/dist/img/footer/phone-icon.png" alt="Ícone de telefone">
                     <div class="contatos-card-info">
@@ -59,6 +72,7 @@
         </div>
     </div>
 </section>
+
 <footer>
     <div class="footer-container">
         <a class="footer-link-logo" href="#"><img class="footer-logo" src="<?php echo get_template_directory_uri()?>/dist/img/logo.png" alt="Logo do Grupo Sartori"></a>

@@ -418,6 +418,19 @@ section.onde-chegamos {
     z-index: 2;
     display: flex;
 
+    &::after {
+        content: '';
+        z-index: -1;
+        background: $default_yellow;
+        width: 60%;
+        height: 100%;
+        position: absolute;
+        bottom: -30px;
+        left: -15%;
+        border-radius: 20%;
+        
+    }
+
     //contagem
     div.contagem-candidatos-contratados {
         position: absolute;
@@ -465,6 +478,7 @@ section.onde-chegamos {
         padding: 0 10px 150px 80px;
         border-bottom-right-radius: 300px;
         position: relative;
+        z-index: 2;
 
         .mapa-content {
             >:last-child {
@@ -598,6 +612,7 @@ section.nossos-servicos {
             color: $default_yellow;
             font-size: 17px;
             list-style: none;
+            line-height: 33px;
             li {
                 margin: 5px 0;
                 transition: transform 0.3s;
