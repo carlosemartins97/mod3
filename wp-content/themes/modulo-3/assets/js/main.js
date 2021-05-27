@@ -74,3 +74,7 @@ function home() {
           ]
     });
 }
+
+function blog(){
+  
+}

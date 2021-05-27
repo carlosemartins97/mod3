@@ -1,0 +1,23 @@
+@import './variaveis';
+
+.link-leia-mais {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    background: $black;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s;
+    >img {
+        margin-left: 20px;
+        background: $default_yellow;
+        border-radius: 50%;
+        padding: 5px;
+    }
+    &:hover {
+        color: $default_yellow;
+    }  
+}

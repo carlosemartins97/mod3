@@ -1,0 +1,83 @@
+@import '../utils/variaveis';
+
+main.main-blog {
+    overflow-x: hidden;
+}
+
+section.listagem-blog {
+    background: #F3F5F6;
+    .listagem-blog-content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 80px 0;
+        .listagem-blog-post {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 80px;
+            .listagem-post-thumbnail {
+                flex: 1;
+                max-width: 570px;
+                img {
+                    max-width: 570px;
+                    object-fit: cover;
+                }
+            }
+
+            .listagem-post-texto {
+                max-width: 570px;
+                flex: 1 1 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .listagem-post-date {
+                    max-width: 90px;
+                    text-align: center;
+                    font-size: 13px;
+                    background: $default_yellow;
+                    color: $black;
+                    padding: 4px;
+                    transition: all 0.3s;
+                }
+                h2 {
+                    line-height: 40px;
+                    font-size: 33px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                }
+
+                p {
+                    font-weight: 300;
+                    font-size: 17px;
+                    line-height: 28px;
+                }
+
+                .link-leia-mais {
+                    background: transparent;
+                    border: 1px solid $black;
+                    color: $black;
+                    max-width: 250px;
+                    transition: all 0.3s;
+                    
+                    
+                }
+
+                &:hover {
+                    .listagem-post-date {
+                        background: $black;
+                        color: $white;
+                    }
+
+                    .link-leia-mais {
+                        background: $black;
+                        color: $white;
+                        -webkit-box-shadow: 0px 12px 16px -7px rgba(0,0,0,0.45);
+                        -moz-box-shadow: 0px 12px 16px -7px rgba(0,0,0,0.45);
+                        box-shadow: 0px 12px 16px -7px rgba(0,0,0,0.45);
+                    }
+                }
+            }
+        }
+    }
+}

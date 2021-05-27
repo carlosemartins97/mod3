@@ -11,17 +11,12 @@
         <section class="listagem-blog">
             <div class="listagem-blog-content">
                 <?php if(have_posts()): while(have_posts()): the_post(); ?>
-                    <div class="listagem-blog-post">
-                        <div class="listagem-post-thumbnail">
-                            <img src="<?=get_the_post_thumbnail_url()?>" alt="Imagem da notícia">
-                        </div>
-                        <a href="<?=get_permalink()?>" class="listagem-post-texto">
-                            <span class="listagem-post-date"><?= get_the_date('d/m/Y') ?></span>
-                            <h2><?=get_the_title()?></h2>
-                            
-                            <p><?=get_the_excerpt()?></p>
-                            <span class="link-leia-mais" href="<?=get_permalink()?>">Leia Mais<img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></span>
-                        </a>
+                    <div class="blog-post">
+                        <span><?= get_the_date() ?></span>
+                        <h2><?=get_the_title()?></h2>
+                        <img src="<?=get_the_post_thumbnail_url()?>" alt="">
+                        <p><?=get_the_content()?></p>
+                        <a href="<?=get_permalink()?>">Leia mais</a>
                     </div>
                 <?php endwhile; endif; ?>
             </div>
