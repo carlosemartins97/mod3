@@ -31,6 +31,16 @@ section.main-slider-container {
     }
     .main-slider-content {
         height: 100%;
+
+        .slider-buttons {
+            display: none !important;
+        }
+        .slick-current {
+            .slider-buttons {
+                display: flex !important;
+            }
+        }
+
         #slide-1, #slide-2 {
             background: url('../img/home/main-slider.png') no-repeat;
             background-size: cover;
@@ -108,8 +118,11 @@ section.main-slider-container {
                         &:hover {
                             filter: brightness(0.8);
                         }
-                        @media(max-width: 1235px){
+                        @media(max-width: 1380px){
                             font-size: 12px;
+                        }
+                        @media(max-width: 400px) {
+                            font-size: 11px;
                         }
                     }
                     .first-slider-link {     
@@ -119,6 +132,7 @@ section.main-slider-container {
                     .second-slider-link {
                         background: $black;
                     }
+                    
                 }
             }
             .slider-buttons {
@@ -526,20 +540,21 @@ section.onde-chegamos {
         align-items: center;
         justify-content: flex-start;
 
-        padding: 20px 20px 20px 100px;
-        height: 280px;
+        padding: 20px 20px 20px 50px;
+        min-height: 280px;
 
         .contagem-info {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             max-width: 300px;
-            height: 80%;
+            width: 100%;
+            min-height: 240px;
             padding: 0 20px;
             color: $blue;
             
             h2 {
-                font-size: 66px;
+                font-size: 60px;
                 font-weight: 900;
                 line-height: 66px;
             }
@@ -547,6 +562,46 @@ section.onde-chegamos {
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 26px;
+            }
+        }
+        @media(max-width: 1170px){
+            position: unset;
+            width: 100%;
+            padding: 10px;
+            min-height: unset;
+            
+            .contagem-info {
+                justify-content: center;
+                min-height: unset;
+                padding: 0 10px;
+                h2 {
+                    font-size: 50px;
+                }
+            }
+        }
+        @media(max-width: 900px){
+            align-items: center;
+            .contagem-info {
+                h2 {
+                    font-size: 30px;
+                }
+                p {
+                    max-width: 200px;
+                }
+            }
+        }
+        @media(max-width: 600px){
+            flex-direction: column;
+            height: auto;
+            padding: 20px 10px 30px;
+            .contagem-info {
+                max-width: unset !important;
+                text-align: center;
+                width: 100% !important;
+                p {
+                    max-width: unset;
+                    width: 100%;
+                }
             }
         }
     }
@@ -557,36 +612,60 @@ section.onde-chegamos {
         height: 1300px;
         display: flex;
         align-items: flex-end;
-        padding: 0 10px 150px 80px;
+        justify-content: space-around;
+        padding: 0 10px 150px 10px;
         border-bottom-right-radius: 300px;
         position: relative;
         z-index: 2;
 
+        #mapa {
+            max-width: 445px;
+            width: 100%;
+            
+        }
+
         .mapa-content {
+            max-width: 445px;
+            img {
+                max-width:445px;
+                width: 100%;
+            }
             >:last-child {
                 padding-top: 50px;
+            }
+            @media(max-width: 1400px){
+                max-width: 345px;
             }
         }
 
         .mapa-legenda {
             position: relative;
-            width: 50%;
+            max-width: 200px;
+            width: 100%;
             padding-bottom: 50px;
             h3 {
                 position: absolute;
                 top: 0%;
-                left: -80%;
+                left: -170px;
                 color: $white;
                 max-width: 50px;
                 line-height: 20px;
             }
             ul {
+                list-style: none;
                 li {
                     color: $white;
-                    &::marker {
+                    line-height: 30px;
+                    &::before {
+                        content: '\25CF';
+                        margin-right: 5px;
                         color: $default_yellow;
-                        font-size: 2rem;
+                        font-size: 1.5rem;
                     }
+                    @media(max-width: 1400px){
+                        line-height: 28px;
+                    }
+
                 }
             }
         }
@@ -618,7 +697,6 @@ section.onde-chegamos {
             height: 60px;
             font-weight: 600;
             font-size: 13px;
-            display: block;
             text-transform: uppercase;
             background: $default_yellow;
             color: $black;
@@ -631,6 +709,100 @@ section.onde-chegamos {
                 color: $default_yellow;
             }
         }
+
+
+        @media(max-width: 1400px){
+            padding-left: 0;
+            span,h2,.capilaridade-button {
+                margin-left: 80px;
+            }
+            span {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 50px;
+            }
+            .capilaridade-button {
+                display: flex;
+                margin-top: 20px;
+            }
+        }
+
+        @media(max-width: 1170px) {
+            padding: 30px 10px;
+            text-align: center;
+            span,h2,.capilaridade-button {
+                margin: 0 auto;
+            }
+            h2 {
+                margin: 30px auto;
+                @media(max-width: 550px){
+                    font-size: 40px;
+                    line-height: normal;
+                }
+            }
+            .capilaridade-button {
+                padding: 0 20px;
+            }
+        }
+    }
+
+    @media(max-width: 1170px){
+        flex-direction: column;
+
+        //detalhe do background
+        &::after {
+            display: none;
+        }
+
+        .capilaridade, .mapa-container {
+            height: auto;
+        }
+
+        .mapa-container {
+            border-radius: unset;
+            padding: 50px 10px;
+            max-width: 100%;
+            @media(max-width: 600px){
+                flex-direction: column-reverse;
+
+                .mapa-content, .mapa-legenda {
+                    width: 100%;
+                    max-width: unset;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .mapa-content {
+                    position: absolute;
+                    top: 30%;
+                    left: 10%;
+                    img {
+                        max-width: 300px !important;
+                        @media(max-width: 500px){
+                            max-width: 200px !important;
+                        }
+                    }
+                    >:nth-child(2){
+                        display: none;
+                    }
+                }
+                .mapa-legenda {
+                    flex-direction: column;
+                    justify-content: center;
+                    h3 {
+                        position: unset;
+                        max-width: unset;
+                        font-size: 27px;
+                        margin: 20px 0;
+                    }
+                }
+            }
+            @media(max-width: 600px){
+                padding: 20px 10px 0;
+            }
+        }
+        
     }
 }
 
@@ -749,6 +921,44 @@ section.nossos-servicos {
         height: 100%;
         padding: 100px 0 0 200px;
         @media(max-width: 768px){
+            display: none;
+        }
+    }
+
+    @media(max-width: 1170px){
+        margin-top: unset;
+        padding: 50px 10px;
+        height: auto;
+
+        .nossos-servicos-content {
+            > span {
+                margin: 30px 0;
+            }
+            ul {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    @media(max-width: 997px){
+        padding-left: 20px;
+        .nossos-servicos-content {
+            ul {
+                display: flex;
+                flex-direction: column;
+                li {
+                    line-height: normal;
+                    margin: 15px 0;
+                }
+            }
+            @media(max-width: 460px){
+                a {
+                    max-width: unset;
+                    width: 100%;
+                }
+            }
+        }
+
+        #nossos-servicos-logo {
             display: none;
         }
     }

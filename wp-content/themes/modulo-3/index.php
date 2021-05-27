@@ -30,6 +30,7 @@
                 </div>
                 <div class="main-slider-slide" id="slide-2">
                     <div class="slider-info">
+                        <img src="<?=get_template_directory_uri()?>/dist/img/home/pontilhado.png" alt="detalhe de fundo que reproduz um pontilhado com gradiente.">
                         <span>Bem-vindo ao <strong>grupo sartori</strong></span>
                         <h1>Lorem ipsum dolor sit amet.</h1>
                     </div>
@@ -158,7 +159,7 @@
             ) ?>
             <div class="mapa-container">
                 <div class="mapa-content">
-                    <img src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/mapa.png" alt="Mapa onde a empresa Grupo Sartori atua.">
+                    <img id="mapa" src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/mapa.png" alt="Mapa onde a empresa Grupo Sartori atua.">
                     <img src="<?=get_template_directory_uri()?>/dist/img/home/pontilhado.png" alt="detalhe de fundo que reproduz um pontilhado com gradiente.">
                 </div>
                 <div class="mapa-legenda">
