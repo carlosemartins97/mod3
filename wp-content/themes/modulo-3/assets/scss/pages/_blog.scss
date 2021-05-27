@@ -14,13 +14,17 @@ section.listagem-blog {
         .listagem-blog-post {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 80px;
+            
+            & + .listagem-blog-post {
+                margin-top: 80px;
+            }
             .listagem-post-thumbnail {
                 flex: 1;
                 max-width: 570px;
                 img {
                     max-width: 570px;
                     object-fit: cover;
+                    border-radius: 10px;
                 }
             }
 
@@ -38,7 +42,7 @@ section.listagem-blog {
                     background: $default_yellow;
                     color: $black;
                     padding: 4px;
-                    transition: all 0.3s;
+                    transition: all 0.7s;
                 }
                 h2 {
                     line-height: 40px;
@@ -58,7 +62,7 @@ section.listagem-blog {
                     border: 1px solid $black;
                     color: $black;
                     max-width: 250px;
-                    transition: all 0.3s;
+                    transition: all 0.7s;
                     
                     
                 }
