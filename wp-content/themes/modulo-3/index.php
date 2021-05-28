@@ -7,15 +7,10 @@
     <?php include_once get_template_directory() . '/assets/views/includes/nav.php' ?>
     
     <main class="main-blog">
-
+        <?php include_once('assets/views/includes/header-navigation.php'); ?>
+        
         <section class="filtro-blog">
             <div class="filtro-blog-content">
-                <div class="filtro-blog-header">
-                    <ul>
-                        <li><a href="home">Home</a></li>
-                        <li><a href="blog">Blog</a></li>
-                    </ul>
-                </div>
                 <div class="filtro-blog-form">
                     <h1>Últimas do <br> blog</h1>
 
