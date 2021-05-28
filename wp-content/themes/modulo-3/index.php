@@ -8,6 +8,33 @@
     
     <main class="main-blog">
 
+        <section class="filtro-blog">
+            <div class="filtro-blog-content">
+                <div class="filtro-blog-header">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="filtro-blog-form">
+                    <h1>Últimas do <br> blog</h1>
+
+                    <form action="#">
+                        <label for="pesquisa"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/filter.png" alt="filtro de pesquisa"> O que você procura</label>
+                        <div class="pesquisa-wrapper">
+                            <input id="pesquisa" name="pesquisa" type="text">
+                            <button type="submit">OK</button>
+                        </div>
+                        <div class="select-wrapper">
+                            <select name="categoria" id="categoria">
+                                <option value="">Categoria</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <section class="listagem-blog">
             <div class="listagem-blog-content">
                 <?php if(have_posts()): while(have_posts()): the_post(); ?>

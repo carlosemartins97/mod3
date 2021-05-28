@@ -4,6 +4,129 @@ main.main-blog {
     overflow-x: hidden;
 }
 
+section.filtro-blog {
+    padding: 20px 10px 30px;
+    .filtro-blog-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .filtro-blog-header {
+            ul {
+                list-style: none;
+                display: flex;
+                li {
+                    font-size: 11px;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    & + li {
+                        margin-left: 40px;
+                    }
+                }
+                >:nth-child(2) {
+                    font-weight: 600;
+                    color: $default_yellow;
+                }
+            }
+        }
+        .filtro-blog-form {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+
+            h1 {
+                font-size: 35px;
+                line-height: 45px;
+                text-transform: uppercase;
+                color: $blue;
+                flex:1;
+            }
+
+            form {       
+                display: flex;
+                align-items: center;
+                flex: 3;
+                max-width: 765px;
+                label {
+                    letter-spacing: 0.015em;
+                    width: 100%;
+                    display:flex;
+                    align-items: center;
+                    max-width: 200px;
+                    margin-right: 10px;
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+                .pesquisa-wrapper {
+                    display: flex;
+                    margin-right: 15px;
+                    input {
+                        height: 100%;
+                        border: none;
+                        max-width: 200px;
+                        
+                    }
+                    button {
+                        flex: 4;
+                        border: none;
+                        font-size: 12px;
+                        background: transparent;
+                        font-weight: 700;
+                        color: $default_yellow;
+                        padding-left: 5px;
+                        border-left: 1px solid rgba(0,0,0,0.1);
+                        transition: all 0.3s;
+                        &:hover {
+                            color: $black;
+                        }
+                    }
+                }
+
+                .select-wrapper {     
+                    overflow:hidden; /* Esconde o conteúdo que passar do tamanho especificado */ 
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 17%;
+                        border-left: 1px solid rgba(0,0,0,0.1);
+                        width: 1px;
+                        height: 20px;
+                    }
+                    select {      
+                        height: 100%;
+                        margin-left: 10px;
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        background: url('../img/blog/icons/select-arrow.png') no-repeat;  /* Imagem de fundo (Seta) */      
+                        background-position: 98%    center;  /*Posição da imagem do background*/      
+                        width: 100%; /* Tamanho do select, maior que o tamanho da div "div-select" */      
+                        font-size:18px;
+                        color:$black;   
+                        border: none;  
+                        text-indent: 0.01px;         
+                        &::-ms-expand {display: none}
+                    }                   
+                }
+                .pesquisa-wrapper, .select-wrapper {
+                    max-width: 265px;
+                    max-height: 50px;
+                    width: 100%;
+                    border-radius: 100px;
+                    border: 1px solid $black;
+                    padding: 15px 10px;
+                }
+            }
+        }
+    }
+}
+
 section.listagem-blog {
     background: #F3F5F6;
     .listagem-blog-content {
