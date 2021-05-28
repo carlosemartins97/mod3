@@ -10,6 +10,7 @@
             <li class="nav-link"><a href="#">Sobre nós</a></li>
             <li class="nav-link"><a href="#">Para sua Empresa</a></li>
             <li class="nav-link"><a href="#">Para profissionais</a></li>
+            <li class="nav-link"><a href="blog">Blog</a></li>
             <li class="nav-link"><a href="#">Saiu na mídia</a></li>
             <li class="nav-link"><a href="#">Clientes</a></li>
         </ul>
