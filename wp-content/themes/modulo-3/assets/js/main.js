@@ -75,6 +75,21 @@ function home() {
     });
 }
 
-function blog(){
-  
+function integra(){
+  var baseUrl = 'http://localhost/mod3/';
+  $(".integra-socials").jsSocials({
+    showCount: true,
+    showLabel: false,
+    shares: [{
+      share: "facebook",
+      logo: baseUrl+'wp-content/uploads/2021/05/facebook.png'
+    }, {
+      share: "linkedin",
+      logo: baseUrl+'wp-content/uploads/2021/05/linkedin.png'
+    }, {
+      share: "whatsapp",
+      logo: baseUrl+'wp-content/uploads/2021/05/whatsapp.png'
+    }
+    ]
+});
 }

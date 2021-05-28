@@ -3,12 +3,12 @@
     include_once get_template_directory() . '/assets/views/includes/head.php' 
 ?> 
 
-<body onload="blog()"> 
+<body> 
     <?php include_once get_template_directory() . '/assets/views/includes/nav.php' ?>
     
     <main class="main-blog">
         <?php include_once('assets/views/includes/header-navigation.php'); ?>
-        
+
         <section class="filtro-blog">
             <div class="filtro-blog-content">
                 <div class="filtro-blog-form">
