@@ -45,16 +45,18 @@
                     <?php if ( $the_query->have_posts() ) : ?>
                         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                             <?php if(get_the_title() != $original_title) {?>
-                                <div class="noticias-relacionadas-post">
-                                    <div class="post-img-wrapper">
-                                        <img src="<?= get_the_post_thumbnail_url()?>" alt="<?=get_the_title()?>">
+                                <a href="<?=get_permalink()?>" class="post-link">
+                                    <div class="noticias-relacionadas-post">
+                                        <div class="post-img-wrapper">
+                                            <img src="<?= get_the_post_thumbnail_url()?>" alt="<?=get_the_title()?>">
+                                        </div>
+                                        <div  class="post-text-wrapper">
+                                            <span class="post-date"><?=get_the_date('d/m/Y')?></span>
+                                            <h3><?php the_title(); ?></h3>
+                                            <span class="link-leia-mais">Leia Mais<img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></span>
+                                        </div>
                                     </div>
-                                    <a href="<?=get_permalink()?>" class="post-text-wrapper">
-                                        <span class="post-date"><?=get_the_date('d/m/Y')?></span>
-                                        <h3><?php the_title(); ?></h3>
-                                        <span class="link-leia-mais">Leia Mais<img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></span>
-                                    </a>
-                                </div>
+                                </a>
                             <?php } ?>
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>

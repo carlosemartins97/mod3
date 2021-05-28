@@ -116,13 +116,39 @@ section.listagem-blog {
         width: 100%;
         margin: 0 auto;
         padding: 80px 0;
+
+        .blog-post-link {
+            display: block;
+            & + .blog-post-link {
+                margin-top: 80px;
+            }
+
+            &:hover {
+                .listagem-post-thumbnail {
+                    >img {
+                        filter: brightness(0.8);
+                    }
+                }
+                .listagem-post-date {
+                    background: $black !important;
+                    color: $white !important;
+                }
+
+                .link-leia-mais {
+                    background: $black !important;
+                    color: $white !important;
+                    -webkit-box-shadow: 0px 12px 16px -7px rgba(0,0,0,0.45);
+                    -moz-box-shadow: 0px 12px 16px -7px rgba(0,0,0,0.45);
+                    box-shadow: 0px 12px 16px -7px rgba(0,0,0,0.45);
+                }
+            }
+        }
+
         .listagem-blog-post {
             display: flex;
             justify-content: space-between;
             
-            & + .listagem-blog-post {
-                margin-top: 80px;
-            }
+            
             .listagem-post-thumbnail {
                 flex: 1;
                 max-width: 570px;
@@ -130,6 +156,7 @@ section.listagem-blog {
                     max-width: 570px;
                     object-fit: cover;
                     border-radius: 10px;
+                    transition: all 0.3s;
                 }
             }
 
@@ -147,7 +174,7 @@ section.listagem-blog {
                     background: $default_yellow;
                     color: $black;
                     padding: 4px;
-                    transition: all 0.7s;
+                    transition: all 0.3s;
                 }
                 h2 {
                     line-height: 40px;
@@ -170,21 +197,6 @@ section.listagem-blog {
                     transition: all 0.7s;
                     
                     
-                }
-
-                &:hover {
-                    .listagem-post-date {
-                        background: $black;
-                        color: $white;
-                    }
-
-                    .link-leia-mais {
-                        background: $black;
-                        color: $white;
-                        -webkit-box-shadow: 0px 12px 16px -7px rgba(0,0,0,0.45);
-                        -moz-box-shadow: 0px 12px 16px -7px rgba(0,0,0,0.45);
-                        box-shadow: 0px 12px 16px -7px rgba(0,0,0,0.45);
-                    }
                 }
             }
         }
