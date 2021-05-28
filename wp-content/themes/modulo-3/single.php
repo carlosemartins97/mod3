@@ -17,7 +17,7 @@
             </div>
         </section>
 
-        <img src="<?= get_the_post_thumbnail_url() ?>" alt="" class="integra-thumbnail">
+        <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?=get_the_title()?>" class="integra-thumbnail">
 
         <section class="integra-content-wrapper">
             <div class="integra-content">
@@ -32,8 +32,39 @@
         <section class="integra-noticias-relacionadas">
             <div class="noticias-relacionadas-content">
                 <h2>Notícias Relacionadas</h2>
+
+                <div class="noticias-relacionadas">
+                <?php 
+                    $original_title = get_the_title();
+                    $args = array(
+                        'post_type' => 'post',
+                    );
+
+                    $the_query = new WP_Query($args); ?>
+                    
+                    <?php if ( $the_query->have_posts() ) : ?>
+                        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                            <?php if(get_the_title() != $original_title) {?>
+                                <div class="noticias-relacionadas-post">
+                                    <div class="post-img-wrapper">
+                                        <img src="<?= get_the_post_thumbnail_url()?>" alt="<?=get_the_title()?>">
+                                    </div>
+                                    <a href="<?=get_permalink()?>" class="post-text-wrapper">
+                                        <span class="post-date"><?=get_the_date('d/m/Y')?></span>
+                                        <h3><?php the_title(); ?></h3>
+                                        <span class="link-leia-mais">Leia Mais<img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></span>
+                                    </a>
+                                </div>
+                            <?php } ?>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+                    <?php else : ?>
+                        <p><?php echo 'Sorry, no posts matched your criteria'; ?></p>
+                    <?php endif; ?>
+                </div>
             </div>
         </section>
+
     </main>
    
     <?php include_once get_template_directory() . '/assets/views/includes/footer.php' ?>

@@ -91,6 +91,8 @@ section.integra-content-wrapper {
 }
 
 section.integra-noticias-relacionadas {
+    padding: 130px 10px;
+
     max-width: 90%;
     width: 100%;
     margin: 0 auto;
@@ -99,5 +101,74 @@ section.integra-noticias-relacionadas {
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
+
+        h2 {
+            text-align: center;
+            font-size: 33px;
+            line-height: 40px;
+            letter-spacing: normal;
+            text-transform: uppercase;
+            margin-bottom: 100px;
+        }
+
+        .noticias-relacionadas {
+            display: flex;
+            justify-content: space-between;
+
+            .noticias-relacionadas-post {
+                display: flex;
+                flex-direction: column;
+                max-width: 380px;
+                .post-img-wrapper {
+                    > img {
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+                .post-text-wrapper {
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    min-height: 240px;
+                    height: 100%;
+                    .post-date {
+                        font-size: 13px;
+                        background: $default_yellow;
+                        color: $black;
+                        padding: 5px 10px;
+                        max-width: 100px;
+                        text-align: center;
+                        transition: all 0.3s;
+                        font-weight: 600;
+                    }
+                    h3 {
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 27px;
+                        text-transform: uppercase; 
+                        letter-spacing: normal;
+                    }
+
+                    > :nth-child(3) {
+                        max-width: 200px;
+                        background: transparent;
+                        color: $black;
+                        border: 1px solid $black;
+                        transition: all 0.3s;
+                    }
+                    &:hover {
+                        >:nth-child(3){
+                            background: $black;
+                            color: $white;
+                        }
+                        .post-date {
+                            background: $black;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
