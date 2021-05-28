@@ -12,8 +12,8 @@
             <div class="filtro-blog-content">
                 <div class="filtro-blog-header">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="home">Home</a></li>
+                        <li><a href="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="filtro-blog-form">
@@ -51,6 +51,24 @@
                         </a>
                     </div>
                 <?php endwhile; endif; ?>
+            </div>
+        </section>
+
+        <section class="pagination-blog">
+            <div class="pagination-blog-content">
+                <div class="pagination-prev">
+                    <a href="#"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/pagination-left.png" alt="seta pra esquerda">Anterior</a>
+                </div>
+                <div class="pagination-pages">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#" class="active">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                </div>
+                <div class="pagination-next">
+                    <a href="">Próximo<img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/pagination-right.png" alt="seta pra direita"></a>
+                </div>
             </div>
         </section>
     </main>
