@@ -46,6 +46,9 @@ img.integra-thumbnail {
     height: 535px;
     object-fit: cover;
     object-position: center;
+    @media(max-width: 768px){
+        height: 300px;
+    }
 }
 
 section.integra-content-wrapper {
