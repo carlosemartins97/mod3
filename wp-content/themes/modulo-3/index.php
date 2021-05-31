@@ -12,7 +12,7 @@
         <section class="filtro-blog">
             <div class="filtro-blog-content">
                 <div class="filtro-blog-form">
-                    <h1>Últimas do <br> blog</h1>
+                    <h1>Últimas do blog</h1>
 
                     <form action="#">
                         <label for="pesquisa"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/filter.png" alt="filtro de pesquisa"> O que você procura</label>
