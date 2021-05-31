@@ -18,13 +18,23 @@ section.main-slider-container {
                 height: 100% !important;
                 .slider-info, .slider-buttons {
                     max-width: 100% !important;
-                    padding: 10px !important;
                     width: 100% !important;
+                    padding: 20px 10px;
+                    min-height: unset !important;
                     span, h1 {
                         text-align: center;
                     }
                     h1 {
                         margin: 0 auto;
+                    }
+                }
+                .slide-info, .slider-links {
+                    min-height: unset !important;
+                    padding: 10px !important;
+                }
+                .slider-links {
+                    span {
+                        padding: unset !important;
                     }
                 }
             }
@@ -59,6 +69,7 @@ section.main-slider-container {
                 width: 34%;
                 text-align: end;
                 padding: 0 60px 0 10px;
+                min-height: 300px;
 
                 >img {
                     margin-left: auto;
@@ -69,8 +80,10 @@ section.main-slider-container {
                     background: $default_yellow;
                     padding: 5px;
                     color: $black;
+                    letter-spacing: 0.24em;
                 }
                 h1 {
+                    font-weight: 800;
                     font-size: 52px;
                     line-height: 72px;
                     max-width: 540px;
@@ -88,6 +101,7 @@ section.main-slider-container {
             }
             .slider-links {
                 max-width: 440px;
+                min-height: 220px;
                 span {
                     display: block;
                     max-width: 440px;
@@ -103,15 +117,15 @@ section.main-slider-container {
                     }
                 }
                 .slider-links-flex {
+                    font-size: 13px;
                     margin-top: 30px;
                     display: flex;
                     max-width: 440px;
-                    padding: 0 10px;
                     .first-slider-link, .second-slider-link {
                         height: 60px;
                         width: 100%;
                         text-transform: uppercase;
-                        font-weight: 600;
+                        font-weight: 700;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -149,16 +163,17 @@ section.main-slider-container {
                 
                 .main-slider-prev, .main-slider-next {
                     background: transparent;
+                    border-radius: 50%;
                     border: none;
                     margin: 0 5px;
-                    transition: transform 0.3s;
+                    transition: all 0.3s;
                     img {
                         padding: 10px;
                         border-radius: 50%;
                         border: 1px solid $white;
                     }
                     &:hover {
-                        transform: scale(1.1);
+                        background-color: $default_yellow;
                     }
                 }
             }

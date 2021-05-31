@@ -17,7 +17,7 @@ function home() {
     $('.main-slider-content').slick({
         dots: false,
         infinite: true,
-        speed: 500,
+        speed: 800,
         fade: true,
         cssEase: 'linear',
         prevArrow: $('.main-slider-prev'),
