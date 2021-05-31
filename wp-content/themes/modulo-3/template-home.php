@@ -61,17 +61,25 @@
             <form class="encontre-vagas-form">
                 <div class="input-vagas-container">
                     <label for="cargo">cargo:</label>
-                    <input type="text" id="cargo" name="cargo">
+                    <input 
+                        type="text" id="cargo" name="cargo" 
+                        required data-msg="Campo obrigatório"
+                    >
                 </div>
 
                 <div class="input-vagas-container">
                     <label for="cidade">cidade:</label>
-                    <input type="text" id="cidade" name="cidade">
+                    <input 
+                        type="text" id="cidade" name="cidade"
+                    >
                 </div>
 
                 <div class="input-vagas-container" id="estado-container">
                     <label for="estado">estado:</label>
-                    <input type="text" id="estado" name="estado">
+                    <select 
+                        name="estado" id="estado"
+                    >
+                    </select>
                 </div>
 
                 <button id="filtrar-button">filtrar</button>
@@ -268,6 +276,7 @@
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
     <script src="<?= get_template_directory_uri()?>/assets/js/slick.min.js"></script>
     <script src="<?= get_template_directory_uri()?>/assets/js/main.js"></script>

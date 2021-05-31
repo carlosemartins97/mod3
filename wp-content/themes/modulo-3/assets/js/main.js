@@ -14,6 +14,7 @@ $(window).resize(function(){
 });
 
 function home() {
+  //slider 1
     $('.main-slider-content').slick({
         dots: false,
         infinite: true,
@@ -25,7 +26,7 @@ function home() {
     });
     
 
-
+    //slider 2
     $('.especialidades-header-wrapper').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -73,6 +74,21 @@ function home() {
             }
           ]
     });
+
+    //estados do brasil
+    const estadosUrl = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome';
+    fetch(estadosUrl)
+      .then(response => response.json())
+      .then(data => {
+        data.map(estado => {
+          const op = $("<option class='estado-opcao'></option>")
+          op.text(estado.nome)
+          $('#estado').append(op)
+        })
+      })
+      .catch(err => console.log(err));
+
+    $('.encontre-vagas-form').validate();
 }
 
 function integra(){
