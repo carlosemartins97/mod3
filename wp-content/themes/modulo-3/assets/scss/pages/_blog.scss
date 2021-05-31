@@ -126,7 +126,9 @@ section.filtro-blog {
                     width: 100%;
                 }
             }
+
             @media(max-width: 768px){
+                margin-top: 20px;
                 form {
                     flex-direction: column;
                     .pesquisa-wrapper {
