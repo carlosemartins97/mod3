@@ -473,6 +473,7 @@ section.slider-especialidades {
         }
         .especialidades-img-wrapper {
             width: 100%;
+            max-height: 630px;
             position: static;
             z-index: 50;
                 @media(max-width: 1100px){
@@ -481,6 +482,9 @@ section.slider-especialidades {
             .especialidades-header-img {
                 width: 100%;
                 object-fit: cover;
+                position: static;
+                z-index: 50;
+                
             }
         }
         
@@ -510,16 +514,19 @@ section.slider-especialidades {
             }
             .slick-list {
                 padding: 20px 0;
+                @media(max-width: 1170px){
+                    padding-bottom: 40px;
+                }
             }
             .slick-list::after {
                 content: '';
                 position: absolute;
-                z-index: -1;
+                z-index: -30;
                 width: 59.55%;
                 height: 100%;
                 bottom: 0;
                 background: $default_grey;
-                @media(max-width: 1170px){
+                @media(max-width: 1100px){
                     width: 100%;
                 }
             }
@@ -641,6 +648,32 @@ section.onde-chegamos {
             justify-content: flex-start;
             max-width: 1200px;
             width: 100%;
+            @media(max-width: 900px){
+                align-items: center;
+                .contagem-info {
+                    h2 {
+                        font-size: 30px;
+                    }
+                    p {
+                        max-width: 200px;
+                    }
+                }
+            }
+            @media(max-width: 600px){
+                flex-direction: column;
+                height: auto;
+                padding: 20px 10px 30px;
+                .contagem-info {
+                    margin-bottom: 20px;
+                    min-height: unset;
+                    text-align: center;
+                    width: 100% !important;
+                    p {
+                        max-width: unset;
+                        width: 100%;
+                    }
+                }
+            }
         }
 
         .contagem-info {
@@ -678,32 +711,7 @@ section.onde-chegamos {
                 }
             }
         }
-        @media(max-width: 900px){
-            align-items: center;
-            .contagem-info {
-                h2 {
-                    font-size: 30px;
-                }
-                p {
-                    max-width: 200px;
-                }
-            }
-        }
-        @media(max-width: 600px){
-            flex-direction: column;
-            height: auto;
-            padding: 20px 10px 30px;
-            .contagem-info {
-                margin-bottom: 20px;
-                min-height: unset;
-                text-align: center;
-                width: 100% !important;
-                p {
-                    max-width: unset;
-                    width: 100%;
-                }
-            }
-        }
+        
     }
 
     .mapa-container {
