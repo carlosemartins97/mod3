@@ -9,6 +9,7 @@ section.main-slider-container {
     position: relative;
     overflow: hidden;
     background: $black;
+    
     @media(max-width: 1000px){
         .main-slider-content {
             height: 100% !important;
@@ -61,15 +62,34 @@ section.main-slider-container {
             height: 100%;
             color: $white;
             display: flex;
-            align-items: center;
             height: calc(100vh - 86px);
+            padding-top: 300px;
+            @media(max-width: 1366px){
+                padding-top: 200px;
+            }
+            @media(max-width: 1000px){
+                padding-top: 0px;
+                align-items: center;
+                .slider-info {
+                    padding-right: 10px !important;
+                    span {
+                        max-width: 440px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            @media(max-width: 768px){
+                
+                .slider-buttons {
+                    padding-top: 20px !important;
+                }
+            }
     
             .slider-info {
                 text-transform: uppercase;
                 width: 34%;
                 text-align: end;
                 padding: 0 60px 0 10px;
-                min-height: 300px;
 
                 >img {
                     margin-left: auto;
@@ -81,6 +101,11 @@ section.main-slider-container {
                     padding: 5px;
                     color: $black;
                     letter-spacing: 0.24em;
+                    @media(max-width: 360px){
+                        strong {
+                            display: block;
+                        }
+                    }
                 }
                 h1 {
                     font-weight: 800;
@@ -102,6 +127,7 @@ section.main-slider-container {
             .slider-links {
                 max-width: 440px;
                 min-height: 220px;
+                padding-top: 50px;
                 span {
                     display: block;
                     max-width: 440px;
@@ -151,6 +177,7 @@ section.main-slider-container {
                 }
             }
             .slider-buttons {
+                padding-top: 60px;
                 width: 40%;
                 display: flex;
                 justify-content: center;
