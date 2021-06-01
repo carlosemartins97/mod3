@@ -126,8 +126,7 @@ function home() {
 }
 
 function integra(){
-  var baseUrl = 'http://localhost/mod3/';
-  //var baseUrl = 'http://ambiente-desenvolvimento.provisorio.ws/carlos-martins/grupo-sartori/';
+  var baseUrl = 'http://ambiente-desenvolvimento.provisorio.ws/carlos-martins/grupo-sartori/';
   $(".integra-socials").jsSocials({
     showCount: true,
     showLabel: false,
