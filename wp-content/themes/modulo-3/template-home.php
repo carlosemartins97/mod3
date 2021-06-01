@@ -60,7 +60,7 @@
             </div>
             <form class="encontre-vagas-form">
                 <div class="input-vagas-container">
-                    <label for="cargo">cargo:</label>
+                    <label id="cargo-label" for="cargo">CARGO:</label>
                     <input 
                         type="text" id="cargo" name="cargo" 
                         required data-msg="Campo obrigatório"
@@ -68,17 +68,18 @@
                 </div>
 
                 <div class="input-vagas-container">
-                    <label for="cidade">cidade:</label>
+                    <label id="cidade-label" for="cidade">CIDADE:</label>
                     <input 
                         type="text" id="cidade" name="cidade"
                     >
                 </div>
 
                 <div class="input-vagas-container" id="estado-container">
-                    <label for="estado">estado:</label>
+                    <label id="estado-label" for="estado">ESTADO:</label>
                     <select 
                         name="estado" id="estado"
                     >
+                    <option value=""></option>
                     </select>
                 </div>
 
@@ -145,21 +146,23 @@
 
         <section class="onde-chegamos">
             <div class="contagem-candidatos-contratados">
-                <div class="contagem-info">
-                    <h2>97%</h2>
-                    <p>Dos candidatos contratados por nós,permanecem por pelo menos 15 meses na empresa.</p>
-                </div>
-                <div class="contagem-info">
-                    <h2>+10MIL</h2>
-                    <p>Posições realizadas por nós, somados todo Know How de nosso time.</p>
-                </div>
-                <div class="contagem-info">
-                    <h2>+500</h2>
-                    <p>Mais de 500 clientes atendidos em todo território nacional.</p>
-                </div>
-                <div class="contagem-info">
-                    <h2>12</h2>
-                    <p>Nossa operação está presente em 12 estados do país.</p>
+                <div class="contagem-content">
+                    <div class="contagem-info">
+                        <h2>97%</h2>
+                        <p>Dos candidatos contratados por nós,permanecem por pelo menos 15 meses na empresa.</p>
+                    </div>
+                    <div class="contagem-info">
+                        <h2>+10MIL</h2>
+                        <p>Posições realizadas por nós, somados todo Know How de nosso time.</p>
+                    </div>
+                    <div class="contagem-info">
+                        <h2>+500</h2>
+                        <p>Mais de 500 clientes atendidos em todo território nacional.</p>
+                    </div>
+                    <div class="contagem-info">
+                        <h2>12</h2>
+                        <p>Nossa operação está presente em 12 estados do país.</p>
+                    </div>
                 </div>
             </div>
 

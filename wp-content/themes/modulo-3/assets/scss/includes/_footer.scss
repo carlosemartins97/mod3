@@ -5,7 +5,7 @@ section.cadastre-curriculo {
     min-height: 220px;
     padding: 0 10px;
     .cadastre-curriculo-content {
-        max-width: 1200px;
+        max-width: 1100px;
         margin: 0 auto;
         width: 100%;
         min-height: 220px;
@@ -55,7 +55,7 @@ section.cadastre-curriculo {
                 color: $white;
                 text-transform: uppercase;
                 font-weight: 600;
-                transition: color 0.3s;
+                transition: all 0.3s;
                 >img {
                     margin-left: 20px;
                     background: $default_yellow;
@@ -63,7 +63,8 @@ section.cadastre-curriculo {
                     padding: 5px;
                 }
                 &:hover {
-                    color: $default_yellow;
+                    color: $black;
+                    background: $default_yellow;
                 }
             }
         }
@@ -98,13 +99,13 @@ section.contato-container {
     color: $white;
     padding: 100px 10px;
     .contato-content {
-        max-width: 1200px;
+        max-width: 1100px;
         margin: 0 auto;
         width: 100%;
         display: flex;
         justify-content: space-between;
         h3 {
-            font-size: 20px;
+            font-size: 17px;
             text-transform: uppercase;
             margin-bottom: 40px;
         }
@@ -113,7 +114,7 @@ section.contato-container {
                 list-style: none;
                 text-transform: uppercase;
                 li {
-                    font-size: 15px;
+                    font-size: 13px;
                     letter-spacing: 0.04em;
                     line-height: 47px;
                     cursor: pointer;
@@ -141,7 +142,7 @@ section.contato-container {
             span {
                 display: block;
                 text-transform: uppercase;
-                font-size: 15px;
+                font-size: 13px;
                 letter-spacing: 0.04em;
                 line-height: 47px;
 
@@ -185,7 +186,7 @@ section.contato-container {
             > a {
                 display: block;
                 text-transform: uppercase;
-                font-size: 17px;
+                font-size: 14px;
                 transition: all 0.3s;
                 padding: 5px 0;
                 padding-left: 10px;
@@ -221,14 +222,14 @@ section.contato-container {
                     flex-direction: column;
                     width: 100%;
                     small {
-                        font-size: 14px;
+                        font-size: 13px;
                         text-transform: uppercase;
                     }
                     span {
-                        font-size: 27px;
+                        font-size: 24px;
                         line-height: 35px;
                         strong {
-                            font-weight: 700;
+                            font-weight: 800;
                         }
 
                     }
@@ -279,7 +280,7 @@ footer {
     padding: 0 10px;
 
     .footer-container {
-        max-width: 1200px;
+        max-width: 1100px;
         width: 100%;
         min-height: 175px;
         margin: 0 auto;
@@ -312,14 +313,12 @@ footer {
         #desenvolvido-por {
             display: flex;
             align-items: center;
-            a {
-                transition: all 0.3s;
-                &:hover {
-                    filter: brightness(0.7);
-                }
-                img {
-                    margin-left: 15px;
-                }
+            transition: all 0.3s;
+            &:hover {
+                filter: brightness(0.7);
+            }
+            img {
+                margin-left: 15px;
             }
         }
     }

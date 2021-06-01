@@ -57,14 +57,14 @@
                     <img src="<?=get_template_directory_uri()?>/dist/img/footer/phone-icon.png" alt="Ícone de telefone">
                     <div class="contatos-card-info">
                         <small>suporte ao candidato</small>
-                        <span>(13)<strong>99103-7559</strong></span>
+                        <span>(13)<strong> 99103-7559</strong></span>
                     </div>
                 </a>
                 <a href="tel:13991037559" class="contato-contatos-card">
                     <img src="<?=get_template_directory_uri()?>/dist/img/footer/phone-icon.png" alt="Ícone de telefone">
                     <div class="contatos-card-info">
                         <small>sucesso do cliente</small>
-                        <span>(13)<strong>99103-7559</strong></span>
+                        <span>(13)<strong> 99103-7559</strong></span>
                     </div>
                 </a>
             </div>
@@ -77,6 +77,6 @@
     <div class="footer-container">
         <a class="footer-link-logo" href="#"><img class="footer-logo" src="<?php echo get_template_directory_uri()?>/dist/img/logo.png" alt="Logo do Grupo Sartori"></a>
         <span id="direitos-reservados">GRUPO SARTORI © 2021 - Todos os direitos reservados</span>
-        <span id="desenvolvido-por">DESENVOLVIDO POR <a href="#"><img src="<?php echo get_template_directory_uri()?>/dist/img/kbr-logo.png" alt="Logo da empresa KBRTEC"></a></span>
+        <a href="#" id="desenvolvido-por">DESENVOLVIDO POR <img src="<?php echo get_template_directory_uri()?>/dist/img/kbr-logo.png" alt="Logo da empresa KBRTEC"></a>
     </div>
 </footer>

@@ -269,6 +269,10 @@ section.encontre-vagas {
             // }
             label {
                 text-transform: uppercase;
+                transition: all 0.3s;
+                position: absolute;
+                bottom: 3px;
+                left: 0;
             }
             input, select {
                 background: transparent;
@@ -279,8 +283,12 @@ section.encontre-vagas {
                 font-size: 14px;
                 max-width: 250px;
                 min-width: 150px;
+                min-height: 20px;
                 outline: unset;
+                position: relative;
+                
             }
+
             label.error {
                 position: absolute;
                 bottom: -14px;
@@ -288,6 +296,11 @@ section.encontre-vagas {
                 margin-top: 5px;
                 text-transform: lowercase;
                 font-weight: bold;
+            }
+
+            label.focused {
+                bottom: 20px;
+                font-size: 10px;
             }
         }
 
@@ -349,6 +362,7 @@ section.encontre-vagas {
 }
 
 section.slider-especialidades {
+    position: relative;
 
     .slider-especialidades-header {
         display: flex;
@@ -401,7 +415,7 @@ section.slider-especialidades {
                     display: flex;
                     align-items: center;
                     justify-content: flex-end;
-                    padding-right: 20px;
+                    margin-right: 20px;
 
                     .especialidades-texto {
                         max-width: 500px;
@@ -459,13 +473,14 @@ section.slider-especialidades {
                     display: none;
                 }
             .especialidades-header-img {
-                width: 100%;
+                width: 133.9%;
                 object-fit: cover;
             }
         }
         
     }
     .slider-especialidades-slider {
+        max-height: 245px;
         min-height: 245px;
         height: 100%;
         display: flex;
@@ -476,27 +491,45 @@ section.slider-especialidades {
             display: flex;
             align-items: center;
             justify-content: flex-start;
+            position: relative;
             
             .slick-list, .slick-track {
+                position: unset;
                 height: 100%;
-                position: relative;
                 z-index: 4;
+                padding: 20px 0;
+            }
+            .slick-list::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                width: 59.55%;
+                height: 100%;
+                bottom: 0;
+                background: $default_grey;
+                @media(max-width: 1170px){
+                    width: 100%;
+                }
             }
 
             .slick-current {
                 transition: all 0.3s;
+                transform: scaleY(1.3);
+                border-radius: 10px;
             }
             .slider-especialidades-slide {
                 transition: all 0.3s;
                 display: flex;
                 flex-direction: column;
-                padding-top: 1.1%;
+                padding-top: 40px;
                 align-items: center;
                 flex: 1;
                 transition: all 0.3;
                 cursor: pointer;
                 &:hover {
                     filter: brightness(0.7);
+                    transform: scaleY(1.1);
+                    border-radius: 5px;
                 }
                 > img {
                     max-height: 50px;
@@ -541,11 +574,18 @@ section.slider-especialidades {
         @media(max-width: 1100px){
             min-height: 200px;
         }
+
+        @media(max-width: 768px) {
+            .slider-especialidades-slide {
+                padding-top: 30px !important;
+            }
+        }
+
         @media(max-width: 500px){
             min-height: 100px;
             .slider-especialidades-slide {
                 min-height: 150px;
-                padding-top: 1% !important;
+                padding-top: 40px !important;
                 img {
                     width: 40%;
                     height: 40%;
@@ -577,17 +617,21 @@ section.onde-chegamos {
     div.contagem-candidatos-contratados {
         position: absolute;
         z-index: 3;
-        top: 150px;
+        top: 60px;
         right: 0;
-        background: $default_yellow;
-        width: 80%;
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+        background: #FFB500;
+        width: 85%;
 
-        padding: 50px 20px 20px 50px;
+        padding: 50px 0 20px 20px;
         min-height: 280px;
+
+        .contagem-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            max-width: 1200px;
+            width: 100%;
+        }
 
         .contagem-info {
             display: flex;
@@ -654,12 +698,12 @@ section.onde-chegamos {
 
     .mapa-container {
         background: $default_grey;
-        width: 100%;
-        height: 1300px;
+        width: 102.5%;
+        height: 1200px;
         display: flex;
         align-items: flex-end;
         justify-content: space-around;
-        padding: 0 10px 150px 10px;
+        padding-bottom: 150px;
         border-bottom-right-radius: 300px;
         position: relative;
         z-index: 2;
@@ -671,7 +715,8 @@ section.onde-chegamos {
         }
 
         .mapa-content {
-            max-width: 445px;
+            max-width: 445px; 
+            margin-left: auto;
             img {
                 max-width:445px;
                 width: 100%;
@@ -681,6 +726,9 @@ section.onde-chegamos {
             }
             @media(max-width: 1400px){
                 max-width: 345px;
+            }
+            @media(max-width: 1170px){
+                margin-left: unset;
             }
         }
 
@@ -700,13 +748,18 @@ section.onde-chegamos {
             ul {
                 list-style: none;
                 li {
+                    margin-left: 10px;
                     color: $white;
                     line-height: 30px;
+                    transition: transform 0.3s;
                     &::before {
                         content: '\25CF';
                         margin-right: 5px;
                         color: $default_yellow;
                         font-size: 1.5rem;
+                    }
+                    &:hover {
+                        transform: translateX(10px);
                     }
                     @media(max-width: 1400px){
                         line-height: 28px;
@@ -723,22 +776,22 @@ section.onde-chegamos {
         flex-direction: column;
         justify-content: flex-end;
         color: $blue;
-        padding: 0 10px 30px 80px;
         span {
             font-size: 30px;
             font-weight: 500;
+            margin-left: 50px;
         }
 
         h2 {
-            font-size: 60px;
-            max-width: 80%;
-            line-height: 60px;
+            font-size: 50px;
+            max-width: 70%;
+            line-height: 50px;
             font-weight: 600;
-            margin-top: 10px;
+            margin: 10px 0 0 50px;
         }
 
         .capilaridade-button {
-            margin-top: 80px;
+            margin: 30px 0 50px 50px;
             max-width: 250px;
             height: 60px;
             font-weight: 600;
@@ -853,13 +906,13 @@ section.onde-chegamos {
 }
 
 section.nossos-servicos {
-    margin-top: -300px;
+    margin-top: -200px;
     background-image: url('../img/home/nossos-servicos.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 1000px;
-    padding: 300px 10px 100px;
+    padding: 200px 10px 100px;
 
     display: flex;
     flex-direction: column;
@@ -883,7 +936,7 @@ section.nossos-servicos {
     
     .nossos-servicos-content {
         color: $white;
-        max-width: 1366px;
+        max-width: 1200px;
         width: 100%;
         margin: 0 auto;
         height: 80%;
@@ -901,22 +954,23 @@ section.nossos-servicos {
         }
 
         span {
-            font-size: 25px;
+            font-size: 20px;
             display: block;
-            max-width: 440px;
+            max-width: 350px;
         }
 
         ul {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 180px;
             color: $default_yellow;
-            font-size: 17px;
+            font-size: 15px;
             list-style: none;
             line-height: 33px;
             li {
                 margin: 5px 0;
                 transition: transform 0.3s;
-                max-width: 400px;
+                max-width: 350px;
 
                 &:hover {
                     transform: translateX(10px);
@@ -944,7 +998,12 @@ section.nossos-servicos {
             align-items: center;
             transition: all 0.3s;
             &:hover {
-                color: $white;
+                background: $default_grey;
+                color: $default_yellow;
+                -webkit-box-shadow: 0px 6px 5px -5px $default_yellow;
+                -moz-box-shadow: 0px 6px 5px -5px $default_yellow;
+                box-shadow: 0px 6px 5px -5px $default_yellow;
+
             }
         }
     }
@@ -953,7 +1012,7 @@ section.nossos-servicos {
         position: absolute;
         z-index: 0;
         bottom: -87%;
-        left: 15%;
+        left: 20%;
         text-transform: uppercase;
         opacity: 0.4;
 
@@ -1027,7 +1086,7 @@ section.saiu-na-midia {
     padding: 100px 10px 60px;
     .midia-content {
         margin: 0 auto;
-        max-width: 1366px;
+        max-width: 1200px;
         width: 100%;
 
         h2 {
@@ -1066,7 +1125,7 @@ section.saiu-na-midia {
                     content: '';
                     position: absolute;
                     z-index: -10;
-                    right: -30px;
+                    right: -5px;
                     top: 25%;
                     border-right: 1px solid $blue;
                     height: 50%;
@@ -1077,7 +1136,7 @@ section.saiu-na-midia {
                     content: '';
                     position: absolute;
                     z-index: -10;
-                    left: -30px;
+                    left: -5px;
                     top: 25%;
                     border-left: 1px solid $blue;
                     height: 50%;
@@ -1202,19 +1261,26 @@ section.saiu-na-midia {
             align-items: center;
             justify-content: center;
             font-weight: 600;
+            border-radius: 10px;
             font-size: 15px;
             letter-spacing: 0.04em;
             text-transform: uppercase;
             color: $blue;
+            max-width: 300px;
+            margin: 0 auto;
             transition: all 0.3s;
             >img {
                 margin-left: 10px;
                 background: $blue;
                 border-radius: 50%;
                 padding: 10px 12px;
+                transition: all 0.3s;
+                border: 1px solid transparent;
             }
             &:hover {
-                transform: scale(1.1);
+                    background: $blue;
+                    color:$default_yellow;
+
             }
         }
     }
@@ -1227,7 +1293,7 @@ section.ultimas-do-blog {
     background: $light-grey;
     padding: 100px 10px;
     .ultimas-blog-content {
-        max-width: 1366px;
+        max-width: 1200px;
         margin: 0 auto;
         width: 100%;
 
@@ -1244,7 +1310,7 @@ section.ultimas-do-blog {
 
         .ultimas-blog-grid {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
 
             .ultimas-blog-post {
                display: flex;
@@ -1260,7 +1326,6 @@ section.ultimas-do-blog {
                     padding: 30px;
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-around;
                     span {
                         color: $default_yellow;
                         font-size: 17px;
@@ -1274,6 +1339,7 @@ section.ultimas-do-blog {
                         line-height: 23px;
                         color: $blue;
                         text-transform: uppercase;
+                        margin: 5px 0 15px;
                     }
 
                     p {
@@ -1314,9 +1380,6 @@ section.ultimas-do-blog {
                         }
                         h3 {
                             font-size: 16px;
-                        }
-                        @media(max-width: 400px){
-                            justify-content: space-between;
                         }
                     }
                 }

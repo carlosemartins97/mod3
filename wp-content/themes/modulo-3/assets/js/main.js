@@ -89,6 +89,40 @@ function home() {
       .catch(err => console.log(err));
 
     $('.encontre-vagas-form').validate();
+
+    //cargo label
+    $('#cargo').focusin(function() {
+      $('#cargo-label').addClass('focused');
+    });
+    $('#cargo').focusout(function() {
+      if($("#cargo").val() === '') {
+        $('#cargo-label').removeClass('focused');
+      } else {
+        $('#cargo-label').addClass('focused');
+      }
+    });
+
+    $('#estado').focusin(function() {
+      $('#estado-label').addClass('focused');
+    });
+    $('#estado').focusout(function() {
+      if($("#estado").val() === '') {
+        $('#estado-label').removeClass('focused');
+      } else {
+        $('#estado-label').addClass('focused');
+      }
+    });
+
+    $('#cidade').focusin(function() {
+      $('#cidade-label').addClass('focused');
+    });
+    $('#cidade').focusout(function() {
+      if($("#cidade").val() === '') {
+        $('#cidade-label').removeClass('focused');
+      } else {
+        $('#cidade-label').addClass('focused');
+      }
+    });
 }
 
 function integra(){
