@@ -63,7 +63,7 @@
                     <label id="cargo-label" for="cargo">CARGO:</label>
                     <input 
                         type="text" id="cargo" name="cargo" 
-                        required data-msg="Campo obrigatório"
+                        
                     >
                 </div>
 
@@ -78,6 +78,7 @@
                     <label id="estado-label" for="estado">ESTADO:</label>
                     <select 
                         name="estado" id="estado"
+                        required data-msg="Campo obrigatório"
                     >
                     <option value=""></option>
                     </select>
