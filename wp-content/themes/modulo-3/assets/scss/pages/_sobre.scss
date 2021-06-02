@@ -13,6 +13,7 @@ section.sobre-header {
         justify-content: center;
 
         .sobre-header-wrapper {
+            padding-top: 40px;
             max-width: 800px;
             width: 100%;
             text-align: center;
@@ -30,6 +31,7 @@ section.sobre-header {
                 font-size: 35px;
                 line-height: 45px;
                 text-transform: uppercase;
+                
             }
             span {
                 display: block;
@@ -44,6 +46,14 @@ section.sobre-header {
                 font-weight: 500;
                 font-size: 21px;
                 line-height: 29px;
+            }
+            @media(max-width: 768px){
+                h1 {
+                    font-size: 28px;
+                }
+                span {
+                    margin-bottom: 20px;
+                }
             }
         }
     }
@@ -81,6 +91,22 @@ section.sobre-header {
         }
         .insta {
             background: $yellow-2;
+        }
+        @media(max-width: 1000px){
+            bottom: -60px;
+            left: 1%;
+            .sobre-socials-content {
+                width: 50px;
+                height: 60px;
+            }
+        }
+        @media(max-width: 1000px){
+            bottom: -60px;
+            left: 1%;
+            .sobre-socials-content {
+                width: 50px;
+                height: 60px;
+            }
         }
     }
 }
@@ -202,7 +228,76 @@ section.sobre-content-container {
                     letter-spacing: 0.035em;
                 }
             }
+            @media(max-width: 1366px){
+                right: 4%;
+            }
+            @media(max-width: 1280px){
+                right: 2%;
+            }
+        }
+    }
+    @media(max-width: 1235px){
+        padding: 0;
+        .sobre-content-wrapper {
+            max-width: unset;
+            width: 100%;
+            padding: 0;
+            margin: 0;
 
+            .sobre-content-info {
+                max-width: unset;
+                padding: 20px 10px;
+
+                > span {
+                text-align: center;
+                    display: block;
+                }
+                .content-info-estrategia {
+                    margin: 0 auto;
+                }
+                > img {
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+
+            .sobre-visao-missao {
+                position: relative;
+                right: 0;
+                top: 0;
+                width: 100%;
+                max-width: unset;
+                border-bottom-right-radius: unset;
+                
+                .sobre-visao-content, .sobre-missao-content {
+                    text-align: center;
+                    h2 {
+                        margin-bottom: 40px;
+                    }
+                }
+
+                .sobre-visao-content {
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 550px){
+        .sobre-content-wrapper {
+            .sobre-content-info {
+                .content-info-estrategia {
+                    padding-top: 0;
+                    flex-direction: column;
+                    text-align: center;
+                    img {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .sobre-visao-missao {
+                padding: 40px 20px;
+            }
         }
     }
 
@@ -231,6 +326,7 @@ section.sobre-valores {
             grid-template-columns: 1fr 1fr 1fr;
             grid-row-gap: 90px;
             grid-column-gap: 10px;
+            
         }
 
         .sobre-valores-valor {
@@ -289,4 +385,38 @@ section.sobre-valores {
             }
         }
     }
+
+    @media(max-width: 1000px){
+        padding: 60px 10px;
+        .sobre-valores-content {
+
+            h2 {
+                text-align: center;
+                margin-bottom: 80px;
+            }
+
+            .sobre-valores-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 10px;
+                justify-items: center;
+                @media(max-width: 600px){
+                    grid-template-columns: 1fr;
+
+                    .sobre-valores-valor {
+                        height: unset;
+                        min-height: 245px;
+                        .valor-img-wrapper {
+                            width: 60px;
+                            height: 60px;
+                            top: -30px;
+                        }
+                        .valor-info-wrapper {
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 }
