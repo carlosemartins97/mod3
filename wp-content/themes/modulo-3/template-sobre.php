@@ -72,6 +72,34 @@
             </div>
         </section>
 
+        <section class="sobre-valores">
+            <div class="sobre-valores-content">
+                <h2>VALORES</h2>
+                <div class="sobre-valores-grid">
+                    <?php 
+                        $valores = array(
+                            array("valor"=>"Honestidade", "texto"=>"Verdade acima de qualquer coisa."),
+                            array("valor"=>"Inovação", "texto"=>"Trazer aos nossos clientes o que há de em tecnologia para Gestão de Pessoas."),
+                            array("valor"=>"Empreendedorismo", "texto"=>"Pensamento de dono e protagonismo, fazem parte do nosso jeito."),
+                            array("valor"=>"Agilidade", "texto"=>"Ser rápido em nossas entregas, mantendo a qualidade acima da média."),
+                            array("valor"=>"Respeito ao Ser Humano", "texto"=>"Feedback aqui é uma regra, respeitamos o tempo de cada pessoa, seja empresa ou candidato."),
+                            array("valor"=>"Ética com transparência", "texto"=>"Não negociar nossos valores ou agir de forma diferente do nosso código de conduta.")
+                        )
+                    ?>
+                    <?php foreach($valores as $key => $valor) { ?>
+                        <div class="sobre-valores-valor">
+                            <div class="valor-img-wrapper">
+                                <img src="<?=get_template_directory_uri()?>/dist/img/sobre/checkmark.png " alt="Checkmark">
+                            </div>
+                            <div class="valor-info-wrapper">
+                                <h3><?= $valor["valor"] ?>:</h3>
+                                <p><?= $valor["texto"] ?></p>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </section>
         
     </main>
 
