@@ -37,6 +37,41 @@
             <img src="<?=get_template_directory_uri()?>/dist/img/sobre/main.png" alt="Imagem de duas pessoas apertando a mão">
             <span>GRUPO <br> SARTORI</span>
         </section>
+
+        <section class="sobre-content-container">
+            <div class="sobre-content-wrapper">
+                <div class="sobre-content-info">
+                    <p>Uma empresa inovadora quando se fala em gestão de pessoas e todos os seus processos estratégicos que envolvem: Recrutamento & Seleção / Treinamento & desenvolvimento / Avaliações Psicológicas / Clima e Diagnóstico organizacional, esse é o nosso foco.</p>
+
+                    <p>A nossa consultoria conta com um forte viés tecnológico em todos os nossos processos, levando aos nossos clientes assertividade com retenção dos talentos, com um único objetivo: Maximizar os seus resultados com consistência e isso começa no nosso processo seletivo.</p>
+
+                    <p>Somos focados em empresas que realmente tenham esses mesmos valores e que buscam a mesma coisa que acreditamos.</p>
+
+                    <span>Esse é o nosso DNA!</span>
+
+                    <div class="content-info-estrategia">
+                        <img src="<?=get_template_directory_uri()?>/dist/img/sobre/objetivo.png" alt="Pessoa subindo uma escada e botando uma bandeira no final, sinalizando vitória.">
+                        <span>Entre a estratégia e a execução com com o Grupo Sartori</span>
+                    </div>
+                    <img src="<?=get_template_directory_uri()?>/dist/img/home/pontilhado.png" alt="Pontilhado para dar detalhe de fundo">
+                </div>
+
+                <div class="sobre-visao-missao">
+                    <div class="sobre-visao-content">
+                        <img src="<?=get_template_directory_uri()?>/dist/img/sobre/visao.png" alt="Desenho de um olho">
+                        <h2>Visão</h2>
+                        <p>Ser a principal referência em Consultoria de RH do País até 2025.</p>
+                    </div>
+
+                    <div class="sobre-missao-content">
+                        <img src="<?=get_template_directory_uri()?>/dist/img/sobre/missao.png" alt="Desenho de um olho">
+                        <h2>Missão</h2>
+                        <p>Ser a empresa que melhor entende e satisfaz as necessidades das empresas e candidatos, de forma humana, personalizada e com resultados consistentes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         
     </main>
 
