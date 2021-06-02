@@ -7,7 +7,7 @@
         
         
         <ul class="nav-bar">
-            <li class="nav-link"><a href="#">Sobre nós</a></li>
+            <li class="nav-link"><a href="sobre">Sobre nós</a></li>
             <li class="nav-link"><a href="#">Para sua Empresa</a></li>
             <li class="nav-link"><a href="#">Para profissionais</a></li>
             <li class="nav-link"><a href="blog">Blog</a></li>

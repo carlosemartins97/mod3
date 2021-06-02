@@ -1,0 +1,102 @@
+@import '../utils/variaveis';
+
+section.sobre-header {
+    background: $gradient_default;
+    padding: 0 10px 50px;
+    position:relative;
+
+    .sobre-header-content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+
+        .sobre-header-wrapper {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            color: $white;
+
+            h1 {
+                margin-top: 10px;
+                font-size: 35px;
+                line-height: 45px;
+                text-transform: uppercase;
+            }
+            span {
+                display: block;
+                margin: 10px 0 50px;
+                font-weight: 300;
+                font-size: 20px;
+                line-height: 26px;
+                text-transform: uppercase;
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 21px;
+                line-height: 29px;
+            }
+        }
+    }
+    .sobre-socials {
+        z-index: 2;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        bottom: -84px;
+        left: 5%;
+        .sobre-socials-content {
+            width: 77px;
+            height: 84px;
+            
+            a {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    transition: all 0.3s;
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.3);
+                    }
+                }
+            }
+        }
+        .face {
+            background: $default_grey;
+        }
+        .insta {
+            background: $yellow-2;
+        }
+    }
+}
+
+section.sobre-thumbnail {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+    span {
+        position: absolute;
+        top: 100px;
+        left: 15%;
+        font-family: 'Segoe UI';
+        font-weight: 900;
+        font-size: 110px;
+        line-height: 100px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.06);
+        text-shadow: 0px -18px 248px #000000;
+    }
+}
