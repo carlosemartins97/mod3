@@ -3,7 +3,7 @@
 <nav>
     <div class="nav-content">
         <div class="nav-header">
-            <a class="nav-link-logo" href="home"><img class="nav-logo" src="<?php echo get_template_directory_uri()?>/dist/img/logo.png" alt="Logo do Grupo Sartori"></a>
+            <a class="nav-link-logo" href="<?=$homeUrl?>"><img class="nav-logo" src="<?php echo get_template_directory_uri()?>/dist/img/logo.png" alt="Logo do Grupo Sartori"></a>
             <i class="fas fa-bars" id="collapse-nav-button"></i></button>
         </div>
         

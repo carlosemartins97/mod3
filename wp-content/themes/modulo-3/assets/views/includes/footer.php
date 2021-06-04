@@ -1,3 +1,4 @@
+<?php $homeUrl = get_home_url() ?>
 <section class="cadastre-curriculo">
     <div class="cadastre-curriculo-content">
         <div class="curriculo-info">
@@ -75,7 +76,7 @@
 
 <footer>
     <div class="footer-container">
-        <a class="footer-link-logo" href="#"><img class="footer-logo" src="<?php echo get_template_directory_uri()?>/dist/img/logo.png" alt="Logo do Grupo Sartori"></a>
+        <a class="footer-link-logo" href="<?=$homeUrl?>"><img class="footer-logo" src="<?php echo get_template_directory_uri()?>/dist/img/logo.png" alt="Logo do Grupo Sartori"></a>
         <span id="direitos-reservados">GRUPO SARTORI © 2021 - Todos os direitos reservados</span>
         <a href="#" id="desenvolvido-por">DESENVOLVIDO POR <img src="<?php echo get_template_directory_uri()?>/dist/img/kbr-logo.png" alt="Logo da empresa KBRTEC"></a>
     </div>
