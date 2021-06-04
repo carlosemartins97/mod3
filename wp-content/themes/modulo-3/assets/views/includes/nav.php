@@ -1,3 +1,5 @@
+<?php $homeUrl = get_home_url(); ?>
+
 <nav>
     <div class="nav-content">
         <div class="nav-header">
@@ -7,11 +9,11 @@
         
         
         <ul class="nav-bar">
-            <li class="nav-link"><a href="sobre">Sobre nós</a></li>
+            <li class="nav-link"><a href="<?=$homeUrl?>/sobre">Sobre nós</a></li>
             <li class="nav-link"><a href="#">Para sua Empresa</a></li>
             <li class="nav-link"><a href="#">Para profissionais</a></li>
-            <li class="nav-link"><a href="blog">Blog</a></li>
-            <li class="nav-link"><a href="#">Saiu na mídia</a></li>
+            <li class="nav-link"><a href="<?=$homeUrl?>/blog">Blog</a></li>
+            <li class="nav-link"><a href="<?=$homeUrl?>/saiu_midia">Saiu na mídia</a></li>
             <li class="nav-link"><a href="#">Clientes</a></li>
         </ul>
         <a href="#" id="nav-contato" >Contatos</a>

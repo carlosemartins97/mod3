@@ -7,6 +7,8 @@
                 <li><a href="<?=$page?>">Blog</a></li>
             <?php } elseif($page == 'Sobre Nós') {?>
                 <li><a href="sobre"><?=$page?></a></li>
+            <?php } elseif($page == 'Saiu na mídia') {?>
+                <li><a href="saiu_midia"><?=$page?></a></li>
             <?php } else { ?>
                 <li><a href="blog">Blog</a></li>
             <?php } ?>

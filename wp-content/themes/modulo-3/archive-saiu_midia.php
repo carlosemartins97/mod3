@@ -1,52 +1,48 @@
 <?php 
-    $page = "Blog";
+    $page = "Saiu na mídia";
     include_once get_template_directory() . '/assets/views/includes/head.php' 
 ?> 
 
 <body> 
     <?php include_once get_template_directory() . '/assets/views/includes/nav.php' ?>
     
-    <main class="main-blog">
+    <main class="main-saiu_midia">
         <?php include_once('assets/views/includes/header-navigation.php'); ?>
 
-        <section class="filtro-blog">
-            <div class="filtro-blog-content">
-                <div class="filtro-blog-form">
-                    <h1>Últimas do blog</h1>
+        <section class="filtro-saiu_midia">
+            <div class="filtro-saiu_midia-content">
+                <div class="filtro-saiu_midia-form">
+                    <h1>Saiu na mídia</h1>
 
                     <form action="#">
-                        <label for="pesquisa"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/filter.png" alt="filtro de pesquisa"> O que você procura</label>
+                        <label for="pesquisa"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/filter.png" alt="filtro de pesquisa"> Filtro por período</label>
+                        <div class="pesquisa-wrapper"> 
+                            <span>De:</span>
+                            <input id="pesquisa" name="pesquisa" type="text">
+                        </div>
                         <div class="pesquisa-wrapper">
+                        <span>Até:</span>
                             <input id="pesquisa" name="pesquisa" type="text">
                             <button type="submit">OK</button>
-                        </div>
-                        <div class="select-wrapper">
-                            <select name="categoria" id="categoria">
-                                <option value="">Categoria</option>
-                            </select>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
 
-        <section class="listagem-blog">
-            <div class="listagem-blog-content">
+        <section class="listagem-saiu_midia">
+            <div class="listagem-saiu_midia-content">
                 <?php if(have_posts()): while(have_posts()): the_post(); ?>
-                    <a href="<?=get_permalink()?>" class="blog-post-link">
-                        <div class="listagem-blog-post">
-                            <div class="listagem-post-thumbnail">
-                                <img src="<?=get_the_post_thumbnail_url()?>" alt="Imagem da notícia">
-                            </div>
-                            <div  class="listagem-post-texto">
-                                <span class="listagem-post-date"><?= get_the_date('d/m/Y') ?></span>
-                                <h2><?=get_the_title()?></h2>
-                                
-                                <p><?=get_the_excerpt()?></p>
-                                <span class="link-leia-mais" >Leia Mais<img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></span>
-                            </div>
+                    <div class="saiu_midia-post">
+                        <div class="post-info">
+                            <span class="post-data"><?=get_field('data')?></span>
+                            <h2 class="post-titulo"><?=get_the_title()?></h2>
+                            <span class="post-fonte"><img src="<?=get_template_directory_uri()?>/dist/img/saiu-midia/icons/globo.png" alt="Imagem de um globo"> Fonte: <?=get_field('fonte')?></span>
                         </div>
-                    </a>
+                        <div class="post-link">
+                            <a href="<?=get_field('link')?>">ver na mídia <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></a>
+                        </div>
+                    </div>
                 <?php endwhile; endif; ?>
             </div>
         </section>

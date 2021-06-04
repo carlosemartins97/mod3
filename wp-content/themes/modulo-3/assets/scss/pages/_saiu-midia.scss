@@ -1,0 +1,247 @@
+@import '../utils/variaveis';
+
+section.filtro-saiu_midia {
+    padding:0 10px 30px;
+    .filtro-saiu_midia-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        .filtro-saiu_midia-form {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+
+            h1 {
+                max-width: 300px;
+                font-size: 35px;
+                line-height: 45px;
+                text-transform: uppercase;
+                color: $blue;
+                flex:1;
+            }
+
+            form {       
+                display: flex;
+                align-items: center;
+                flex: 3;
+                max-width: 765px;
+                label {
+                    letter-spacing: 0.015em;
+                    width: 100%;
+                    display:flex;
+                    align-items: center;
+                    max-width: 200px;
+                    margin-right: 10px;
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+                .pesquisa-wrapper {
+                    display: flex;
+                    margin-right: 15px;
+                    position: relative;
+                    > span {
+                        font-weight: 500;
+                        padding-left: 10px;
+                        margin-right: 5px;
+                    }
+                    input {
+                        height: 100%;
+                        border: none;
+                        max-width: 200px; 
+                    }
+
+                    button {
+                        position: absolute;
+                        right:10px;
+                        top: 17px;
+                        border: none;
+                        font-size: 12px;
+                        background: transparent;
+                        font-weight: 700;
+                        color: $default_yellow;
+                        padding-left: 10px;
+                        border-left: 1px solid rgba(0,0,0,0.1);
+                        transition: all 0.3s;
+                        &:hover {
+                            color: $black;
+                        }
+                    }
+                }
+
+                .select-wrapper {     
+                    overflow:hidden; /* Esconde o conteúdo que passar do tamanho especificado */ 
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 17%;
+                        border-left: 1px solid rgba(0,0,0,0.1);
+                        width: 1px;
+                        height: 20px;
+                    }
+                    select {      
+                        height: 100%;
+                        margin-left: 10px;
+                        appearance: none;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        background: url('../img/blog/icons/select-arrow.png') no-repeat;  /* Imagem de fundo (Seta) */      
+                        background-position: 98%    center;  /*Posição da imagem do background*/      
+                        width: 100%; /* Tamanho do select, maior que o tamanho da div "div-select" */      
+                        font-size:18px;
+                        color:$black;   
+                        border: none;  
+                        text-indent: 0.01px;         
+                        &::-ms-expand {display: none}
+                    }                   
+                }
+                .pesquisa-wrapper, .select-wrapper {
+                    max-width: 265px;
+                    max-height: 50px;
+                    width: 100%;
+                    border-radius: 100px;
+                    border: 1px solid $black;
+                    padding: 15px 10px;
+                    input,select {
+                        outline: none;
+                    }
+                }
+            }
+            @media(max-width: 1170px){
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h1 {
+                    margin-bottom: 20px;
+                    max-width: unset;
+                    font-size: 30px;
+                }
+                form {
+                    width: 100%;
+                }
+            }
+
+            @media(max-width: 768px){
+                margin-top: 20px;
+                form {
+                    flex-direction: column;
+                    .pesquisa-wrapper {
+                        margin-right: 0;
+                        order: 3;
+                        margin: 30px 0 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section.listagem-saiu_midia {
+    background: $light-grey;
+
+    .listagem-saiu_midia-content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 40px 10px 100px;
+
+        .saiu_midia-post {
+            background: $white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            padding: 0 30px;
+
+            
+            & + .saiu_midia-post {
+                margin-top: 40px;
+            }
+
+            .post-info {
+                .post-data {
+                    background: $yellow-2;
+                    padding: 3px 10px;
+                    font-weight: 600;
+                    font-size: 13px;
+                    position: absolute;
+                    top: -11px;
+                    left: 30px;
+                }
+    
+                .post-titulo {
+                    margin-top: 50px;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 24px;
+                    margin-bottom: 15px;
+                }
+    
+                .post-fonte {
+                    display: flex;
+                    align-items: center;
+                    font-size: 13px;
+                    color: $text_grey;
+                    letter-spacing: 0.015em;
+                    margin-bottom: 20px;
+                    img {
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .post-link {
+                min-width: 180px;
+                a {
+                    padding: 10px 20px;
+                    font-weight: 600;
+                    font-size:12px;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                    display: flex;
+                    align-items: center;
+                    transition: all 0.3s;
+                    img {
+                        width: 27px;
+                        height: 27px;
+                        margin-left: 10px;
+                        background: $yellow-2;
+                        border-radius: 50%;
+                        padding: 5px;
+                    }
+                    &:hover {
+                        background: $black;
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        @media(max-width:500px){
+            .saiu_midia-post {
+                flex-direction: column;
+                align-items: flex-start;
+                .post-info {
+                    .post-fonte {
+                        margin-bottom: 0;
+                    }
+                }
+                .post-link {
+                    a {
+                        padding: 20px 0;
+                        &:hover {
+                            background: unset;
+                            color: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
