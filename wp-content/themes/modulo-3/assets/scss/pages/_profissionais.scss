@@ -1,0 +1,33 @@
+@import '../utils/variaveis';
+
+main.profissionais {
+    overflow-x: hidden;
+}
+
+section.profissionais-header {
+    padding: 0 10px;
+
+    .profissionais-header-content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+
+        .profissionais-header-wrapper {
+            text-align: center;
+            padding: 40px 0 60px;
+
+            > img {
+                transition: all 0.3s;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+            h1 {
+                text-transform: uppercase;
+                margin-top: 10px;
+                color: $blue;
+            }
+        }
+    }
+}

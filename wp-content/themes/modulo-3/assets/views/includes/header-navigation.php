@@ -1,14 +1,17 @@
+<?php $homeUrl = get_home_url(); ?>
 <header class="header-navigation">
     <div class="filtro-blog-header">
         <ul>
-            <li><a href="home">Home</a></li>
+            <li><a href="<?= $homeUrl ?>">Home</a></li>
 
             <?php if($page == 'Blog'){ ?>
-                <li><a href="<?=$page?>">Blog</a></li>
+                <li><a href="<?=$homeUrl?>/blog">Blog</a></li>
             <?php } elseif($page == 'Sobre Nós') {?>
-                <li><a href="sobre"><?=$page?></a></li>
+                <li><a href="<?=$homeUrl?>/sobre"><?=$page?></a></li>
+            <?php } elseif($page == 'Para Profissionais') {?>
+                <li><a href="<?=$homeUrl?>/para-profissionais"><?=$page?></a></li>
             <?php } elseif($page == 'Saiu na mídia') {?>
-                <li><a href="saiu_midia"><?=$page?></a></li>
+                <li><a href="<?=$homeUrl?>/saiu_midia"><?=$page?></a></li>
             <?php } else { ?>
                 <li><a href="blog">Blog</a></li>
             <?php } ?>

@@ -11,44 +11,44 @@
     
     <main class="main-home">
 
+        <?php 
+            $args = array(
+                'post_type' => 'slider_principal',
+                'posts_per_page'=> 3,
+            );
+            
+            $sliderQuery = new WP_Query($args);
+
+            
+        ?>
+
         <section class="main-slider-container">
             <div class="main-slider-content">
-                <div class="main-slider-slide" id="slide-1">
-                    <div class="slider-info">
-                        <img src="<?=get_template_directory_uri()?>/dist/img/home/pontilhado.png" alt="detalhe de fundo que reproduz um pontilhado com gradiente.">
-                        <span>Bem-vindo ao <strong>grupo sartori</strong></span>
-                        <h1>treinamento recrutamento e seleção</h1>
-                    </div>
-                    <div class="slider-links">
-                        <span>Assertividade com retenção de talentos, é a nossa especialidade.</span>
-                        <div class="slider-links-flex">
-                            <a class="first-slider-link" href="#">para profissionais</a>
-                            <a class="second-slider-link" href="#">para sua empresa</a>
+                <?php if($sliderQuery->have_posts()): while($sliderQuery->have_posts()): $sliderQuery->the_post(); ?>
+                    <?php 
+                    $background_image = get_field('imagem');
+                    if( !empty( $background_image ) ): ?>
+                        <div class="main-slider-slide slide-1" style="background-image: url('<?= esc_url($background_image['url'])?>;');">
+                        
+                            <div class="slider-info">
+                                <img src="<?=get_template_directory_uri()?>/dist/img/home/pontilhado.png" alt="detalhe de fundo que reproduz um pontilhado com gradiente.">
+                                <span>Bem-vindo ao <strong>grupo sartori</strong></span>
+                                <h1><?=get_the_title()?></h1>
+                            </div>
+                            <div class="slider-links">
+                                <span><?=get_field('descricao')?></span>
+                                <div class="slider-links-flex">
+                                    <a class="first-slider-link" href="#">para profissionais</a>
+                                    <a class="second-slider-link" href="#">para sua empresa</a>
+                                </div>
+                            </div>
+                            <div class="slider-buttons">
+                                <button type="button" class="main-slider-prev"><img src="<?= get_template_directory_uri()?>/dist/img/home/slider-buttons/left.png" alt="seta pra esquerda"></button>
+                                <button type="button" class="main-slider-next"><img src="<?= get_template_directory_uri()?>/dist/img/home/slider-buttons/right.png" alt="seta pra direita"></button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="slider-buttons">
-                        <button type="button" class="main-slider-prev"><img src="<?= get_template_directory_uri()?>/dist/img/home/slider-buttons/left.png" alt="seta pra esquerda"></button>
-                        <button type="button" class="main-slider-next"><img src="<?= get_template_directory_uri()?>/dist/img/home/slider-buttons/right.png" alt="seta pra direita"></button>
-                    </div>
-                </div>
-                <div class="main-slider-slide" id="slide-2">
-                    <div class="slider-info">
-                        <img src="<?=get_template_directory_uri()?>/dist/img/home/pontilhado.png" alt="detalhe de fundo que reproduz um pontilhado com gradiente.">
-                        <span>Bem-vindo ao <strong>grupo sartori</strong></span>
-                        <h1>Lorem ipsum dolor sit amet.</h1>
-                    </div>
-                    <div class="slider-links">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quibusdam?</span>
-                        <div class="slider-links-flex">
-                            <a class="first-slider-link" href="#">para profissionais</a>
-                            <a class="second-slider-link" href="#">para sua empresa</a>
-                        </div>
-                    </div>
-                    <div class="slider-buttons">
-                        <button type="button" class="main-slider-prev"><img src="<?= get_template_directory_uri()?>/dist/img/home/slider-buttons/left.png" alt="seta pra esquerda"></button>
-                        <button type="button" class="main-slider-next"><img src="<?= get_template_directory_uri()?>/dist/img/home/slider-buttons/right.png" alt="seta pra direita"></button>
-                    </div>
-                </div>
+                    <?php endif; ?>
+                <?php endwhile; endif; ?>
             </div>
             <div id="left-background"><span>Desenvolvimento Humano e Organizacional</span></div>
         </section>
@@ -89,54 +89,58 @@
         </section>
 
         <?php 
-            $especialidades = array(
-                array("img"=>"/dist/img/home/slider-especialidades/icons/industria.png", "nome"=>"Indústria", "cor"=>"#C6565A"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/porto.png", "nome"=>"Porto", "cor"=>"#1D3E73"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/logistica.png", "nome"=>"Logistica", "cor"=>"#6B364F"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/agenciamento.png", "nome"=>"Agenciamento Marítmo", "cor"=>"#181818"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/servico.png", "nome"=>"Serviço", "cor"=>"#312626"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/energia.png", "nome"=>"Energia", "cor"=>"#FFB500"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/construcao.png", "nome"=>"Construção", "cor"=>"#654B2D"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/automotivo.png", "nome"=>"Automotivo", "cor"=>"#300141"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/tecnologia.png", "nome"=>"Tecnologia", "cor"=>"#21385D"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/quimico.png", "nome"=>"Químico e Petroquímico", "cor"=>"#B3050D"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/oleo.png", "nome"=>"Óleo e Gás", "cor"=>"#5F5F5F"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/farma.png", "nome"=>"Farma", "cor"=>"#05ACB7"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/transportes.png", "nome"=>"Transportes", "cor"=>"#21385D"),
-                array("img"=>"/dist/img/home/slider-especialidades/icons/agro.png", "nome"=>"Agro", "cor"=>"#00A341")
-            )
+            $args = array(
+                'post_type' => 'setores',
+                'posts_per_page'=> 20,
+            );
+            
+            $setoresQuery = new WP_Query($args);
         ?>
         <section class="slider-especialidades">
             <div class="slider-especialidades-header">
                 <div class="especialidades-header-wrapper">
-                    <?php foreach($especialidades as $key => $especialidade) { ?>
+                    <?php if($setoresQuery->have_posts()): while($setoresQuery->have_posts()): $setoresQuery->the_post(); ?>
                         <div class="especialidades-header-info">
                             <div class="especialidades-slide-headerinfo">
                                 <div class="especialidades-texto">
-                                    <img src="<?=get_template_directory_uri()?><?php echo $especialidade["img"]?>" alt="<?php echo $especialidade["nome"]?>">
-                                    <h2><?php echo $especialidade["nome"]?></h2>
+                                    
+                                <?php 
+                                    $image = get_field('icone');
+                                    if( !empty( $image ) ): ?>
+                                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                <?php endif; ?>
+
+                                    <h2><?=get_the_title()?></h2>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sequi officiis rem voluptates repudiandae. Modi nam aperiam et blanditiis 
-                                        animi rem facere voluptates magni, sit commodi incidunt alias sunt, enim ea quod sequi impedit ducimus neque, placeat quidem facilis 
+                                        <?=get_field('descricao')?>
                                     </p>
                                 </div>
                             </div>
                             <div class="especialidades-img-wrapper">
-                                <img class="especialidades-header-img" src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/industria.png" alt="<?php echo $especialidade["nome"]?>">
+                                <?php 
+                                    $image = get_field('imagem');
+                                    if( !empty( $image ) ): ?>
+                                        <img class="especialidades-header-img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                <?php endif; ?>
                             </div>
                         </div>
-                    <?php } ?>
+                    <?php endwhile; endif; ?>
                 </div>
                 
             </div>
             <div class="slider-especialidades-slider">
                 <div class="slider-especialidades-slides">
-                    <?php foreach($especialidades as $key => $especialidade) { ?>
-                        <div class="slider-especialidades-slide" style="background-color: <?=$especialidade["cor"]?>">
-                            <img src="<?=get_template_directory_uri()?><?php echo $especialidade["img"]?>" alt="imagem de uma industria">
-                            <span><?=$especialidade["nome"]?></span>
+                    <?php if($setoresQuery->have_posts()): while($setoresQuery->have_posts()): $setoresQuery->the_post(); ?>
+                        <div class="slider-especialidades-slide" style="background-color: <?=get_field('cor')?>">
+                            <?php 
+                                $image = get_field('icone');
+                                if( !empty( $image ) ): ?>
+                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php endif; ?>
+
+                            <span><?=get_the_title()?></span>
                         </div>
-                    <?php } ?>
+                    <?php endwhile; endif; ?>
                 </div>
                 <div class="slider-especialidades-button">
                     <button id="slider-especialidades-prev"><img src="<?=get_template_directory_uri()?>/dist/img/home/slider-especialidades/setas/left.png" alt="seta pra esquerda"></button>
@@ -145,25 +149,23 @@
             </div>
         </section>
 
+        <?php 
+            $args = array(
+                'post_type' => 'numeros_home',
+                'posts_per_page'=> 4,
+            );
+            
+            $numerosQuery = new WP_Query($args);
+        ?>
         <section class="onde-chegamos">
             <div class="contagem-candidatos-contratados">
                 <div class="contagem-content">
-                    <div class="contagem-info">
-                        <h2>97%</h2>
-                        <p>Dos candidatos contratados por nós,permanecem por pelo menos 15 meses na empresa.</p>
-                    </div>
-                    <div class="contagem-info">
-                        <h2>+10MIL</h2>
-                        <p>Posições realizadas por nós, somados todo Know How de nosso time.</p>
-                    </div>
-                    <div class="contagem-info">
-                        <h2>+500</h2>
-                        <p>Mais de 500 clientes atendidos em todo território nacional.</p>
-                    </div>
-                    <div class="contagem-info">
-                        <h2>12</h2>
-                        <p>Nossa operação está presente em 12 estados do país.</p>
-                    </div>
+                    <?php if($numerosQuery->have_posts()): while($numerosQuery->have_posts()): $numerosQuery->the_post(); ?>
+                        <div class="contagem-info">
+                            <h2><?=get_field('titulo')?></h2>
+                            <p><?=get_field('descricao')?></p>
+                        </div>
+                    <?php endwhile; endif; ?>
                 </div>
             </div>
 
@@ -186,19 +188,39 @@
                     </ul>
                 </div>
             </div>
+
+            <?php 
+                $args = array(
+                    'post_type' => 'mapa_home',
+                    'posts_per_page'=> 1,
+                );
+                
+                $mapaQuery = new WP_Query($args);
+            ?>
             <div class="capilaridade">
-                <span>Capilaridade nacional</span>
-                <h2>Estamos presentes onde você precisa.</h2>
-                <a href="#" class="capilaridade-button">fale com nosso time</a>
+                <?php if($mapaQuery->have_posts()): while($mapaQuery->have_posts()): $mapaQuery->the_post(); ?>
+                    <span>Capilaridade nacional</span>
+                    <h2><?=get_the_title()?></h2>
+                    <a href="<?=get_field('link_botao')?>" class="capilaridade-button">fale com nosso time</a>
+                <?php endwhile; endif; ?>
             </div>
         </section>
 
+        <?php 
+            $args = array(
+                'post_type' => 'nossos_servicos',
+                'posts_per_page'=> 1,
+            );
+            
+            $servicosQuery = new WP_Query($args);
+        ?>
         <section class="nossos-servicos">
             <img id="nossos-servicos-logo" src="<?=get_template_directory_uri()?>/dist/img/min-logo.png" alt="Logo minimalista do grupo Sartori.">
             <div class="nossos-servicos-content">
-                <h2>Nossos serviços</h2>
+                <?php if($servicosQuery->have_posts()): while($servicosQuery->have_posts()): $servicosQuery->the_post(); ?>
+                <h2><?php echo get_the_title()?></h2>
 
-                <span>Somos especializados em contratação para o setor portuário</span>
+                <span><?=get_field('descricao')?></span>
 
                 <ul>
                     <li><a href="#">Recrutamento e Seleção</a></li>
@@ -214,62 +236,62 @@
                     <li><a href="#">Gestão de Talentos</a></li>
                 </ul>
 
-                <a href="#">Saiba mais</a>
+                <a href="<?=get_field('link_botao')?>">Saiba mais</a>
+
+                <?php endwhile; endif; ?>
                 <div id="servico-background"></div>
             </div>
         </section>
 
+
+        <?php 
+            $args = array(
+                'post_type' => 'saiu_midia',
+                'posts_per_page'=> 6,
+            );
+            
+            $midiaQuery = new WP_Query($args);
+        ?>
         <section class="saiu-na-midia">
             <div class="midia-content">
                 <h2>Saiu na mídia</h2>
 
                 <div class="midia-grid">
-                    <a href="#" class="midia-post">
-                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
-                    </a>
-                    <a href="#" class="midia-post">
-                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
-                    </a>
-                    <a href="#" class="midia-post">
-                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
-                    </a>
-                    <a href="#" class="midia-post">
-                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
-                    </a>
-                    <a href="#" class="midia-post">
-                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
-                    </a>
-                    <a href="#" class="midia-post">
-                        <p><span>02/09/2020 - </span> Conheça a consultoria mais tecnológica do seguimento de Porto.</p>
-                    </a>
+                    <?php if($midiaQuery->have_posts()): while($midiaQuery->have_posts()): $midiaQuery->the_post(); ?>
+                        <a href="<?=get_field('link')?>" class="midia-post">
+                            <p><span><?=get_field('data')?> - </span> <?=get_the_title()?></p>
+                        </a>
+                    <?php endwhile; endif; ?>
                 </div>
 
-                <a id="midia-veja-mais" href="#">veja outras notícias <img src="<?=get_template_directory_uri()?>/dist/img/home/seta-lista.png" alt="Seta pra direita"></a>
+                <a id="midia-veja-mais" href="<?=$homeUrl?>/saiu_midia">veja outras notícias <img src="<?=get_template_directory_uri()?>/dist/img/home/seta-lista.png" alt="Seta pra direita"></a>
             </div>
         </section>
 
         <?php 
-            $blog_posts = array(
-                array("data"=>"27/01/2021", "titulo"=>"COMO MANDAR Bem NUMA ENTREVISTA", "descricao"=>"Cerca de 40% dos entrevistados, poderiam ser aprovados nas entrevistas, mas esbarram em coisas simples:"),
-                array("data"=>"27/01/2021", "titulo"=>"O QUE FAZER PARA SE DESTACAR EM UM PROCESSO SELETIVO", "descricao"=>"Assim como qualquer momento crucial da sua vida, quando você encontra a vaga certa"),
-                array("data"=>"27/01/2021", "titulo"=>"O QUE É PRECISO PARA TER SUCESSO E RECONHECIMENTO ", "descricao"=>"O tão sonhado reconhecimento profissional. Quem nunca trabalhou duro para receber um elogio."),
-            )
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page'=> 3,
+            );
+            
+            $blogQuery = new WP_Query($args);
         ?>
         <section class="ultimas-do-blog">
             <div class="ultimas-blog-content">
                 <h2>últimas do blog</h2>
 
                 <div class="ultimas-blog-grid">
-                    <?php foreach($blog_posts as $key => $post) { ?>
+                    
+                    <?php if($blogQuery->have_posts()): while($blogQuery->have_posts()): $blogQuery->the_post(); ?>
                         <div class="ultimas-blog-post">
                             <div class="blog-post-header">
-                                <span><?=$post["data"]?></span>
-                                <h3><?=$post["titulo"]?></h3>
-                                <p><?=$post["descricao"]?></p>
+                                <span><?=get_the_date()?></span>
+                                <h3><?=get_the_title()?></h3>
+                                <p><?=get_the_excerpt()?></p>
                             </div>
-                            <div class="blog-post-link"><img src="<?=get_template_directory_uri()?>/dist/img/home/mais-icon.png" alt="Ícone de mais, dando a entender que seja um link."></div>
+                            <a href="<?=get_permalink()?>" class="blog-post-link"><img src="<?=get_template_directory_uri()?>/dist/img/home/mais-icon.png" alt="Ícone de mais, dando a entender que seja um link."></a>
                         </div>
-                    <?php } ?>
+                    <?php endwhile; endif; ?>
                 </div>
             </div>
         </section>

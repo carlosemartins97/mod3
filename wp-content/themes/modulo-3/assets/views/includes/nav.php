@@ -11,7 +11,7 @@
         <ul class="nav-bar">
             <li class="nav-link"><a href="<?=$homeUrl?>/sobre">Sobre nós</a></li>
             <li class="nav-link"><a href="#">Para sua Empresa</a></li>
-            <li class="nav-link"><a href="#">Para profissionais</a></li>
+            <li class="nav-link"><a href="<?=$homeUrl?>/para-profissionais">Para profissionais</a></li>
             <li class="nav-link"><a href="<?=$homeUrl?>/blog">Blog</a></li>
             <li class="nav-link"><a href="<?=$homeUrl?>/saiu_midia">Saiu na mídia</a></li>
             <li class="nav-link"><a href="#">Clientes</a></li>

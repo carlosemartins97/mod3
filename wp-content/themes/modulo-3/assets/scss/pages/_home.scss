@@ -16,6 +16,7 @@ section.main-slider-container {
             .main-slider-slide {
                 flex-direction: column;
                 justify-content: space-around;
+                min-height: 600px !important;
                 height: 100% !important;
                 .slider-info, .slider-buttons {
                     max-width: 100% !important;
@@ -53,10 +54,10 @@ section.main-slider-container {
             }
         }
 
-        #slide-1, #slide-2 {
-            background: url('../img/home/main-slider.png') no-repeat;
-            background-size: cover;
-            background-position: top;
+        .slide-1 {
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
         }
         .main-slider-slide {
             height: 100%;
@@ -79,7 +80,7 @@ section.main-slider-container {
                 }
             }
             @media(max-width: 768px){
-                
+                min-height: calc(100vh - 151px) !important;
                 .slider-buttons {
                     padding-top: 20px !important;
                 }
@@ -118,14 +119,19 @@ section.main-slider-container {
                         font-size: 30px;
                         line-height: 50px;
                     }
+                    @media(max-width: 1170px) {
+                        max-width: 440px;
+                    }
                     @media(max-width: 768px){
                         font-size: 24px;
                         line-height: 30px;
+                        
                     }
                 }
             }
             .slider-links {
                 max-width: 440px;
+                width: 100%;
                 min-height: 220px;
                 padding-top: 50px;
                 span {
@@ -208,7 +214,7 @@ section.main-slider-container {
     }
     #left-background {
         position: absolute;
-        bottom: -70%;
+        bottom: -75%;
         left: -14%;
 
         color: $white;
@@ -227,7 +233,7 @@ section.main-slider-container {
         border-radius: 20%;
         height: 100%;
         padding: 100px 0 0 200px;
-        @media(max-width: 768px){
+        @media(max-width: 1000px){
             display: none;
         }
     }
@@ -450,6 +456,7 @@ section.slider-especialidades {
 
                     .especialidades-texto {
                         max-width: 500px;
+                        min-width: 500px;
 
                         padding-left: 50px;
                         background: $default_grey;
@@ -469,6 +476,7 @@ section.slider-especialidades {
                         }
                         @media(max-width: 1100px){
                             padding-left: unset;
+                            min-width: auto;
                         }
                     }
                     @media(max-width: 1100px){
@@ -483,6 +491,7 @@ section.slider-especialidades {
                             font-size: 15px !important;
                         }
                     }
+
                     @media(max-width: 400px){
                         padding: 20px 10px;
                         text-align: center;
@@ -508,6 +517,7 @@ section.slider-especialidades {
                 }
             .especialidades-header-img {
                 width: 100%;
+                height: 500px;
                 object-fit: cover;
                 position: static;
                 z-index: 50;
@@ -1203,9 +1213,11 @@ section.saiu-na-midia {
                 display: block;
                 color: $blue;
                 padding: 50px;
+                min-height: 180px;
                 max-width: 390px;
                 width: 100%;
                 transition: all 0.3s;
+                overflow: hidden;
                 p {
                     font-size: 15px;
                     line-height: 27px;
@@ -1220,6 +1232,12 @@ section.saiu-na-midia {
                 }
                 &:hover {
                     box-shadow: 0px 4px 50px rgba(150, 132, 190, 0.18);
+                }
+                @media(max-width: 768px) {
+                    max-height: 180px;
+                }
+                @media(max-width: 570px){
+                    max-height: unset;
                 }
             }
 
@@ -1362,7 +1380,9 @@ section.ultimas-do-blog {
                display: flex;
                flex-direction: column;
                max-width: 390px;
+               width: 100%;
                margin: 0 10px;
+               
                
                .blog-post-header {
                     background: $white;
@@ -1372,6 +1392,7 @@ section.ultimas-do-blog {
                     padding: 30px;
                     display: flex;
                     flex-direction: column;
+                    overflow: hidden;
                     span {
                         color: $default_yellow;
                         font-size: 17px;
@@ -1393,6 +1414,8 @@ section.ultimas-do-blog {
                         font-weight: 300;
                         line-height: 25px;
                         color: #1C1F25;
+                        max-height: 100px;
+                        overflow: hidden;
                     }
                }
                .blog-post-link {
@@ -1417,15 +1440,21 @@ section.ultimas-do-blog {
                 .ultimas-blog-post {
                     max-width: 100%;
                     margin-bottom: 30px;
+                    padding-right: 20px;
                     .blog-post-header {
                         max-width: 100%;
                         min-height: 180px;
                         height: unset;
+                        min-width: unset;
                         span, p {
                             font-size: 15px;
                         }
                         h3 {
                             font-size: 16px;
+                        }
+                        p {
+                            max-height: unset;
+                            overflow: unset;
                         }
                     }
                 }
