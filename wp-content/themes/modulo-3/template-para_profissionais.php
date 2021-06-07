@@ -22,6 +22,31 @@
             </div>
         </section>
 
+        <section class="profissionais-carreira">
+            <div class="profissionais-carreira-content">
+                <h2>Programa de Carreira e Performance</h2>
+
+                <p>
+                    Não sabe como procurar um novo emprego ou desenhar seu currículo?
+                    Você acabou de encontrar o programa certo pra você. Nosso objetivo é alinhar as suas
+                    expectativas as necessidades do mercado e te preparar para que você conquiste a sua
+                    recolocação.
+                </p>
+
+                <p>
+                    O melhor de tudo é que nós, ainda enviamos o seu material a nossa base de clientes,
+                    para contratações, sem custo adicional para a empresa... que incentivo a contratação,
+                    hein?
+                </p>
+            </div>
+        </section>
+
+        <section class="profissionais-thumb">
+            <img src="<?=get_template_directory_uri()?>/dist/img/profissionais/thumb.png" alt="Imagem de um grupo de pessoas">
+        </section>
+
+
+
         
     </main>
 
