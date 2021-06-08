@@ -30,6 +30,14 @@ section.profissionais-header {
             }
         }
     }
+    @media(max-width: 768px) {
+        img {
+            width: 30px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+    }
 }
 
 section.profissionais-carreira {
@@ -57,6 +65,11 @@ section.profissionais-carreira {
             }
         }
     }
+    @media(max-width: 768px) {
+        .profissionais-carreira-content {
+            padding: 20px 0 40px;
+        }
+    }
 }
 
 section.profissionais-thumb {
@@ -65,5 +78,203 @@ section.profissionais-thumb {
         width: 100%;
         height: 442px;
         object-fit: cover;
+        object-position: -100px;
+    }
+}
+
+section.profissionais-grid {
+    background: $gradient_default;
+    padding: 60px 10px;
+
+    .profissionais-grid-content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+
+        color: $white;
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            line-height: 44px;
+            letter-spacing: 0.035em;
+        }
+
+        .grid-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-content: center;
+            justify-items: center;
+            grid-gap: 30px;
+            margin: 70px 0 40px;
+            .profissionais-grid-post {
+                max-width: 290px;
+                flex: 1;
+    
+                .grid-post-header {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 36px;
+                    
+                    .numero {
+                        margin-right: 12px;
+                        
+                        border-radius:  10px;
+    
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: $yellow-2;
+                        color: $blue;
+    
+                        font-weight: 600;
+                        font-size: 24px;
+    
+                        min-width: 48px;
+                        min-height: 48px;
+                    }
+    
+                    .etapa {
+                        font-size: 16px;
+                        line-height: 20px;
+                        letter-spacing: 0.035em;
+                    }
+                }
+            }
+            @media(max-width: 1000px) {
+                grid-template-columns: repeat(2, 1fr);
+                .profissionais-grid-post {
+                    .grid-post-header {
+                        .numero {
+                            font-size: 20px;
+                            min-width: 40px;
+                            min-height: 40px;
+                        }
+                        .etapa {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+            @media(max-width: 650px) {
+                grid-template-columns: 1fr;
+                grid-gap: 10px;
+                
+            }
+        }
+
+        a {
+            max-width: 330px ;
+            width: 100% ;
+            margin: 0 auto;
+            filter: drop-shadow(0 0.3rem 0.5rem #444);
+            transition: all 0.3s;
+            &:hover {
+                background: $yellow-2;
+                color: $black;
+            }
+        }
+    }
+}
+
+section.profissionais-programa {
+    background: radial-gradient(178.13% 6214.69% at 157.97% -59.37%, #FFFFFF 0%, #FEFEFE 100%);
+    padding: 70px 10px;
+    .profissionais-programa-content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        .opcoes-programa {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            .opcoes {
+                max-width: 270px;
+                width: 100%;
+                padding: 35px 5px 35px 0;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-left: none;
+                cursor: pointer;
+                
+
+                &.slick-current {
+                    background: $white;
+                    box-shadow: 0px 4px 50px rgba(150, 132, 190, 0.18);
+                    border: none;
+                    transform: scaleY(1.1);
+                    position: relative;
+                    z-index: 3;
+                    padding-left: 30px;
+                    transition: all 0.5s;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 10px;
+                    background: $gradient_default;
+                    transition: all 0.3s;
+                }
+
+
+                }
+                
+                h2 {
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 38px;
+                    letter-spacing: 0.035em;
+                    color: $blue;
+                }
+            }
+        }
+        .info-programa {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 710px;
+            width: 100%;
+
+            p {
+                font-size: 16px;
+                line-height:26px;
+                letter-spacing: 0.035em;
+                color: $blue;
+
+                & + p {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    @media(max-width: 768px) {
+        padding: 20px 10px;
+        .profissionais-programa-content {
+            flex-direction: column;
+
+            .opcoes-programa {
+                flex-direction: row;
+                margin: 40px auto;
+                .opcoes {
+                    &.active {
+                        padding-left: 10px;
+                    }
+                    h2 {
+                        font-size: 16px;
+                        line-height: 20px;
+                        padding-left: 10px;
+                        @media(max-width: 400px) {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+
+            .info-programa {
+                flex: 1; 
+            }
+        }
     }
 }

@@ -143,3 +143,22 @@ function integra(){
     ]
 });
 }
+
+function profissionais() {
+  $('.info-programa').slick({
+    slidesToShow: 1,
+    arrows: false,
+    dots: false,
+    fade: true,
+    speed: 800,
+    asNavFor: '.opcoes-programa'
+  });
+  $('.opcoes-programa').slick({
+    slidesToShow: 2,
+    vertical: true,
+    arrows: false,
+    dots: false,
+    focusOnSelect: true,
+    asNavFor: '.info-programa'
+  });
+}
