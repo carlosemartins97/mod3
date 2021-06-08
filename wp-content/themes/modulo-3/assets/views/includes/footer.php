@@ -1,15 +1,40 @@
-<?php $homeUrl = get_home_url() ?>
+<?php $homeUrl = get_home_url();
+
+if($page == 'Para Profissionais') {
+    $args = array(
+        'post_type' => 'info_footer',
+        'posts_per_page'=> 1,
+    );
+    
+    $footerQuery = new WP_Query($args);
+}
+?>
+
 <section class="cadastre-curriculo">
     <div class="cadastre-curriculo-content">
-        <div class="curriculo-info">
-            <h2>Cadastre <span>seu currículo</span></h2>
+        <?php if(isset($footerQuery)) { ?>
+            <?php if($footerQuery->have_posts()): while($footerQuery->have_posts()): $footerQuery->the_post(); ?>
+                <div class="curriculo-info">
+                    <h2><?=get_field('titulo_em_negrito')?> <span><?=get_field('titulo_sem_negrito')?></span></h2>
 
-            <p>Cadastre-se grátis e de forma rápida para se candidatar às melhores vagas.</p>
-        </div>
-        <div class="curriculo-button">
-            <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/dotted2.png" alt="Imagem de detalhe de fundo com vários pontos.">
-            <a href="#">Cadastre-se aqui <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></a>
-        </div>
+                    <p><?=get_field('descricao')?></p>
+                </div>
+                <div class="curriculo-button">
+                    <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/dotted2.png" alt="Imagem de detalhe de fundo com vários pontos.">
+                    <a href="<?=get_field('link_botao')?>"><?=get_field('texto_botao')?> <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></a>
+                </div>
+            <?php endwhile; endif; ?>
+        <?php } else { ?>
+            <div class="curriculo-info">
+                    <h2>Cadastre <span>Seu currículo</span></h2>
+
+                    <p>Cadastre-se grátis e de forma rápida para se candidatar às melhores vagas.</p>
+                </div>
+                <div class="curriculo-button">
+                    <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/dotted2.png" alt="Imagem de detalhe de fundo com vários pontos.">
+                    <a href="#">Cadastre-se aqui<img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></a>
+                </div>
+        <?php } ?>
     </div>
 </section>
 

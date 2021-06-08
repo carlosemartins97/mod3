@@ -134,11 +134,8 @@
                 </div>
             </div>
         </section>
-
-
-
-        
     </main>
+
 
     <?php include_once get_template_directory() . '/assets/views/includes/footer.php' ?>
     

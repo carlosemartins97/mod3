@@ -64,6 +64,15 @@ function my_post_type() {
     );
 
     register_post_type('slider_principal', $args6);
+
+    //Bloco padrão cadastre currículo
+    $args7 = array (
+        'labels'=> ['name'=>'Info Footer'],
+        'public' => true,
+        'supports' => ['']
+    );
+
+    register_post_type('info_footer', $args7);
 }
 
 add_action('init', 'my_post_type');

@@ -47,8 +47,8 @@ section.cadastre-curriculo {
                 margin-top: -20px;
                 display: flex;
                 align-items: center; 
-                padding: 20px 30px 20px 80px;
-                text-align: right;
+                justify-content: flex-end;
+                padding: 20px 20px 20px 20px;
                 width: 100%;
                 max-width: 330px;
                 background: $black;
