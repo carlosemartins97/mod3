@@ -73,6 +73,39 @@ function my_post_type() {
     );
 
     register_post_type('info_footer', $args7);
+
+    //Para profissionais grid
+    $args8 = array (
+        'labels'=> ['name'=>'Grid Para profissionais'],
+        'public' => true,
+        'supports' => ['title']
+    );
+
+    register_post_type('grid_profissionais', $args8);
+
+    //Para profissionais Thumb
+    $args9 = array (
+        'labels'=> ['name'=>'Thumbnail Para profissionais'],
+        'public' => true,
+        'supports' => ['title']
+    );
+    register_post_type('thumb_profissionais', $args9);
+
+    //Para profissionais Bloco 1
+    $args10 = array (
+        'labels'=> ['name'=>'Introdução Para profissionais'],
+        'public' => true,
+        'supports' => ['title', 'editor']
+    );
+    register_post_type('intro_profissionais', $args10);
+
+    //Para profissionais Bloco 1
+    $args12 = array (
+        'labels'=> ['name'=>'Programas Para profissionais'],
+        'public' => true,
+        'supports' => ['title', 'editor']
+    );
+    register_post_type('prog_profissionais', $args12);
 }
 
 add_action('init', 'my_post_type');

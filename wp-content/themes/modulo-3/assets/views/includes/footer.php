@@ -1,15 +1,6 @@
 <?php $homeUrl = get_home_url();
 
-if($page == 'Para Profissionais') {
-    $args = array(
-        'post_type' => 'info_footer',
-        'posts_per_page'=> 1,
-    );
-    
-    $footerQuery = new WP_Query($args);
-}
 ?>
-
 <section class="cadastre-curriculo">
     <div class="cadastre-curriculo-content">
         <?php if(isset($footerQuery)) { ?>

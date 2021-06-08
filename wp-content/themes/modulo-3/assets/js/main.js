@@ -150,8 +150,8 @@ function profissionais() {
     arrows: false,
     dots: false,
     fade: true,
-    speed: 800,
-    asNavFor: '.opcoes-programa'
+    speed: 500,
+    draggable: false,
   });
   $('.opcoes-programa').slick({
     slidesToShow: 2,
@@ -159,6 +159,7 @@ function profissionais() {
     arrows: false,
     dots: false,
     focusOnSelect: true,
+    draggable: false,
     asNavFor: '.info-programa'
   });
 }
