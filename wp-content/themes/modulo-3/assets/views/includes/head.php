@@ -24,7 +24,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/jsSocials/1.5.0/jssocials.css" rel="stylesheet">
     <?php } ?>
 
-    <?php if($page == 'Para Profissionais') {?>
+    <?php if($page == 'Para Profissionais' or $page == 'Para sua empresa') {?>
         <link href="<?php echo get_template_directory_uri()?>/assets/utils/slick.css" rel="stylesheet">
         <link href="<?php echo get_template_directory_uri()?>/assets/utils/slick-theme.css" rel="stylesheet">
     <?php } ?>

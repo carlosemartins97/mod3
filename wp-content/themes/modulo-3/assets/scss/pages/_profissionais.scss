@@ -161,9 +161,13 @@ section.profissionais-grid {
                 }
             }
             @media(max-width: 650px) {
+                
                 grid-template-columns: 1fr;
                 grid-gap: 10px;
                 
+                .grid-post-header {
+                    margin-bottom: 20px !important;
+                }
             }
         }
 
@@ -196,14 +200,16 @@ section.profissionais-programa {
 
             .slick-list {
                 overflow: unset;
+                height:100% !important;
+                border-right: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             }
             
             .opcoes {
-                max-width: 270px;
-                width: 100%;
+                max-width: 300px !important;
+                width: 100% !important;
                 padding: 35px 5px 35px 0;
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                border-left: none;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
                 cursor: pointer;
                 
 
@@ -245,7 +251,8 @@ section.profissionais-programa {
             padding: 0 20px;
             max-width: 710px;
             width: 100%;
-
+            color: $blue;
+            
             p, ul {
                 font-size: 16px;
                 line-height:26px;
@@ -256,17 +263,31 @@ section.profissionais-programa {
 
             ul {
                 li {
+                    height: 100%;
+                    padding: 10px 5px;
+                    transition: all 0.3s;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
                     &::before {
-                        content: '•';
-                        font-size: 20px;
-                        font-weight: bold;
-                        margin-right: 5px;
+                        content: url('../img/empresa/checkmark.png');
+                        background: $yellow-2;
+                        padding: 0 8px;
+                        padding-top: 5px;
+                        border-radius: 100%;
+                        margin-right: 10px;
+                    }
+                    &:hover {
+                        transform: translateX(10px);
                     }
                 }
             }
+            @media(max-width: 768px){
+                margin-top: 30px;
+            }
         }
     }
-    @media(max-width: 768px) {
+    @media(max-width: 900px) {
         padding: 20px 10px;
         .profissionais-programa-content {
             flex-direction: column;

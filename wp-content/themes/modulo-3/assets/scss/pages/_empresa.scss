@@ -1,0 +1,264 @@
+@import '../utils/variaveis';
+
+main.empresa {
+    overflow-x: hidden;
+}
+
+section.empresa-numeros {
+    background: $gradient_default;
+    padding: 40px 10px 30px;
+    .numeros-content {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+        color: $white;
+
+        .numeros-post {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 280px;
+            width: 100%;
+
+            & + .numeros-post {
+                margin-left: 25px;
+            }
+
+            .numeros-post-header {        
+                h2 {
+                    font-size: 59px;
+                    text-transform: uppercase;
+                    color: $default_yellow;
+                }
+    
+                p {
+                    line-height: 30px;
+                    letter-spacing: 0.035em;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    @media(max-width: 1200px) {
+        .numeros-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+
+            .numeros-post {
+                & + .numeros-post {
+                    margin-left: unset;
+                }
+            }
+        }
+        h2 {
+            font-size: 40px !important;
+        }
+    }
+    @media(max-width: 768px) {
+        .numeros-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            font-size: 24px !important; 
+        }
+    }
+}
+
+section.empresa-treinamentos {
+    background: $gradient_default;
+    padding: 65px 10px 150px;
+    border-bottom: 1px solid rgba(255,255,255, 0.5);
+    h2 {
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 100%;
+        padding-left: 40px;
+        margin-bottom: 65px;
+        color: $white;
+        font-size: 35px;
+
+        text-transform: uppercase;
+    }
+    .treinamentos-content {
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        
+        .treinamentos-wrapper {
+            max-width: 350px;
+            width: 100%;
+            
+
+            .treinamentos {
+                display: flex;
+                align-items: center;
+                justify-items: center;
+                min-height: 130px;
+                flex: 1;
+                padding: 25px 30px 25px 40px;
+                transition: all 0.3s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba(255,255,255,0.05);
+                }
+                
+                .img-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 20px;
+                    height: 78px;
+                    width: 78px;
+                    background: $yellow-2;
+                    margin-right: 40px;
+                    transition: transform 0.3s;
+                    position: relative;
+                }
+
+                span {
+                    color: $white;
+                    font-size: 15px;
+                    font-weight: 600;
+                    line-height: 20px;
+                    letter-spacing: 0.035em;
+                    max-width: 160px;
+                }
+
+                &.slick-current {
+                    transition: all 0.3s;
+                    background-color: rgba(255,255,255,0.1);
+                    .img-wrapper {
+                        transform: rotate(45deg);
+                        img {
+                            transform: rotate(-45deg);
+                        }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 115%;
+                            height: 115%;
+                            border-radius: 20%;
+                            border: 1px solid $white;
+                        }
+                        
+                    }
+                }
+                
+                
+            }
+        }
+
+        .info-treinamento {
+            color: $white;
+            padding: 60px 70px;
+            background-color: rgba(255,255,255,0.1);
+            max-width: 850px;
+            width: 100%;
+
+            p, ul {
+                line-height:26px;
+                letter-spacing: 0.035em;
+                margin-bottom: 20px;
+            }
+
+            ul {
+                li {
+                    height: 100%;
+                    margin-bottom: 10px;
+                    transition: all 0.3s;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    &::before {
+                        content: url('../img/empresa/checkmark.png');
+                        background: $yellow-2;
+                        padding: 0 8px;
+                        padding-top: 5px;
+                        border-radius: 100%;
+                        margin-right: 10px;
+                    }
+                    &:hover {
+                        transform: translateX(10px);
+                    }
+                }
+            }
+        }
+        
+    }
+    @media(max-width: 1220px) {
+        padding: 30px 10px;
+        h2 {
+            text-align: center;
+            padding-left: 0;
+            font-size: 24px;
+        }
+        .treinamentos-content {
+            flex-direction: column;
+
+            .treinamentos-wrapper {
+                display: flex;
+                flex-direction: row !important;
+                max-width: unset;
+
+                .treinamentos {
+                    .img-wrapper {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 20%;
+                        margin-right: 20px;
+                        img {
+                            width: 50%;
+                        }
+                        &::before {
+                            border-radius: 10px;
+                        }
+                    }
+                }
+            }
+            .info-treinamento {
+                max-width: unset;
+            }
+        }
+    }
+    @media(max-width: 768px) {
+        .info-treinamento {
+            padding: 30px !important;
+        }
+        .treinamentos {
+            padding: 20px 30px !important;
+            flex-direction: column !important;
+            min-height: 160px !important;
+            flex: 1 !important;
+            justify-content: center !important;
+
+            .img-wrapper {
+                width: 40px !important;
+                height: 40px !important;
+                margin-right: unset !important;
+                margin-bottom: 20px;
+            }
+
+            span {
+                display: block !important;
+                margin: 0 auto;
+                font-size: 11px !important;
+                max-width: 100% !important;
+                text-align: center !important;
+            }
+        }
+    }
+    @media(max-width: 420px) {
+        .treinamentos {
+            min-height: 180px !important;
+        }
+    }
+}

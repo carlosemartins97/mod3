@@ -163,3 +163,64 @@ function profissionais() {
     asNavFor: '.info-programa'
   });
 }
+
+function empresa() {
+  $('.info-treinamento').slick({
+    slidesToShow: 1,
+    arrows: false,
+    dots: false,
+    fade: true,
+    speed: 500,
+    draggable: false,
+  });
+  $('.treinamentos-wrapper').slick({
+    slidesToShow: 5,
+    vertical: true,
+    arrows: false,
+    dots: false,
+    focusOnSelect: true,
+    draggable: false,
+    asNavFor: '.info-treinamento',
+    responsive: [
+      {
+        breakpoint: 1221,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          vertical: false,
+          draggable: true
+        }
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          vertical: false,
+          draggable: true
+        }
+      },
+    ]
+  });
+
+
+  $('.info-programa').slick({
+    slidesToShow: 1,
+    arrows: false,
+    dots: false,
+    fade: true,
+    speed: 500,
+    draggable: false,
+  });
+  $('.opcoes-programa').slick({
+    slidesToShow: 4,
+    vertical: true,
+    arrows: false,
+    dots: false,
+    focusOnSelect: true,
+    draggable: false,
+    asNavFor: '.info-programa'
+  });
+}

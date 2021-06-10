@@ -10,8 +10,12 @@
                 <li><a href="<?=$homeUrl?>/sobre"><?=$page?></a></li>
             <?php } elseif($page == 'Para Profissionais') {?>
                 <li><a href="<?=$homeUrl?>/para-profissionais"><?=$page?></a></li>
+            <?php } elseif($page == 'Para sua empresa') {?>
+                <li><a href="<?=$homeUrl?>/para-empresa"><?=$page?></a></li>
             <?php } elseif($page == 'Saiu na mídia') {?>
                 <li><a href="<?=$homeUrl?>/saiu_midia"><?=$page?></a></li>
+            <?php } elseif($page == 'Orçamento') {?>
+                <li><a href="<?=$homeUrl?>/orcamento"><?=$page?></a></li>
             <?php } else { ?>
                 <li><a href="blog">Blog</a></li>
             <?php } ?>

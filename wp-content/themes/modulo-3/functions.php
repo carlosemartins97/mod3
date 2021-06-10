@@ -106,6 +106,48 @@ function my_post_type() {
         'supports' => ['title', 'editor']
     );
     register_post_type('prog_profissionais', $args12);
+
+    $args13 = array (
+        'labels'=> ['name'=>'Introdução Para Empresa'],
+        'public' => true,
+        'supports' => ['title', 'editor']
+    );
+    register_post_type('intro_empresa', $args13);
+
+    $args14 = array (
+        'labels'=> ['name'=>'Thumbnail Para Empresa'],
+        'public' => true,
+        'supports' => ['title']
+    );
+    register_post_type('thumb_empresa', $args14);
+
+    $args15 = array (
+        'labels'=> ['name'=>'Footer Para Empresa'],
+        'public' => true,
+        'supports' => ['']
+    );
+    register_post_type('footer_empresa', $args15);
+
+    $args16 = array (
+        'labels'=> ['name'=>'Programas Para Empresa'],
+        'public' => true,
+        'supports' => ['title', 'editor']
+    );
+    register_post_type('prog_empresa', $args16);
+
+    $args17 = array (
+        'labels'=> ['name'=>'Numeros Para Empresa'],
+        'public' => true,
+        'supports' => ['title']
+    );
+    register_post_type('numeros_empresa', $args17);
+
+    $args18 = array (
+        'labels'=> ['name'=>'Treinamentos Para Empresa'],
+        'public' => true,
+        'supports' => ['title', 'editor']
+    );
+    register_post_type('treinamentos_empresa', $args18);
 }
 
 add_action('init', 'my_post_type');
