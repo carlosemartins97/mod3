@@ -1,1 +1,227 @@
 @import '../utils/variaveis';
+
+section.orcamento-header {
+    background: url('../img/orcamento/thumb.png') no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+
+    .orcamento-header-container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        height: 410px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        position: relative;
+
+        h1 {
+            font-size: 35px;
+            line-height: 45px;
+            text-transform: uppercase;
+            color: $white;
+        }
+    }
+}
+
+section.orcamento-form {
+    background: $gradient_default;
+    padding: 50px 10px 140px;
+    position: relative;
+    .orcamento-form-content {
+        max-width: 850px;
+        width: 100%;
+        margin:0 auto;
+        .form-wrapper {
+            max-width: 850px;
+            width: 100%;
+            color: $white;
+            position: relative;
+            
+            h2 {
+                font-size: 33px;
+                line-height: 45px;
+                text-align: center;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+            p {
+                font-weight: 300;
+                font-size: 21px;
+                line-height: 29px;
+                text-align: center;
+            }
+
+            form {
+                margin-top: 80px;
+                label {
+                    line-height: 28px;
+                    letter-spacing: 0.015em;
+                }
+                input, textarea, select {
+                    border: 1px solid #CDCDCD;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    background: transparent;
+                    padding: 5px;
+                    color: $white;
+                    height: 50px;
+                    font-size: 20px;
+                    &:focus {
+                        background: $white;
+                        color: $black;
+                    }
+                }
+                textarea {
+                    height: 110px;
+                }
+                .nome, .tipo, .email, .tel, .cel, .mensagem {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .nome-tipo {
+                    display: flex;
+                    .nome , .tipo{
+                        flex: 1;
+                    }
+                    .nome {
+                        margin-right: 5px;
+                    }
+                    .tipo {
+                        margin-left: 5px;
+                    }
+                }
+                .email-tel-cel {
+                    display: flex;
+                    justify-content: space-between;
+                    .email {
+                        width: 420px;
+                    }
+                    
+                    .tel-cel {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 420px;
+                        .tel, .cel {
+                            width: 49%;
+                        }
+                        
+                    }
+                }
+
+                .termos {
+                    max-width: 400px;
+                    width:100%;
+                    display: flex;
+                    margin-top: 20px;
+                    label {
+                        margin-left: 10px;
+                        margin-top: 12px;
+                    }
+                }
+
+                .recaptcha {
+                    margin-top: 30px;
+                    background: $white;
+                    max-width: 360px;
+                    padding: 25px 20px 20px;
+                    border-radius: 10px;
+
+                    span {
+                        color: $black;
+                        display: block;
+                        text-align: center;
+                        margin-bottom: 15px;
+                    }
+                    .g-recaptcha {
+                        > div {
+                            margin-right: unset;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+
+                button {
+                    margin-top: 50px;
+                    max-width: 50%;
+                    min-width: 235px;
+                    width: auto;
+                    border: none;
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: -250px;
+                width: 25%;
+                height: 110%;
+                border-left: 1px solid rgba(255,255,255,0.2);
+                border-top: 1px solid rgba(255,255,255,0.2);
+                border-top-left-radius: 100px;
+                z-index: 0;
+        
+            }
+        }
+    }
+
+    
+}
+
+section.orcamento-contato {
+    padding: 80px 10px;
+    .contato-content {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        h2 {
+            font-size: 33px;
+            line-height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            max-width: 500px;
+            margin: 0 auto;
+            margin-bottom: 60px;
+        }
+        .contato-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            .contato {
+                background: linear-gradient(180deg, #BA9FB0 0%, #56558B 100%);
+                -webkit-box-shadow: 0px 18px 28px -18px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 18px 28px -18px rgba(0,0,0,0.75);
+                box-shadow: 0px 18px 28px -18px rgba(0,0,0,0.75);
+                border-radius: 8px;
+                max-width: 340px;
+                width: 100%;
+                padding: 10px 20px 20px 20px;
+                display: flex;
+                align-items: center;
+                color: $white;
+
+                > div {
+                    margin-left: 30px;
+                    .titulo {
+                        display: block;
+                        font-size: 14px;
+                        letter-spacing: 0.04em;
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+                    }
+                    .ddd, .numero {
+                        font-weight: 300;
+                        font-size: 27px;
+                        text-transform: uppercase;
+                    }
+                    .numero {
+                        font-weight: 900;
+                    }
+                }
+            }
+        }
+    }
+}

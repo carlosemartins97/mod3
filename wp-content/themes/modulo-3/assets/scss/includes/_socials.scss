@@ -1,0 +1,54 @@
+@import '../utils/variaveis';
+
+.sobre-socials {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: -84px;
+    left: 5%;
+    .sobre-socials-content {
+        width: 77px;
+        height: 84px;
+        
+        a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                transition: all 0.3s;
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+    .face {
+        background: $default_grey;
+    }
+    .insta {
+        background: $yellow-2;
+    }
+    @media(max-width: 1000px){
+        bottom: -60px;
+        left: 1%;
+        .sobre-socials-content {
+            width: 50px;
+            height: 60px;
+        }
+    }
+    @media(max-width: 1000px){
+        bottom: -60px;
+        left: 1%;
+        .sobre-socials-content {
+            width: 50px;
+            height: 60px;
+        }
+    }
+}

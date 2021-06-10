@@ -14,7 +14,7 @@
             <li class="nav-link"><a href="<?=$homeUrl?>/para-profissionais">Para profissionais</a></li>
             <li class="nav-link"><a href="<?=$homeUrl?>/blog">Blog</a></li>
             <li class="nav-link"><a href="<?=$homeUrl?>/saiu_midia">Saiu na mídia</a></li>
-            <li class="nav-link"><a href="#">Clientes</a></li>
+            <li class="nav-link"><a href="<?=$homeUrl?>/orcamento">Clientes</a></li>
         </ul>
         <a href="#" id="nav-contato" >Contatos</a>
     </div>

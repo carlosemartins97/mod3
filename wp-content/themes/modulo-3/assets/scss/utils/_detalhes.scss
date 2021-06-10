@@ -10,7 +10,7 @@
     color: $white;
     text-transform: uppercase;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: all 0.3s;
     >img {
         margin-left: 20px;
         background: $default_yellow;
@@ -18,6 +18,7 @@
         padding: 5px;
     }
     &:hover {
-        color: $default_yellow;
+        color: $white;
+        background-color: $default_yellow;
     }  
 }
