@@ -174,72 +174,7 @@ section.contato-container {
                     }
                 }
             }
-        }
-
-        .contato-contatos {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            max-width: 300px;
-            width: 100%;
-
-            h3 {
-                text-align: right;
-            }
-
-            > a {
-                display: block;
-                text-transform: uppercase;
-                font-size: 14px;
-                transition: all 0.3s;
-                padding: 5px 0;
-                padding-left: 10px;
-                &:hover {
-                    transform: scale(1.1);
-                }
-
-            }
-
-            .contato-contatos-card {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                
-                border-radius: 10px;
-                padding: 20px 10px;
-                margin-bottom: 10px;
-
-                transition: all 0.3s;
-                border: 1px solid transparent;
-
-                &:hover {
-                    border-color: $default_yellow;
-                }
-                img {
-                    width: 31px;
-                    height: 31px;
-                    margin-right: 10px;
-                }
-                
-                .contatos-card-info {
-                    display: flex;
-                    flex-direction: column;
-                    width: 100%;
-                    small {
-                        font-size: 13px;
-                        text-transform: uppercase;
-                    }
-                    span {
-                        font-size: 24px;
-                        line-height: 35px;
-                        strong {
-                            font-weight: 800;
-                        }
-
-                    }
-                    
-                }
-            }
+            
         }
         @media(max-width: 1100px){
             flex-direction: column;
@@ -252,19 +187,19 @@ section.contato-container {
             ul, span {
                 max-width: 300px;
             }
-
+        
             #titulo-contato {
                 text-align: center;
             }
-
+        
             .onde-estamos-social {
                 justify-content: center;
             }
-
+        
             > div {
                 margin-bottom: 80px;
             }
-
+        
             .contato-contatos > a {
                 font-size: 15px;
             }

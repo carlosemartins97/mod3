@@ -16,6 +16,6 @@
             <li class="nav-link"><a href="<?=$homeUrl?>/saiu_midia">Saiu na mídia</a></li>
             <li class="nav-link"><a href="<?=$homeUrl?>/orcamento">Clientes</a></li>
         </ul>
-        <a href="#" id="nav-contato" >Contatos</a>
+        <a href="<?=$homeUrl?>/contato" id="nav-contato" >Contatos</a>
     </div>
 </nav>

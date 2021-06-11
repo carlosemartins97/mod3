@@ -224,11 +224,3 @@ function empresa() {
     asNavFor: '.info-programa'
   });
 }
-
-function orcamento() {
-  var onloadCallback = function() {
-    grecaptcha.render('html_element', {
-      '6LfDzyQbAAAAABJifjTlRiZOffqMJzMw2ovQ4nlw' : '6LfDzyQbAAAAAHYHLDzski45qguht-1zPpBSV81T'
-    });
-  };
-}

@@ -16,6 +16,8 @@
                 <li><a href="<?=$homeUrl?>/saiu_midia"><?=$page?></a></li>
             <?php } elseif($page == 'Orçamento') {?>
                 <li><a href="<?=$homeUrl?>/orcamento"><?=$page?></a></li>
+            <?php } elseif($page == 'Contato') {?>
+                <li><a href="<?=$homeUrl?>/contato"><?=$page?></a></li>
             <?php } else { ?>
                 <li><a href="blog">Blog</a></li>
             <?php } ?>

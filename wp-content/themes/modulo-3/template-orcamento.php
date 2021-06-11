@@ -6,7 +6,7 @@
     include_once get_template_directory() . '/assets/views/includes/head.php' 
 ?> 
 
-<body onload="orcamento()">
+<body>
     <?php include_once get_template_directory() . '/assets/views/includes/nav.php' ?>
 
     <main class="orcamento">

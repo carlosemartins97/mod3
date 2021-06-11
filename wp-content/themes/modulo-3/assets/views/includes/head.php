@@ -16,7 +16,7 @@
         <link href="<?php echo get_template_directory_uri()?>/assets/utils/slick-theme.css" rel="stylesheet">
     <?php } ?>
 
-    <?php if(strlen($page) > 15) {?>
+    <?php if(strlen($page) > 20) {?>
         <!-- fonte Noto Sans -->
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/jsSocials/1.5.0/jssocials-theme-classic.css" rel="stylesheet">
