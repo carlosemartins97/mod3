@@ -27,52 +27,7 @@
                 <p>Por favor preencha este formulário.</p>
                 <p>Em até um dia útil responderemos ao seu orçamento.</p>
 
-                <form action="#">
-                    <div class="nome-tipo">
-                        <div class="nome">
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome">
-                        </div>
-                        <div class="tipo">
-                            <label for="tipo">Escolha o tipo de serviços:</label>
-                            <input type="text" id="tipo" name="tipo">
-                        </div>
-                    </div>
-
-                    <div class="email-tel-cel">
-                        <div class="email">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-                        <div class="tel-cel">
-                            <div class="tel">
-                                <label for="tel">Telefone:</label>
-                                <input type="tel" id="tel" name="tel">
-                            </div>
-                            <div class="cel">
-                                <label for="cel">Celular:</label>
-                                <input type="tel" id="cel" name="cel">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mensagem">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea name="mensagem" id="mensagem" ></textarea>
-                    </div>
-
-                    <div class="termos">
-                        <input type="checkbox" id="termos" name="termos">
-                        <label for="termos"><strong>Estou de acordo</strong> com o Termo de Uso de Dados LGPD - <strong>Lei n° 13.709</strong></label>
-                    </div>
-
-                    <div class="recaptcha">
-                        <span>Prove que você não é um robô</span>
-                        <div class="g-recaptcha" data-sitekey="6LfDzyQbAAAAABJifjTlRiZOffqMJzMw2ovQ4nlw"></div>
-                    </div>
-
-                    <button type="submit" class="link-leia-mais">Enviar <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></button>
-                </form>
+                <?php echo do_shortcode( '[contact-form-7 id="214" title="Contact form 1"]' ); ?>
             </div>
         </div>
     </section>
@@ -117,10 +72,6 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-    async defer>
-    </script>
     <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
     <script src="<?= get_template_directory_uri()?>/assets/js/main.js"></script>
 </body>
