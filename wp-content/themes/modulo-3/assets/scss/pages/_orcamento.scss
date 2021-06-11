@@ -84,6 +84,11 @@ section.orcamento-form {
                         background: $white;
                         color: $black;
                     }
+
+                    & + span {
+                        margin-top: 5px;
+                        color: $yellow-2;
+                    }
                 }
                 textarea {
                     height: 110px;
@@ -158,6 +163,12 @@ section.orcamento-form {
                             height: 60px;
                         }
                     }
+
+                    .g-recaptcha {
+                        > div, iframe {
+                            max-width: 260px;
+                        }
+                    }
                     
                     
                 }
@@ -199,6 +210,12 @@ section.orcamento-form {
                         position: absolute;
                         
                         color: $white; 
+                    }
+
+                    & + div {
+                        border: none;
+                        color: $default_yellow;
+                        padding: 0;
                     }
                 }
                 @media(max-width: 900px){

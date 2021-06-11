@@ -82,6 +82,12 @@ section.contato-form {
                         outline: none;
                         margin-bottom: 15px;
                         width: 100%;
+
+                        & + span {
+                            margin-top: -10px;
+                            color: $yellow-2;
+                        }
+
                         &:focus {
                             background: $white;
                             color: $black;
@@ -97,6 +103,13 @@ section.contato-form {
                         position: relative;
                         max-width: 250px;
                         min-width: 250px;
+
+                        & + div {
+                            border: none;
+                            color: $default_yellow;
+                            padding: 0;
+                        }
+
                         .link-leia-mais {
                             margin-top: 20px;
                             padding-right: 50px !important;
@@ -132,7 +145,10 @@ section.contato-form {
                             
                             color: $white; 
                         }
+
+                       
                     }
+
                 }
 
                 //detalhe de background
