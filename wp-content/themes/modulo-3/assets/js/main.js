@@ -88,8 +88,6 @@ function home() {
       })
       .catch(err => console.log(err));
 
-    $('.encontre-vagas-form').validate();
-
     //cargo label
     $('#cargo').focusin(function() {
       $('#cargo-label').addClass('focused');
@@ -123,6 +121,34 @@ function home() {
         $('#cidade-label').addClass('focused');
       }
     });
+
+
+  function checkFields(form) {
+    var checks_radios = form.find(':checkbox, :radio'),
+        inputs = form.find(':input').not(checks_radios).not('[type="submit"],[type="button"],[type="reset"]'),
+        checked = checks_radios.filter(':checked'),
+        filled = inputs.filter(function(){
+            return $.trim($(this).val()).length > 0;
+        });
+
+    if(checked.length + filled.length === 0) {
+        return false;
+    }
+
+    return true;
+  }
+
+  $('')
+  
+  $('.encontre-vagas-form').on('submit',function(e){
+      e.preventDefault();
+      var oneFilled = checkFields($(this));
+      if(!oneFilled) {
+        $('.encontre-vagas').append('<p class="error-msg">Ao menos um campo precisa estar preenchido.</>')
+      } else {
+        $('.error-msg').css('display', 'none');
+      }
+  });
 }
 
 function integra(){
@@ -223,4 +249,9 @@ function empresa() {
     draggable: false,
     asNavFor: '.info-programa'
   });
+}
+
+function midia() {
+  $('#de').mask('00/00/0000');
+  $('#ate').mask('00/00/0000');
 }

@@ -51,13 +51,13 @@
 
                 <div class="sobre-visao-missao">
                     <div class="sobre-visao-content">
-                        <img src="<?=get_template_directory_uri()?>/dist/img/sobre/visao.png" alt="Desenho de um olho">
+                        <img src="<?=get_template_directory_uri()?>/dist/img/sobre/visao1.png" alt="Desenho de um olho">
                         <h2>Visão</h2>
                         <p>Ser a principal referência em Consultoria de RH do País até 2025.</p>
                     </div>
 
                     <div class="sobre-missao-content">
-                        <img src="<?=get_template_directory_uri()?>/dist/img/sobre/missao.png" alt="Desenho de um olho">
+                        <img src="<?=get_template_directory_uri()?>/dist/img/sobre/missao-1.png" alt="Desenho de um olho">
                         <h2>Missão</h2>
                         <p>Ser a empresa que melhor entende e satisfaz as necessidades das empresas e candidatos, de forma humana, personalizada e com resultados consistentes.</p>
                     </div>

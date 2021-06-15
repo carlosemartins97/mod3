@@ -90,7 +90,7 @@ section.main-slider-container {
                 text-transform: uppercase;
                 width: 34%;
                 text-align: end;
-                padding: 0 60px 0 10px;
+                padding: 0 60px 0 0px;
 
                 >img {
                     margin-left: auto;
@@ -251,6 +251,10 @@ section.encontre-vagas {
     justify-content: space-around;
 
     color: $white;
+
+    .error-msg {
+        text-align: center; 
+    }
     .encontre-vagas-header, .encontre-vagas-form {
         max-width: 1366px;
         width: 100%;
@@ -273,12 +277,15 @@ section.encontre-vagas {
             display: block;
         }
         @media(max-width: 1170px){
+
             justify-content: center;
             text-align: center;
             flex-direction: column;
             margin-bottom: 30px;
             > img {
                 margin-bottom: 10px;
+                width: 60px;
+
             }
         }
 
@@ -306,6 +313,13 @@ section.encontre-vagas {
                 position: absolute;
                 bottom: 3px;
                 left: 0;
+                @media(max-width: 1170px) {
+                    left: 25px;
+
+                    &#estado-label {
+                        left: 0;
+                    }
+                }
             }
             input, select {
                 background: transparent;
@@ -391,6 +405,9 @@ section.encontre-vagas {
                 }
             }
         }
+    }
+    @media(max-width: 1170px) {
+        padding: 40px 10px;
     }
 }
 
@@ -570,7 +587,7 @@ section.slider-especialidades {
 
             .slick-current {
                 transition: all 0.3s;
-                transform: scaleY(1.2);
+                transform: scale(1.2);
                 border-radius: 10px;
             }
             .slider-especialidades-slide {
@@ -584,7 +601,7 @@ section.slider-especialidades {
                 cursor: pointer;
                 &:hover {
                     filter: brightness(0.7);
-                    transform: scaleY(1.1);
+                    transform: scale(1.1);
                     border-radius: 5px;
                 }
                 > img {
@@ -608,10 +625,11 @@ section.slider-especialidades {
             justify-content: center;
             background: $white;
             position: relative;
-            z-index: 1;
+            z-index: 999;
             button {
-                width: 35px;
-                height: 35px;
+                margin: 0 5px;
+                width: 60px;
+                height: 60px;
                 border: none;
                 background: none;
                 border-radius: 50%;
@@ -623,9 +641,15 @@ section.slider-especialidades {
                     background: $default_yellow;
                 }
             }
-            @media(max-width: 550px){
-                flex-direction: column;
-                justify-content: space-around;
+            @media(max-width: 768px){
+                min-height: unset;
+                height: 100%;
+                padding: 10px;
+                button {
+                    width: 40px !important;
+                    height: 40px !important;
+                    margin: 0 10px;
+                }
             }
         }
 
@@ -635,6 +659,7 @@ section.slider-especialidades {
                 padding-top: unset !important;
                 justify-content: center;
                 max-height: 200px !important;
+                
             }
         }
 
@@ -644,6 +669,15 @@ section.slider-especialidades {
             background: $default_grey;
             .slider-especialidades-slide {
                 max-height: 150px !important; 
+            }
+        }
+        @media(max-width: 768px) {
+            flex-direction: column;
+            .slider-especialidades-slides {
+                width: 100%;
+            }
+            .slider-especialidades-slide {
+                height: 130px !important;
             }
         }
     }
@@ -722,6 +756,12 @@ section.onde-chegamos {
             height: 100%;
             padding: 0 20px;
             color: $blue;
+            transition: all 0.3s;
+
+            &:hover {
+                background: $default_grey;
+                color: $yellow-2;
+            }
             
             h2 {
                 font-size: 60px;
@@ -747,6 +787,9 @@ section.onde-chegamos {
                     font-size: 50px;
                 }
             }
+        }
+        @media(max-width: 768px) {
+            margin-top: 50px;
         }
         
     }
@@ -920,6 +963,8 @@ section.onde-chegamos {
             max-width: 100%;
             @media(max-width: 600px){
                 flex-direction: column-reverse;
+                text-align: center;
+                padding-bottom: 30px !important; 
 
                 .mapa-content, .mapa-legenda {
                     width: 100%;
@@ -929,9 +974,6 @@ section.onde-chegamos {
                 }
 
                 .mapa-content {
-                    position: absolute;
-                    top: 30%;
-                    left: 10%;
                     img {
                         max-width: 300px !important;
                         @media(max-width: 500px){
@@ -1177,10 +1219,11 @@ section.saiu-na-midia {
             //separação lateral entre o grid
             >:nth-child(2), >:nth-child(5) {
                 position: relative;
+                overflow: unset !important;
                 &::after {
                     content: '';
                     position: absolute;
-                    z-index: -10;
+                    z-index: 999;
                     right: -5px;
                     top: 25%;
                     border-right: 1px solid $blue;
@@ -1191,7 +1234,7 @@ section.saiu-na-midia {
                 &::before {
                     content: '';
                     position: absolute;
-                    z-index: -10;
+                    z-index: 999;
                     left: -5px;
                     top: 25%;
                     border-left: 1px solid $blue;
@@ -1235,6 +1278,7 @@ section.saiu-na-midia {
                 }
                 @media(max-width: 768px) {
                     max-height: 180px;
+                    overflow: unset !important;
                 }
                 @media(max-width: 570px){
                     max-height: unset;
@@ -1270,6 +1314,7 @@ section.saiu-na-midia {
                 }
                 >:nth-child(2n) {
                     position: relative;
+                     
                     &::before {
                         content: '';
                         position: absolute;
@@ -1287,6 +1332,7 @@ section.saiu-na-midia {
                 grid-template-columns: repeat(1, 1fr);
                 justify-items: center;
                 grid-gap: 20px;
+                
 
                 &::before, &::after {
                     display: none;
@@ -1298,6 +1344,8 @@ section.saiu-na-midia {
                     }
                 }
                 >:nth-child(n){
+                    min-height: unset;
+                    padding: 15px;
                     position: relative;
                     padding: 30px;
                     
@@ -1321,6 +1369,7 @@ section.saiu-na-midia {
         }
 
         #midia-veja-mais {
+            padding: 10px 0;
             display: flex;
             align-items: center;
             justify-content: center;

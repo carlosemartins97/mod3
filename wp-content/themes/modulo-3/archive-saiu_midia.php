@@ -3,13 +3,13 @@
     include_once get_template_directory() . '/assets/views/includes/head.php' 
 ?> 
 
-<body> 
+<body onload="midia()"> 
     <?php include_once get_template_directory() . '/assets/views/includes/nav.php' ?>
     
     <main class="main-saiu_midia">
-        <?php include_once('assets/views/includes/header-navigation.php'); ?>
 
         <section class="filtro-saiu_midia">
+            <?php include_once('assets/views/includes/header-navigation.php'); ?>
             <div class="filtro-saiu_midia-content">
                 <div class="filtro-saiu_midia-form">
                     <h1>Saiu na mídia</h1>
@@ -18,11 +18,11 @@
                         <label for="pesquisa"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/filter.png" alt="filtro de pesquisa"> Filtro por período</label>
                         <div class="pesquisa-wrapper"> 
                             <span>De:</span>
-                            <input id="pesquisa" name="pesquisa" type="text">
+                            <input id="de" name="de" type="text">
                         </div>
                         <div class="pesquisa-wrapper">
                         <span>Até:</span>
-                            <input id="pesquisa" name="pesquisa" type="text">
+                            <input id="ate" name="ate" type="text">
                             <button type="submit">OK</button>
                         </div>
                     </form>
@@ -30,9 +30,21 @@
             </div>
         </section>
 
+        <?php
+        //Protect against arbitrary paged values
+        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+        
+        $args = array(
+            'posts_per_page' => 3,
+            'paged' => $paged,
+            'post_type' => 'saiu_midia',
+        );
+        
+        $the_query = new WP_Query( $args );
+        ?>
         <section class="listagem-saiu_midia">
             <div class="listagem-saiu_midia-content">
-                <?php if(have_posts()): while(have_posts()): the_post(); ?>
+                <?php if($the_query->have_posts()): while($the_query->have_posts()): $the_query->the_post(); ?>
                     <div class="saiu_midia-post">
                         <div class="post-info">
                             <span class="post-data"><?=get_field('data')?></span>
@@ -48,21 +60,16 @@
         </section>
 
         <section class="pagination-blog">
-            <div class="pagination-blog-content">
-                <div class="pagination-prev">
-                    <a href="#"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/pagination-left.png" alt="seta pra esquerda">Anterior</a>
+            <?php if($the_query->have_posts()):?>
+                <div class="pagination-blog-content">
+                    <?php
+                        echo paginate_links( array(
+                            'total' => $the_query->max_num_pages,
+                            'format' => '?paged=%#%',
+                        ) );
+                    ?>
                 </div>
-                <div class="pagination-pages">
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#" class="active">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                </div>
-                <div class="pagination-next">
-                    <a href="">Próximo<img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/pagination-right.png" alt="seta pra direita"></a>
-                </div>
-            </div>
+            <?php endif; ?>
         </section>
     </main>
    
@@ -72,6 +79,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/5ced3d7c26.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script src="<?= get_template_directory_uri()?>/assets/js/main.js"></script>
 </body>
 </html>

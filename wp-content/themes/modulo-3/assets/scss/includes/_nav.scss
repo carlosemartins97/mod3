@@ -125,4 +125,10 @@ nav {
             flex-direction: column;
         }
     }
+    @media(max-width: 768px) {
+        min-height: unset ;
+        .nav-bar {
+            min-height: unset !important;
+        }
+    }
 }

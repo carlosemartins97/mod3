@@ -7,22 +7,25 @@
     <?php include_once get_template_directory() . '/assets/views/includes/nav.php' ?>
     
     <main class="main-blog">
-        <?php include_once('assets/views/includes/header-navigation.php'); ?>
+        
 
         <section class="filtro-blog">
+            <?php include_once('assets/views/includes/header-navigation.php'); ?>
             <div class="filtro-blog-content">
                 <div class="filtro-blog-form">
                     <h1>Últimas do blog</h1>
 
-                    <form action="#">
+                    <form action="<?echo home_url('/'); ?>" role="search" method="get" >
                         <label for="pesquisa"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/filter.png" alt="filtro de pesquisa"> O que você procura</label>
                         <div class="pesquisa-wrapper">
-                            <input id="pesquisa" name="pesquisa" type="text">
+                            <input id="s" name="s" type="text" value="">
                             <button type="submit">OK</button>
                         </div>
                         <div class="select-wrapper">
-                            <select name="categoria" id="categoria">
+                            <select name="cat" id="cat">
                                 <option value="">Categoria</option>
+                                <option value="2">Santos</option>
+                                <option value="1">Brasil</option>
                             </select>
                         </div>
                     </form>
@@ -30,9 +33,19 @@
             </div>
         </section>
 
+        <?php 
+            $paged = ( get_query_var( 'paged' ) );
+            $args = array(
+              'posts_per_page' => 2,
+              'paged'          => $paged,
+              'post_type' => 'post'
+            );
+            
+            $postQuery = new WP_Query( $args ); 
+        ?>
         <section class="listagem-blog">
             <div class="listagem-blog-content">
-                <?php if(have_posts()): while(have_posts()): the_post(); ?>
+                <?php if($postQuery->have_posts()): while($postQuery->have_posts()): $postQuery->the_post(); ?>
                     <a href="<?=get_permalink()?>" class="blog-post-link">
                         <div class="listagem-blog-post">
                             <div class="listagem-post-thumbnail">
@@ -47,26 +60,21 @@
                             </div>
                         </div>
                     </a>
-                <?php endwhile; endif; ?>
+                <?php endwhile;  endif; ?>
             </div>
         </section>
 
         <section class="pagination-blog">
-            <div class="pagination-blog-content">
-                <div class="pagination-prev">
-                    <a href="#"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/pagination-left.png" alt="seta pra esquerda">Anterior</a>
+            <?php if($postQuery->have_posts()): ?>
+                <div class="pagination-blog-content">
+                    <?php 
+                        echo paginate_links( array(
+                            'total' => $postQuery->max_num_pages,
+                            
+                        ) );
+                    ?>
                 </div>
-                <div class="pagination-pages">
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#" class="active">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                </div>
-                <div class="pagination-next">
-                    <a href="">Próximo<img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/pagination-right.png" alt="seta pra direita"></a>
-                </div>
-            </div>
+            <?php endif; ?>
         </section>
     </main>
    

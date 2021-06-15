@@ -9,6 +9,27 @@ add_theme_support('post-thumbnails'); //habilitando as thumbnails
 
 add_action( 'wp_enqueue_scripts', 'add_estilos' );//adicionando estilos na head
 
+function wpdocs_my_search_form( $form ) {
+    $form = '<form action="<?=$homeUrl?>/blog">
+                <label for="pesquisa"><img src=<?=get_template_directory_uri()?>/dist/img/blog/icons/filter.png" alt="filtro de pesquisa"> O que você procura</label>
+                <div class="pesquisa-wrapper">
+                    <input id="s" name="s" type="text">
+                    <button type="submit">OK</button>
+                </div>
+                <div class="select-wrapper">
+                    <select name="cat" id="cat">
+                        <option value="">Categoria</option>
+                        <option value="2">Santos</option>
+                        <option value="1">Brasil</option>
+                    </select>
+                </div>
+            </form>';
+ 
+    return $form;
+}
+add_filter( 'get_search_form', 'wpdocs_my_search_form' );
+
+
 function my_post_type() {
     //Saiu na mídia
     $args = array (

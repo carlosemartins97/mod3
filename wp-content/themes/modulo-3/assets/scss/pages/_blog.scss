@@ -306,34 +306,77 @@ section.pagination-blog {
         width: 100%;
         margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        padding: 4rem;
+        position: relative;
         a {
             font-weight: 600;
             font-size: 13px;
         }
 
-        .pagination-next, .pagination-prev {
+        .page-numbers {
+            margin: 0 5px;
+            text-align: center;
+            font-size: 15px;
+            max-width: 40px;
+            width: 100%;
+            max-height: 40px;
+            height: 100%;
+            border: 1px solid $light-grey-2;
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s;
+            cursor: pointer;
+            &:hover, &.current {
+                background: $black;
+                color: $white;
+            }
+    }
+
+        .prev, .next {
             display: flex;
             align-items: center;
+            border: none;
+            width: auto;
+            max-width: unset;
+            padding: 0;
+            border-radius: unset;
+            position: absolute;
+            
             a {
                 transition: all 0.3s;
-                border-bottom: 1px solid transparent;
-                &:hover {
-                    border-bottom: 1px solid $black;
-                }
+            }
+            @media(max-width: 550px) {
+                bottom: 0;
             }
         }
 
-        .pagination-prev {
+        .prev.page-numbers{
+            left: 0;
             img {
                 margin-right: 30px;
             }
+            &:hover {
+                transform: translateX(-10px);
+                color: $yellow-2;
+                background: none;
+            }
+            
         }
-        .pagination-next {
+        .next.page-numbers {
+            right: 0;
             img {
                 margin-left: 30px;
             }
+            &:hover {
+                transform: translateX(10px);
+                color: $yellow-2;
+                background: none;
+            }
         }
+
+        
         .pagination-pages {
             max-width: 250px;
             width: 100%;
@@ -358,11 +401,29 @@ section.pagination-blog {
             }
         }
         @media(max-width: 500px){
-            flex-direction: column;
             align-items: center;
+            flex-wrap: wrap;
             .pagination-pages {
-                margin: 20px 0;
+                margin: 20px auto;
+                width: 100%;
+                order: -1;
+                
             }
+            .pagination-next, .pagination-prev {
+                display: inline-block;
+                order: 4; 
+                width: 50%;
+                text-align: center;
+                
+            }
+            
         }
+        @media(max-width: 550px) {
+            padding: 2rem 0px 4rem 0px;
+        }
+    }
+    @media(max-width: 500px) {
+        min-height: auto;
+        padding: 10px 10px 20px 10px;
     }
 }

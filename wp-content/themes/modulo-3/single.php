@@ -8,9 +8,10 @@
     
     <main class="main-integra">
 
-        <?php include_once('assets/views/includes/header-navigation.php'); ?>
+        
 
         <section class="integra-title">
+        <?php include_once('assets/views/includes/header-navigation.php'); ?>
             <div class="integra-title-content">
                 <span><?= get_the_date('d/m/Y') ?></span>
                 <h1><?= get_the_title() ?></h1>
