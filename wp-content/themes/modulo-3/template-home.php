@@ -190,37 +190,21 @@
             </div>
 
             <?php 
-                $args = array(
-                    'post_type' => 'mapa_home',
-                    'posts_per_page'=> 1,
-                );
-                
-                $mapaQuery = new WP_Query($args);
+                wp_reset_query()
             ?>
             <div class="capilaridade">
-                <?php if($mapaQuery->have_posts()): while($mapaQuery->have_posts()): $mapaQuery->the_post(); ?>
-                    <span>Capilaridade nacional</span>
-                    <h2><?=get_the_title()?></h2>
-                    <a href="<?=get_field('link_botao')?>" class="capilaridade-button">fale com nosso time</a>
-                <?php endwhile; endif; ?>
+                <span>Capilaridade nacional</span>
+                <h2><?=get_field('titulo_bloco_mapa')?></h2>
+                <a href="<?=get_field('link_botao_bloco_mapa')?>" class="capilaridade-button">fale com nosso time</a>
             </div>
         </section>
 
-        <?php 
-            $args = array(
-                'post_type' => 'nossos_servicos',
-                'posts_per_page'=> 1,
-            );
-            
-            $servicosQuery = new WP_Query($args);
-        ?>
         <section class="nossos-servicos">
             <img id="nossos-servicos-logo" src="<?=get_template_directory_uri()?>/dist/img/min-logo.png" alt="Logo minimalista do grupo Sartori.">
             <div class="nossos-servicos-content">
-                <?php if($servicosQuery->have_posts()): while($servicosQuery->have_posts()): $servicosQuery->the_post(); ?>
-                <h2><?php echo get_the_title()?></h2>
+                <h2><?php echo get_field('titulo_bloco_nossos_servicos')?></h2>
 
-                <span><?=get_field('descricao')?></span>
+                <span><?=get_field('descricao_nossos_servicos')?></span>
 
                 <ul>
                     <li><a href="#">Recrutamento e Seleção</a></li>
@@ -236,9 +220,7 @@
                     <li><a href="#">Gestão de Talentos</a></li>
                 </ul>
 
-                <a href="<?=get_field('link_botao')?>">Saiba mais</a>
-
-                <?php endwhile; endif; ?>
+                <a href="<?=get_field('link_botao_nossos_servicos')?>">Saiba mais</a>
                 <div id="servico-background"></div>
             </div>
         </section>
@@ -297,7 +279,9 @@
         </section>
 
     
-    <?php include_once get_template_directory() . '/assets/views/includes/footer.php' ?>
+    <?php 
+        include_once get_template_directory() . '/assets/views/includes/footer.php' 
+    ?>
 
     </main>
 

@@ -1,20 +1,19 @@
 <?php $homeUrl = get_home_url();
 
+
 ?>
 <section class="cadastre-curriculo">
     <div class="cadastre-curriculo-content">
-        <?php if(isset($footerQuery)) { ?>
-            <?php if($footerQuery->have_posts()): while($footerQuery->have_posts()): $footerQuery->the_post(); ?>
+        <?php if(isset($possui_conteudo)) { ?>
                 <div class="curriculo-info">
-                    <h2><?=get_field('titulo_em_negrito')?> <span><?=get_field('titulo_sem_negrito')?></span></h2>
+                    <h2><?=get_field('titulo_footer_em_negrito')?> <span><?=get_field('titulo_footer_sem_negrito')?></span></h2>
 
-                    <p><?=get_field('descricao')?></p>
+                    <p><?=get_field('descricao_footer')?></p>
                 </div>
                 <div class="curriculo-button">
                     <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/dotted2.png" alt="Imagem de detalhe de fundo com vários pontos.">
-                    <a href="<?=get_field('link_botao')?>"><?=get_field('texto_botao')?> <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></a>
+                    <a href="<?=get_field('link_do_botao')?>"><?=get_field('texto_footer_botao')?> <img src="<?=get_template_directory_uri()?>/dist/img/curriculo/seta.png" alt="Seta pra direita"></a>
                 </div>
-            <?php endwhile; endif; ?>
         <?php } else { ?>
             <div class="curriculo-info">
                     <h2>Cadastre <span>Seu currículo</span></h2>

@@ -23,37 +23,19 @@
         </section>
 
         
-        <?php 
-            $args = array(
-                'post_type' => 'intro_empresa',
-                'posts_per_page'=> 1,
-            );
-            
-            $recrutamentoQuery = new WP_Query($args);
-        ?>
-        <section class="profissionais-carreira">
-            <?php if($recrutamentoQuery->have_posts()): while($recrutamentoQuery->have_posts()): $recrutamentoQuery->the_post(); ?>
-                <div class="profissionais-carreira-content">
-                    <h2><?=get_the_title()?></h2>
 
-                    <?=the_content()?>
+        <section class="profissionais-carreira">
+                <div class="profissionais-carreira-content">
+                    <h2><?=get_field('titulo_primeiro_bloco')?></h2>
+
+                    <?=get_field('descricao_primeiro_bloco')?>
                 </div>
-            <?php endwhile; endif; ?>
         </section>
 
 
-        <?php 
-            $args = array(
-                'post_type' => 'thumb_empresa',
-                'posts_per_page'=> 1,
-            );
-            
-            $thumbQuery = new WP_Query($args);
-        ?>  
+
         <section class="profissionais-thumb">
-            <?php if($thumbQuery->have_posts()): while($thumbQuery->have_posts()): $thumbQuery->the_post(); ?>
-                <img src="<?=get_field("imagem")?>" alt="<?=get_the_title()?>">
-            <?php endwhile; endif; ?>
+                <img src="<?=get_field("thumbnail")?>" alt="<?=get_the_title()?>">
         </section>
 
 
@@ -140,17 +122,11 @@
             </div>
         </section>
 
-        
-
     <?php 
-        $args = array(
-            'post_type' => 'footer_empresa',
-            'posts_per_page'=> 1,
-        );
-        
-        $footerQuery = new WP_Query($args);
+        wp_reset_query();
+        $possui_conteudo = true;
+        include_once get_template_directory() . '/assets/views/includes/footer.php' 
     ?>
-    <?php include_once get_template_directory() . '/assets/views/includes/footer.php' ?>
     
 
 

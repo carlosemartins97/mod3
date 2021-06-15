@@ -22,36 +22,18 @@
             </div>
         </section>
 
-        <?php 
-            $args = array(
-                'post_type' => 'intro_profissionais',
-                'posts_per_page'=> 1,
-            );
-            
-            $introQuery = new WP_Query($args);
-        ?>
-        <section class="profissionais-carreira">
-            <?php if($introQuery->have_posts()): while($introQuery->have_posts()): $introQuery->the_post(); ?>
-                <div class="profissionais-carreira-content">
-                    <h2><?=get_the_title()?></h2>
 
-                    <?=the_content()?>
+        <section class="profissionais-carreira">
+                <div class="profissionais-carreira-content">
+                    <h2><?=get_field('titulo_primeiro_bloco')?></h2>
+
+                    <?=get_field('descricao_primeiro_bloco')?>
                 </div>
-            <?php endwhile; endif; ?>
         </section>
 
-        <?php 
-            $args = array(
-                'post_type' => 'thumb_profissionais',
-                'posts_per_page'=> 1,
-            );
-            
-            $thumbQuery = new WP_Query($args);
-        ?>           
+                  
         <section class="profissionais-thumb">
-            <?php if($thumbQuery->have_posts()): while($thumbQuery->have_posts()): $thumbQuery->the_post(); ?>
-                <img src="<?=get_field("imagem")?>" alt="<?=get_the_title()?>">
-            <?php endwhile; endif; ?>
+            <img src="<?=get_field("thumbnail")?>" alt="<?=get_field('titulo_primeiro_bloco')?>">
         </section>
 
         <section class="profissionais-grid">
@@ -113,14 +95,10 @@
     </main>
 
     <?php 
-        $args = array(
-            'post_type' => 'info_footer',
-            'posts_per_page'=> 1,
-        );
-        
-        $footerQuery = new WP_Query($args);
+        wp_reset_query();
+        $possui_conteudo = true;
+        include_once get_template_directory() . '/assets/views/includes/footer.php' 
     ?>
-    <?php include_once get_template_directory() . '/assets/views/includes/footer.php' ?>
     
 
 

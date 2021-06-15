@@ -32,10 +32,10 @@
 
         <?php
         //Protect against arbitrary paged values
-        $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+        $paged = $_GET['pagina']??1;
         
         $args = array(
-            'posts_per_page' => 3,
+            'posts_per_page' => 5,
             'paged' => $paged,
             'post_type' => 'saiu_midia',
         );
@@ -64,7 +64,8 @@
                 <div class="pagination-blog-content">
                     <?php
                         echo paginate_links( array(
-                            'format' => '?paged=%#%',
+                            'current' => $paged,
+                            'format' => '?pagina=%#%',
                         ) );
                     ?>
                 </div>

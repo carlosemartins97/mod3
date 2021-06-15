@@ -15,7 +15,7 @@
                 <div class="filtro-blog-form">
                     <h1>Últimas do blog</h1>
 
-                    <form action="<?echo home_url('/'); ?>" role="search" method="get" >
+                    <form action="" role="search" method="get" >
                         <label for="pesquisa"><img src="<?=get_template_directory_uri()?>/dist/img/blog/icons/filter.png" alt="filtro de pesquisa"> O que você procura</label>
                         <div class="pesquisa-wrapper">
                             <input id="s" name="s" type="text" value="">
@@ -33,16 +33,6 @@
             </div>
         </section>
 
-        <?php 
-            $paged = ( get_query_var( 'paged' ) );
-            $args = array(
-              'posts_per_page' => 2,
-              'paged'          => $paged,
-              'post_type' => 'post'
-            );
-            
-            query_posts( $args ); 
-        ?>
         <section class="listagem-blog">
             <div class="listagem-blog-content">
                 <?php if(have_posts()): while(have_posts()): the_post(); ?>
