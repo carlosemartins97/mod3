@@ -41,11 +41,11 @@
               'post_type' => 'post'
             );
             
-            $postQuery = new WP_Query( $args ); 
+            query_posts( $args ); 
         ?>
         <section class="listagem-blog">
             <div class="listagem-blog-content">
-                <?php if($postQuery->have_posts()): while($postQuery->have_posts()): $postQuery->the_post(); ?>
+                <?php if(have_posts()): while(have_posts()): the_post(); ?>
                     <a href="<?=get_permalink()?>" class="blog-post-link">
                         <div class="listagem-blog-post">
                             <div class="listagem-post-thumbnail">
@@ -65,13 +65,10 @@
         </section>
 
         <section class="pagination-blog">
-            <?php if($postQuery->have_posts()): ?>
+            <?php if(have_posts()): ?>
                 <div class="pagination-blog-content">
                     <?php 
-                        echo paginate_links( array(
-                            'total' => $postQuery->max_num_pages,
-                            
-                        ) );
+                        echo paginate_links();
                     ?>
                 </div>
             <?php endif; ?>

@@ -40,11 +40,11 @@
             'post_type' => 'saiu_midia',
         );
         
-        $the_query = new WP_Query( $args );
+        query_posts( $args );
         ?>
         <section class="listagem-saiu_midia">
             <div class="listagem-saiu_midia-content">
-                <?php if($the_query->have_posts()): while($the_query->have_posts()): $the_query->the_post(); ?>
+                <?php if(have_posts()): while(have_posts()): the_post(); ?>
                     <div class="saiu_midia-post">
                         <div class="post-info">
                             <span class="post-data"><?=get_field('data')?></span>
@@ -60,11 +60,10 @@
         </section>
 
         <section class="pagination-blog">
-            <?php if($the_query->have_posts()):?>
+            <?php if(have_posts()):?>
                 <div class="pagination-blog-content">
                     <?php
                         echo paginate_links( array(
-                            'total' => $the_query->max_num_pages,
                             'format' => '?paged=%#%',
                         ) );
                     ?>
